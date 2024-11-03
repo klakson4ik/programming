@@ -1,0 +1,12 @@
+#header{
+    all: inherit;
+    background-image: url(/images/potolok.jpeg);
+    background-size: 50%;
+}
+
+#header-category{
+		  position: relative;
+		  bottom: 0;
+		  left:0;
+}
+

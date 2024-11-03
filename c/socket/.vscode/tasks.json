@@ -1,0 +1,10 @@
+{
+    "tasks": [
+        {
+            "label": "Build",
+            "command": "make",
+            "type": "shell",
+            "group": "build"
+        }
+    ]
+}

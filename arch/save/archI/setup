@@ -1,0 +1,49 @@
+lxc-net ->/etc/default/
+
+nano /etc/subuid
+
+lxc:100000:65536
+lxd:100000:65536
+root:100000:65536
+
+nano /etc/subgid
+
+lxc:100000:65536
+lxd:100000:65536
+root:100000:65536
+
+Для удобства вы можете добавить пользователя lxc-root, чтобы в htop видеть процессы запущенные в lxc
+
+groupadd -r --gid 100000 lxc-root
+useradd -r -M --uid 100000 -g lxc-root lxc-root
+
+Установите права доступа, чтобы корректно запускались контейнеры:
+
+chown lxc-root:root /var/lib/lxc
+chmod 755 /var/lib/lxc
+
+ Также вам потребуется настроить UID для LXC. Пропишите в конце файла следующие строки, выполнив команду nano /etc/lxc/default.conf
+
+lxc.idmap = u 0 100000 65536
+lxc.idmap = g 0 100000 65536
+
+Рекомендуется использовать сеть 172.30.0.1/24. Более подробный список указан в списке сетей.
+
+В файле /etc/default/lxc-net пропишите
+
+USE_LXC_BRIDGE="true"
+LXC_BRIDGE="lxcbr0"
+LXC_ADDR="172.30.0.1"
+LXC_NETMASK="255.255.255.0"
+LXC_NETWORK="172.30.0.0/24"
+LXC_DHCP_RANGE="172.30.0.2,172.30.0.254"
+LXC_DHCP_MAX="253"
+LXC_DHCP_CONFILE=/etc/lxc/dnsmasq.conf
+#LXC_DOMAIN="lxc"
+
+Создайте файл /etc/lxc/dnsmasq.conf и пропишите в нем:
+
+port=53
+listen-address=172.30.0.1
+
+lxc-create -t download -n test -- --dist archlinux --release current --arch amd64

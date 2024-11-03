@@ -1,0 +1,50 @@
+/*Other things*/
+
+/*common styles*/
+@import url('../common/styles/styles.css');
+
+/*common libs*/
+@import url('../common/libs/libs.css');
+
+/*styles*/
+@import url('styles/styles.css');
+
+/*libs*/
+@import url('libs/libs.css');
+
+/*Views*/
+
+	/*Layouts*/
+		
+		/*defualt*/
+@import url('../../../App/Web/User/Views/Layouts/default/default.css');
+
+	/*Partials*/
+
+		/*default*/
+			
+			/*header*/
+@import url('../../../App/Web/User/Views/Partials/default/header/header.css');
+
+			/*footer*/
+@import url('../../../App/Web/User/Views/Partials/default/footer/footer.css');
+
+	/*Pages*/
+
+		/* Category style */
+@import url("../../../App/Web/User/Views/Pages/Category/categoryView.css");
+
+		/* Home style */
+@import url("../../../App/Web/User/Views/Pages/Home/homeView.css");
+
+		/* News style */
+@import url("../../../App/Web/User/Views/Pages/News/newsView.css");
+
+  /*Widgets*/
+@import url("../../../App/Web/User/Views/Pages/Home/pagination.css");
+  /*Widgets*/
+@import url("../../../App/Web/User/Views/Pages/News/share.css");
+
+
+		/* CreatePost style */
+@import url("../../../App/Web/User/Views/Pages/CreatePost/createPost.css");

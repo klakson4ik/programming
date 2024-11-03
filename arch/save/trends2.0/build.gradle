@@ -1,0 +1,37 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'java-library'
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName = 'com.klakson4ik.App'
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-beta-4'
+    // https://mvnrepository.com/artifact/com.robbypond/boilerpipe
+    implementation group: 'com.robbypond', name: 'boilerpipe', version: '1.2.3'
+    // https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
+    implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.7.3'
+    // https://mvnrepository.com/artifact/com.jcraft/jsch
+    implementation group: 'com.jcraft', name: 'jsch', version: '0.1.55'
+
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-beta-4'
+    compile group: 'com.robbypond', name: 'boilerpipe', version: '1.2.3'
+    compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.7.3'
+    compile group: 'com.jcraft', name: 'jsch', version: '0.1.55'
+}
+
+task fatjar(type: Jar) {
+     manifest {
+        attributes('Implementation-Title': 'Gradle Jar File', 
+                    'Main-Class': 'com.klakson4ik.App')
+    }
+    baseName = "trends"
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+}

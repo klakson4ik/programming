@@ -1,0 +1,26 @@
+.category-tree{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  top: 0px;
+  left: 0px;
+  width: fit-content;
+}
+
+.category-branch{
+  position: relative;
+}
+
+.category-tree-element {
+  position: absolute;
+  display: none;
+  width: fit-content;
+  top: 0;
+  left: 100%;
+}
+
+.category-branch-content{
+  display: flex;
+  border: 2px solid black;
+}

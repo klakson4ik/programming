@@ -1,0 +1,58 @@
+URxvt.scrollstyle: plain
+URxvt.letterSpace: -2
+! Font to Fira Code Retina, 16px
+URxvt.font: xft:Fira Code Retina:style=Retina:pyxelsize=16
+
+! Set Bold Font to Fira Code Bold, 16px
+URxvt.boldFont: xft:Fira Code:style=Bold:pyxelsize=16
+
+! Set Bold Font to Fira Code Light, 16px
+URxvt.italicFfont: xft:Fira Code:style=Light:pyxelsize=16
+
+! set Background Color
+URxvt*background: #1D262A
+
+! set Foreground Color
+URxvt*foreground: #E7EBED
+
+!set Color Scheme
+! Black
+URxvt.color0: #212121
+URxvt.color8: #263238
+
+! Red
+URxvt.color1: #b71c1c
+URxvt.color9: #ef5350
+
+! Green
+URxvt.color2: #004d40
+URxvt.color10: #26a69a
+
+! Yellow
+URxvt.color3: #f57f17
+URxvt.color11: #ffee58
+
+! Blue 
+URxvt.color4: #0d47a1
+URxvt.color12: #42a5f5
+
+! Magenta
+URxvt.color5: #4a148c
+URxvt.color13: #ab47bc
+
+! Cyan
+URxvt.color6: #006064
+URxvt.color14: #26c6da
+
+! White
+URxvt.color7: #fafafa
+URxvt.color15: #ffffff
+
+! Use this color for bold
+URxvt.colorBD: #eaeaea
+
+! Use this color for italics
+URxvt.colorIT: #eaeaea
+
+! Use this color for underlined text
+URxvt.colorUL: #ef5350

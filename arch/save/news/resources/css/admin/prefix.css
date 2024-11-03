@@ -1,0 +1,324 @@
+/*Other things*/
+
+/*common styles*/
+
+/* Указываем box sizing */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*common libs*/
+
+/*styles*/
+
+/*libs*/
+
+/*Views*/
+
+/*Layouts*/
+
+/*defualt*/
+
+#wrapper {
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+#wrapper-header {
+  min-width: 100%;
+  height: 10vh;
+}
+
+#wrapper-content {
+  height: auto;
+  min-width: 100%;
+  padding: 0.5rem;
+}
+
+#wrapper-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+  height: 10vh;
+  background: green;
+}
+
+/*Partials*/
+
+/*default*/
+
+/*header*/
+
+#header {
+  width: inherit;
+  height: inherit;
+  background: green;
+  position: relative;
+}
+
+/*footer*/
+
+/*modal*/
+
+.modalWindow {
+  position: fixed;
+  font-family: arial;
+  font-size: 80%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.2);
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modalHeader h2 {
+  color: #189CDA;
+  border-bottom: 2px groove #efefef;
+}
+
+.modalWindow:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalWindow > div {
+  width: 500px;
+  position: relative;
+  margin: 10% auto;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.modalWindow .modalHeader {
+  padding: 5px 20px 0px 20px;
+}
+
+.modalWindow .modalContent {
+  padding: 0px 20px 5px 20px;
+}
+
+.modalWindow .modalFooter {
+  padding: 8px 20px 8px 20px;
+}
+
+.modalFooter {
+  background: #F1F1F1;
+  border-top: 1px solid #999;
+  box-shadow: inset 0px 13px 12px -14px #888;
+}
+
+.modalFooter p {
+  color: #D4482D;
+  textalign: right;
+  margin: 0;
+  padding: 5px;
+}
+
+.ok,
+.close,
+.cancel {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px #000;
+}
+
+.close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 22px;
+  height: 22px;
+  font-size: 10px;
+}
+
+.ok,
+.cancel {
+  width: 80px;
+  float: right;
+  margin-left: 20px;
+}
+
+.ok:hover {
+  background: #189CDA;
+}
+
+.close:hover,
+.cancel:hover {
+  background: #D4482D;
+}
+
+.clear {
+  float: none;
+  clear: both;
+}
+
+/*Pages*/
+
+/* Category styles */
+
+.category-tree {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  top: 0px;
+  left: 0px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.category-branch {
+  position: relative;
+}
+
+.category-tree-element {
+  position: absolute;
+  display: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  top: 0;
+  left: 100%;
+}
+
+.category-branch-content {
+  display: flex;
+  border: 2px solid black;
+}
+
+.category-edit-tree {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  top: 0px;
+  left: 0px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.category-edit-branch {
+  position: relative;
+}
+
+.category-edit-tree-element {
+  position: absolute;
+  display: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  top: 0;
+  left: 100%;
+}
+
+.category-edit-tree {
+  display: none;
+}
+
+.category-edit-branch-content {
+  display: flex;
+  border: 2px solid black;
+}
+
+.category-edit-change-newtext {
+  display: none;
+}

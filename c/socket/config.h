@@ -1,0 +1,15 @@
+#ifndef CURLY_CONFIG
+#define CURLY_CONFIG
+
+#define PACKET_LEN 1410
+#define SERVER_IP "91.107.86.183"
+#define SERVER_PORT 40100
+
+#define SRC_IP "127.0.0.1"
+#define SRC_PORT 51000
+
+#define LOOP_SLEEP 1
+#define RECV_FLAFS MSG_DONTWAIT
+#define SEND_FLAGS 0
+#define NONBLOCK 1
+#endif

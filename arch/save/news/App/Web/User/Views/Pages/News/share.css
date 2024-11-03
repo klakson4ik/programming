@@ -1,0 +1,30 @@
+.share{
+  --width-icons: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 5px;
+  justify-content: center;
+}
+.share-icons{
+  width: var(--width-icons);
+  margin: 5px;
+}
+
+@media screen and (min-width: 768px){
+  .share{
+    --width-icons: 30px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .share{
+    --width-icons: 35px;
+  }
+}
+
+@media screen and (min-width: 1920px){
+  .share{
+    --width-icons: 40px;
+  }
+}

@@ -1,0 +1,10 @@
+[Unit]
+Description=wol to trends
+
+[Service]
+Type=oneshot
+ExecStart=wol a4:bb:6d:06:59:17
+KillMode=process
+
+[Install]
+WantedBy=default.target

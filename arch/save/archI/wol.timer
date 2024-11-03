@@ -1,0 +1,10 @@
+[Unit]
+Description=wol to trends timer
+Requires=wol.service
+
+[Timer]
+Unit=wol.service
+OnCalendar= 01/2:00:00
+
+[Install]
+WantedBy=timers.target

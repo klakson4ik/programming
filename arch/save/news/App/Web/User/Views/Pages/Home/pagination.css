@@ -1,0 +1,35 @@
+.pagination{
+  display: flex;
+  font-size: 1em;
+  justify-content: center;
+
+}
+.pagination a {
+  text-decoration: none;
+}
+
+.nav-link{
+  border: 1px solid #68829e;
+  padding: 4px 8px;
+  color: black;
+	background: white;
+}
+.active {
+  background-color: #68829e;
+}
+
+.pagination li:hover{
+  background-color: #68829e;
+}
+
+@media screen and (min-width: 768px){
+  .nav-link{
+    padding: 6px 12px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .nav-link{
+    padding: 8px 16px;
+  }
+}

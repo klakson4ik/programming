@@ -1,0 +1,39 @@
+/*Other things*/
+
+/*common styles*/
+@import url('../common/styles/styles.css');
+
+/*common libs*/
+@import url('../common/libs/libs.css');
+
+/*styles*/
+@import url('styles/styles.css');
+
+/*libs*/
+@import url('libs/libs.css');
+
+/*Views*/
+
+	/*Layouts*/
+		
+		/*defualt*/
+@import url('../../../App/Web/Admin/Views/Layouts/default/default.css');
+
+	/*Partials*/
+
+		/*default*/
+			
+			/*header*/
+@import url('../../../App/Web/Admin/Views/Partials/default/header/header.css');
+
+			/*footer*/
+@import url('../../../App/Web/Admin/Views/Partials/default/footer/footer.css');
+      
+      /*modal*/
+@import url('../../../App/Web/Admin/Views/Partials/Modals/default/modal.css');
+
+	/*Pages*/
+
+		/* Category styles */
+@import url("../../../App/Web/Admin/Views/Pages/Category/Index/categoryIndexView.css");
+@import url("../../../App/Web/Admin/Views/Pages/Category/Edit/categoryEditView.css");

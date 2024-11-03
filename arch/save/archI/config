@@ -1,0 +1,19 @@
+# Template used to create this container: /usr/share/lxc/templates/lxc-archlinux
+# Parameters passed to the template:
+# For additional config options, please look at lxc.container.conf(5)
+
+# Distribution configuration
+lxc.include = /usr/share/lxc/config/common.conf
+lxc.arch = x86_64
+
+# Container specific configuration
+lxc.rootfs.path = dir:/var/lib/lxc/playtime/rootfs
+lxc.uts.name = playtime
+
+# Network configuration
+lxc.net.0.type = veth
+lxc.net.0.link = lxcbr0
+lxc.net.0.flags = up 
+lxc.net.0.hwaddr = 00:16:3e:6b:aa:11
+lxc.net.0.ipv4.address = 172.30.0.10/24
+lxc.net.0.ipv4.gateway = 172.30.0.1
