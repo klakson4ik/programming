@@ -1,0 +1,22 @@
+alias grep='grep --colour=auto'
+# замена top на htop
+alias top='top && htop'
+# человеческие df и du
+alias df='df -k --print-type --human-readable'
+alias du='du -k --total --human-readable | sort -h'
+# замена less и zless на симпотяшный vimpager
+
+# ls
+alias ls='ls --color=auto'
+alias ll='ls --group-directories-first -l --human-readable'
+alias lr='ls --recursive'
+alias la='ll -la'
+alias lx='ll -X --ignore-backups'
+alias lz='ll -S --reverse'
+alias lt='ll -t --reverse'
+alias lm='la | more'
+
+# power
+alias reboot='doas reboot'
+alias poweroff='doas poweroff'
+alias halt='doas halt'

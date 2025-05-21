@@ -1,0 +1,10 @@
+#!/bin/sh
+
+layout=$(swaymsg -t get_inputs | jq -r '.[] | select(.identifier == "1:1:AT_Translated_Set_2_keyboard") | .xkb_active_layout_name' | awk '{print $1}')
+
+case $layout in
+   English) echo "EN"
+       ;;
+   Russian) echo "RU"
+       ;;
+esac

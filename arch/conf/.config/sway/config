@@ -1,0 +1,200 @@
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $menu fuzzel
+set $term footclient
+
+font pango:Fira Code 12
+default_border pixel
+xwayland disable
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Kill focused window
+    bindsym $mod+Shift+q kill
+
+    # Start your launcher
+    bindsym $mod+d exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+
+### Idle configuration
+exec swayidle -w timeout 300 'sudo zzz'
+
+input * {
+    xkb_layout "us,ru"
+    xkb_options "grp:caps_toggle"
+}
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK
+bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $WOBSOCK
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%- | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
+bindsym XF86MonBrightnessUp exec brightnessctl set +5% | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+i workspace IDE
+    bindsym $mod+o workspace DEV
+    bindsym $mod+n workspace BROWSER
+    bindsym $mod+u workspace TERMINAL
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace TOP
+    # Move focused container to workspace
+    bindsym $mod+Shift+i move container to workspace IDE
+    bindsym $mod+Shift+o move container to workspace DEV
+    bindsym $mod+Shift+n move container to workspace BROWSER
+    bindsym $mod+Shift+u move container to workspace TERMINAL
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace TOP
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+
+bindsym $mod+p [title="^Dev"] scratchpad show
+bindsym $mod+Shift+p [title="^Dev"] scratchpad hide
+
+
+### Window rules ###
+
+# Link some programs to workspaces (swaymsg -t get_tree)
+assign [app_id="librewolf"] workspace BROWSER
+assign [app_id="Firefox"] workspace DEV
+assign [app_id="Nvim"] workspace IDE
+assign [app_id="Top"] workspace TOP
+assign [app_id="Terminal"] workspace TERMINAL
+
+exec firefox
+exec librewolf
+exec foot -s
+exec foot -a Nvim nvim
+exec foot -a Top btop
+exec foot -a Terminal
+
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    #bindsym $mod+b splith
+    #bindsym $mod+v splitv
+
+    # Switch the current container between different layout styles
+#    bindsym $mod+s layout stacking
+#    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+#    bindsym $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+tab move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+tab scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+#
+# Colors
+#
+
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
+
+#
+# Status Bar:
+#
+bar {
+    position bottom
+	status_command i3blocks -c ~/.config/sway/i3blocks/i3blocks.conf
+	font pango:Fira Code 14
+	mode hide
+
+    colors {
+    	background #282A36
+    	statusline #F8F8F2
+    	separator  #44475A
+
+    	focused_workspace  #44475A #44475A #F8F8F2
+    	active_workspace   #282A36 #44475A #F8F8F2
+    	inactive_workspace #282A36 #282A36 #BFBFBF
+    	urgent_workspace   #FF5555 #FF5555 #F8F8F2
+    	binding_mode       #FF5555 #FF5555 #F8F8F2
+    }
+}
+
+include /usr/local/etc/sway/config.d/*
