@@ -1,0 +1,10 @@
+{
+	"title": "Сертификаты",
+	"data": {
+		"title": "text",
+		"desc": "text",
+		"text": "text",
+		"file": "string",
+		"date": "text"
+	}
+}

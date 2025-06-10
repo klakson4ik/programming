@@ -1,0 +1,45 @@
+@use "base" as *;
+
+.b-social-link {
+	display: flex;
+	align-items: center;
+	margin-top: vw(65);
+
+	@include breakpoint(400) {
+		display: block;
+	}
+
+	&__title {
+
+		@include breakpoint(400) {
+			margin: 1rem 0;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&__list {
+		padding: 1rem 1rem;
+
+		&:first-child {
+			padding-left: 2rem;
+
+			@include breakpoint(400) {
+				padding-left: 1rem;
+			}
+		}
+
+		& svg {
+			transition: var(--trans-time);
+		}
+
+		&:hover svg {
+			transform: scale(1.05);
+		}
+
+	}
+}

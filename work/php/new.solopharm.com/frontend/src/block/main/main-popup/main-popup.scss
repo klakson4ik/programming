@@ -1,0 +1,88 @@
+@import "~style";
+
+$block-name: "b-main-popup";
+
+.#{$block-name} {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	width: 100dvw;
+	height: 100dvh;
+	visibility: hidden;
+	opacity: 0;
+	transition:
+		opacity 0.4s ease,
+		visibility 0s linear 0.4s;
+
+	&.active {
+		visibility: visible;
+		opacity: 1;
+		transition: opacity 0.4s ease;
+	}
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $black;
+		opacity: 0.5;
+		content: "";
+	}
+
+	&__popup-container {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		gap: 18.7px;
+		width: 90%;
+		max-width: 470px;
+		height: fit-content;
+		inset: 0;
+		margin: auto;
+		padding: 26px 20px;
+		background-color: $white;
+
+		@include breakpoint(mobile) {
+			padding: 26px 47px;
+		}
+	}
+
+	&__row {
+		display: flex;
+		gap: 12px;
+		align-items: center;
+		
+		& > svg {
+			flex-shrink: 0;
+		}
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 16.91px;
+		letter-spacing: -0.4px;
+	}
+
+	&__learn-link {
+		right: 0;
+		left: 0;
+		margin: auto;
+		padding: rem(8) rem(23) rem(7);
+		color: $white;
+		font-weight: 550;
+		font-size: 14px;
+		line-height: 18px;
+		background-color: $color-arrow-red;
+	}
+
+	&__cross {
+		position: absolute;
+		top: 12px;
+		right: 12px;
+		cursor: pointer;
+	}
+}

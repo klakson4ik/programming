@@ -1,0 +1,136 @@
+@import "~style";
+
+$block-name: "b-production-title-img";
+
+.#{$block-name} {
+	background-position: center;
+	background-size: cover;
+
+	@include breakpoint(laptop) {
+		min-height: rem(823);
+	}
+
+	@media (width <= 1023px) {
+		margin-top: 0;
+		background-image: none !important;
+	}
+
+	.content {
+		margin-top: 4rem;
+		padding: 0;
+
+		@include breakpoint(laptop) {
+			margin-top: 0;
+			padding: 2.5%;
+		}
+
+		@include breakpoint(big) {
+			margin-top: 0;
+			padding: 9.5%;
+		}
+
+		img {
+			display: block;
+			margin-bottom: 4rem;
+
+			@include breakpoint(laptop) {
+				display: none;
+			}
+		}
+
+		.mobile {
+			display: block;
+
+			@include breakpoint(big) {
+				display: none;
+			}
+		}
+
+		.row {
+			display: none;
+			margin-bottom: 76px;
+
+			@include breakpoint(big) {
+				display: block;
+			}
+		}
+
+		.row:last-child {
+			margin-bottom: 0;
+		}
+
+		.offset {
+			width: 25%;
+		}
+	}
+
+	&__data {
+		display: grid;
+		grid: auto-flow / repeat(auto-fit, minmax(rem(205), 1fr));
+		gap: rem(80);
+
+		&--2 {
+			@include breakpoint(laptop) {
+				grid-template-columns: repeat(2, rem(205));
+			}
+		}
+
+		&--3 {
+			@include breakpoint(laptop) {
+				grid-template-columns: repeat(3, rem(205));
+			}
+		}
+	}
+
+	&__item {
+		@include breakpoint(laptop) {
+			color: $white;
+		}
+
+		padding-bottom: rem(30);
+		font-weight: 700;
+		font-size: rem(18);
+		border-bottom: 2px solid $orange;
+
+		&-title {
+			margin-bottom: rem(20);
+			font-size: rem(40);
+			line-height: 34px;
+
+			br {
+				display: none;
+				height: 0;
+			}
+
+			@include breakpoint(laptop) {
+				br {
+					display: block;
+					height: 32px;
+				}
+			}
+
+
+			b {
+				font-size:rem(28);
+
+				sup{
+					font-size: 15px;
+        			vertical-align: super;
+				}
+			}
+		}
+
+		&--top {
+			max-width: rem(490);
+			margin-bottom: rem(40);
+		}
+	}
+}
+
+.ptitleimg {
+	display: block;
+
+	@include breakpoint(laptop) {
+		display: none;
+	}
+}

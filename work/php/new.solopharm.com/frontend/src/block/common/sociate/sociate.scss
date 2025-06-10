@@ -1,0 +1,12 @@
+@import "~style";
+
+$block-name: "b-sociate";
+
+.#{$block-name} {
+	display: flex;
+	flex-wrap: wrap;
+
+	& > a:not(:last-child) {
+		margin-right: rem(10);
+	}
+}

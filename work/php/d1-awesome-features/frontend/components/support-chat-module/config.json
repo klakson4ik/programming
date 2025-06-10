@@ -1,0 +1,87 @@
+{
+    "0": {
+        "text": "Начальное сообщение",
+        "options": [
+            {
+                "text": "Текст 1",
+                "next_step": 1
+            },
+            {
+                "text": "Текст 2",
+                "next_step": 1
+            },
+            {
+                "text": "Ссылка",
+                "next_step": 3
+            },
+            {
+                "text": "Запрос к API",
+                "next_step": 4
+            },
+            {
+                "text": "Картинка",
+                "next_step": 5
+            }
+        ]
+    },
+    "1": {
+        "text": "Текст 1",
+        "options": [
+            {
+                "text": "Текст 2",
+                "next_step": 2
+            },
+            {
+                "text": "Назад",
+                "next_step": 0
+            }
+        ]
+    },
+    "2": {
+        "text": "Текст 2",
+        "options": [
+            {
+                "text": "Текст 1",
+                "next_step": 1
+            },
+            {
+                "text": "Назад",
+                "next_step": 0
+            }
+        ]
+    },
+    "3": {
+        "text": {
+            "text": "Ссылка",
+            "type": "link",
+            "url": "/"
+        },
+        "options": [
+            {
+                "text": "Назад",
+                "next_step": 0
+            }
+        ]
+    },
+    "4": {
+        "text": {
+            "type": "ajax",
+            "url": "/"
+        },
+        "options": [
+            {
+                "text": "Назад",
+                "next_step": 0
+            }
+        ]
+    },
+    "5": {
+        "text": "<img src='https://placekitten.com/200/300'/>",
+        "options": [
+            {
+                "text": "Назад",
+                "next_step": 0
+            }
+        ]
+    }
+}

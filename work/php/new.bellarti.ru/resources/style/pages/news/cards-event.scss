@@ -1,0 +1,22 @@
+@use "base" as *;
+
+.b-cards-event {
+	&__cards {
+		display: flex;
+		flex-direction: column;
+		gap: vmax(35);
+
+		& > div {
+			padding-bottom: vmax(35);
+			border-bottom: 1px solid var(--c-purple);
+		}
+
+		&--past {
+			opacity: 0.5;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: vmax(35);
+	}
+}

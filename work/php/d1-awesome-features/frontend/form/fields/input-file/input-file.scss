@@ -1,0 +1,59 @@
+@import "~style";
+
+.b-input-file {
+	width: 200px;
+
+	&__input {
+		display: none;
+
+		&:disabled + .b-input-file__button {
+			pointer-events: none;
+			cursor: not-allowed;
+			color: gray;
+		}
+	}
+
+	&__list {
+		width: inherit;
+	}
+
+	&__item {
+		display: flex;
+		gap: 5px;
+		justify-content: space-between;
+	}
+
+	&-item {
+		&__remove {
+			color: red;
+			cursor: pointer;
+		}
+
+		// &__img{}
+
+		&__caption{
+			text-align: center;
+		}
+	}
+
+	&.preview {
+		// .b-input-file__list {}
+		.b-input-file__item {
+			position: relative;
+			flex-direction: column;
+		}
+
+		.b-input-file-item {
+			&__remove {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				padding: 2px;
+				padding: 0 7px;
+				color: black;
+				background-color: red;
+				border-radius: 50%;
+			}
+		}
+	}
+}

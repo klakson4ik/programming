@@ -1,0 +1,119 @@
+@import "~style";
+
+$block-name: "b-production-slider-eq";
+
+.#{$block-name} {
+	width: 100%;
+	background-size: cover;
+
+	&__swiper-area {
+		position: relative;
+	}
+
+	&__nav {
+		position: relative;
+		bottom: rem(-30);
+		z-index: 1;
+		width: 100%;
+
+		@include breakpoint(mobile){
+			text-align: end;
+		}
+	}
+
+	.slider-eq {
+		position: relative;
+		overflow: hidden;
+
+		.swiper-slide {
+			height: 450px;
+			background-size: cover;
+
+			@include breakpoint(tablet) {
+				height: 550px;
+			}
+
+			.content {
+				margin-top: 0;
+				padding: 6.5%;
+				padding-top: 3.5%;
+
+				img {
+					display: block;
+					margin-bottom: 4rem;
+					object-fit: cover;
+
+					@include breakpoint(laptop) {
+						display: none;
+					}
+				}
+
+				.mobile {
+					display: block;
+
+					@include breakpoint(big) {
+						display: none;
+					}
+				}
+
+				.row {
+					display: none;
+					margin-bottom: 76px;
+
+					@include breakpoint(big) {
+						display: block;
+					}
+				}
+
+				.mhidden {
+					display: none !important;
+
+					@include breakpoint(tablet) {
+						display: inline-block !important;
+					}
+				}
+
+				.cell {
+					display: inline-block;
+					width: 100%;
+					height: 149px;
+					margin-right: 6.2%;
+					margin-bottom: 0;
+					color: white;
+					vertical-align: top;
+					border-bottom: 1px #fff solid;
+
+					@include breakpoint(tablet) {
+						width: 42%;
+					}
+
+					@include breakpoint(big) {
+						width: 33%;
+					}
+
+					@include breakpoint(laptop) {
+						height: 209px;
+					}
+
+					h2 {
+						margin-top: 1.33rem;
+						margin-bottom: 13px;
+						color: $white;
+
+						@include breakpoint(laptop) {
+							margin-top: 3.33rem;
+						}
+					}
+				}
+
+				.row:last-child {
+					margin-bottom: 0;
+				}
+
+				.offset {
+					width: 25%;
+				}
+			}
+		}
+	}
+}

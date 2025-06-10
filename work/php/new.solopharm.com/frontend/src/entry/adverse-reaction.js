@@ -1,0 +1,10 @@
+import 'common';
+import 'block/adverse-reaction';
+import 'block/field';
+import 'block/partials/popup/popup';
+import 'block/partials/popup/popup.scss';
+import 'block/form/reaction-patient/reaction-patient';
+import 'block/form/reaction-patient/reaction-patient.scss';
+import 'block/form/reaction-medical/reaction-medical';
+import 'block/form/reaction-medical/reaction-medical.scss';
+import 'block/form/reaction-medical/add-drug-btn/add-drug-btn';

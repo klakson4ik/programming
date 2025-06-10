@@ -1,0 +1,47 @@
+@import "~style";
+
+$block-name: "b-search-page";
+
+.#{$block-name} {
+	&__top {
+		margin-bottom: rem(50);
+	}
+
+	&__form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(40);
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		margin-bottom: rem(30);
+
+		@include breakpoint(small) {
+			flex-wrap: nowrap;
+		}
+
+		@include breakpoint(tablet) {
+			width: 75%;
+		}
+	}
+
+	&__field {
+		flex-basis: 100%;
+		flex-grow: 1;
+	}
+
+	&__count {
+		color: $gray;
+		font-size: rem(16);
+	}
+
+	&__nothing {
+		font-weight: 700;
+		font-size: rem(27);
+		text-align: center;
+	}
+
+	&__btn {
+		margin: 0 auto;
+	}
+}

@@ -1,0 +1,58 @@
+@import "~style";
+
+$block-name: "b-production-header-values";
+
+.#{$block-name} {
+	width: 100%;
+
+	&__header {
+		@include breakpoint(laptop){
+			font-size: rem(40) !important;
+		}
+
+		span.alert {
+			position: relative;
+			left: -16px;
+			opacity: 1;
+			animation-name: alert;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+
+			&:hover {
+				&::after,
+				&::before {
+					display: block;
+				}
+			}
+
+			&::after,
+			&::before {
+				position: absolute;
+				display: none;
+				width: 165px;
+			}
+
+			&::after {
+				top: -80px;
+				left: -30px;
+				padding: 1em 1.3em;
+				color: #fff;
+				font-weight: 300;
+				font-size: 14px;
+				line-height: 130%;
+				background-color: #333;
+				border-radius: 0;
+				box-shadow: 0 4px 20px rgb(0 0 0 / 30%);
+				content: "По оценке рейтинга IQVIA и DSM group.";
+			}
+
+			&::before {
+				top: -45px;
+				left: -15px;
+				height: 20px;
+				color: #333;
+				content: "▼";
+			}
+		}
+	}
+}

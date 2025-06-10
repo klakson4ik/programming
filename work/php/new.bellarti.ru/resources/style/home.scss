@@ -1,0 +1,14 @@
+@forward 'layout';
+
+@forward "common";
+
+@forward 'pages/home/main';
+@forward 'pages/home/injection';
+@forward 'pages/home/magic';
+@forward 'pages/home/standard';
+@forward 'pages/home/product';
+
+@forward 'component/slider/nav-pag';
+@forward 'component/slider/nav-default';
+@forward 'component/video';
+@forward 'component/trash';

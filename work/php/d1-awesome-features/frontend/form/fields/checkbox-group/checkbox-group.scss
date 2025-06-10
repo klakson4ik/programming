@@ -1,0 +1,9 @@
+@import "~style";
+
+.b-checkbox-group {
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+}

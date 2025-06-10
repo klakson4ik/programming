@@ -1,0 +1,61 @@
+@mixin reset {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	ol,
+	ul {
+		list-style: none;
+	}
+
+	img,
+	picture,
+	svg {
+		display: block;
+	}
+
+	img {
+		max-width: 100%;
+		@media (min-width: 1920px) {
+			width: 100%;
+        }
+	}
+
+	svg {
+		height: auto;
+		overflow: visible;
+	}
+
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	button,
+	ul,
+	ol,
+	fieldset {
+		margin: 0;
+		padding: 0;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	button,
+	fieldset {
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
+	}
+
+	textarea {
+		border: none;
+	}
+}

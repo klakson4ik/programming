@@ -1,0 +1,19 @@
+@import "~style";
+
+$block-name: "b-page";
+
+.#{$block-name} {
+	& > p {
+		margin-bottom: rem(16);
+	}
+
+	@include return-ul;
+
+	&  a {
+		color: $orange;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

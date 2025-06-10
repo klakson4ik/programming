@@ -1,0 +1,66 @@
+@import '~style';
+
+$block-name: "b-social-share-btn";
+
+.#{$block-name} {
+	position: relative;
+	width: fit-content;
+	cursor: pointer;
+
+	&:hover {
+		color: $orange;
+	}
+
+	&__btn {
+		margin-right: rem(10);
+		cursor: pointer;
+
+		& .icon--share {
+			width: rem(24);
+			height: rem(24);
+			vertical-align: middle;
+			fill: $orange;
+		}
+	}
+
+	&__socials {
+		position: absolute;
+		top: 150%;
+		right: 0;
+		display: none;
+
+		& .icon {
+			width: rem(27);
+			height: rem(27);
+			vertical-align: middle;
+
+			&--vk {
+				fill: #4C75A3;
+			}
+
+			&--telegram {
+				fill: #229ED9;
+			}
+
+			&--wa {
+				fill: #40c351;
+			}
+
+			&--ok {
+				fill: #F68634;
+			}
+
+			&--ln {
+				fill: #0077B5;
+			}
+
+			&:hover {
+				fill: $orange;
+			}
+		}
+
+		&--active {
+			display: block;
+		}
+	}
+}

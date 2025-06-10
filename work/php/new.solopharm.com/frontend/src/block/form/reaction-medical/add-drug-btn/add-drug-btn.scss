@@ -1,0 +1,18 @@
+$block-name: "b-add-drug-btn";
+
+.#{$block-name} {
+	margin-top: rem(31);
+	cursor: pointer;
+
+	& .icon--plus {
+		width: rem(18);
+		height: rem(19);
+		margin-right: rem(20);
+		stroke: $orange;
+		stroke-width: 2px;
+	}
+
+	&__text {
+		color: $orange;
+	}
+}

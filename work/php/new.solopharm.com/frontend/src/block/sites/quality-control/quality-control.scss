@@ -1,0 +1,41 @@
+@import "~style";
+
+$block-name: "b-quality-control";
+
+.#{$block-name} {
+	&__header {
+		margin-bottom: rem(20);
+	}
+
+	&__title {
+		margin-bottom: rem(10) !important;
+	}
+
+	&__column {
+		flex-basis: 100%;
+
+		@include breakpoint(mobile) {
+			flex-basis: calc(50% - rem(40));
+		}
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(20) rem(140);
+
+		@include breakpoint(mobile) {
+			flex-wrap: nowrap;
+		}
+
+		@include section-margin;
+	}
+
+	&__item:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+
+	&__subtitle {
+		margin-bottom: 2rem;
+	}
+}

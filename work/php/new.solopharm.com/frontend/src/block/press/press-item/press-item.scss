@@ -1,0 +1,135 @@
+@import "~style";
+
+$block-name: "b-press-item";
+
+.#{$block-name} {
+	display: inline-block;
+	width: 100% !important;
+	height: auto;
+	max-height: 660px;
+	margin-right: 25px;
+	margin-bottom: 2%;
+	padding-bottom: 3rem;
+	vertical-align: top;
+
+	@include breakpoint(laptop) {
+		width: 46.9% !important;
+	}
+
+	@include breakpoint(desktop) {
+		width: 47% !important;
+	}
+
+	@include breakpoint(laptop) {
+		height: 360px;
+	}
+
+	@include breakpoint(desktop) {
+		height: 460px;
+	}
+
+	.imgarea {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 1.4rem;
+		overflow: hidden;
+
+		span.arrow {
+			position: absolute;
+			bottom: 1.5rem;
+			left: 1rem;
+			z-index: 99;
+			width: 50px;
+			height: 20px;
+			background-image: url("/images/icons/arrow-long-w.svg");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		span.hoveref {
+			position: absolute;
+			bottom: 0.6rem;
+			left: 2rem;
+			z-index: 98;
+			width: 50px;
+			height: 50px;
+			background-image: url("/images/icons/arrow-2-hover-effect-h.svg");
+			background-repeat: no-repeat;
+			background-position: center;
+			opacity: 0;
+			transition: 0.5s;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 1s;
+		}
+	}
+
+	.imgarea:hover {
+		span.hoveref {
+			opacity: 1;
+		}
+
+		img {
+			transform: scale(1.1);
+		}
+	}
+
+	.imgarea::after {
+		position: absolute;
+		right: -20px;
+		bottom: -30px;
+		z-index: 99;
+		width: 180px;
+		height: 220px;
+		background-image: url("/images/icons/s-dark.svg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		opacity: 0;
+		transition: opacity 1s;
+		content: "";
+	}
+
+	.imgarea::before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		background-image: url("https://solopharm.com/img/about/news-ol.png");
+		opacity: 0.7;
+		content: "";
+	}
+
+	.imgarea:hover::after {
+		opacity: 1;
+	}
+
+	span {
+		font-weight: 300;
+		font-size: 18px;
+		font-family: HelveticaNeueCyr;
+		font-style: normal;
+		line-height: 140%;
+	}
+
+	p {
+		margin-top: 1.3rem;
+		color: #333;
+		font-weight: 700;
+		font-size: 20px;
+		font-family: HelveticaNeueCyr;
+		font-style: normal;
+		line-height: 130%;
+	}
+}
+
+.#{$block-name}:nth-child(2n) {
+	margin-right: 0%;
+}

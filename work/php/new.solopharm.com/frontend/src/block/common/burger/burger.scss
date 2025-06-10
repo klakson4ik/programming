@@ -1,0 +1,101 @@
+@import "~style";
+
+$block-name: "b-burger";
+
+.#{$block-name} {
+	position: relative;
+	padding-top: rem(40);
+	padding-bottom: rem(90);
+	overflow: auto;
+	border-bottom: 1px solid $light;
+
+	&__menu {
+		margin-bottom: rem(60);
+
+		&--root {
+			&>li {
+				margin-bottom: rem(18);
+				font-weight: 400;
+				font-size: rem(24);
+				line-height: 1.4;
+			}
+		}
+
+		&-level--1 {
+			height: 0;
+			margin-left: rem(48);
+			overflow: hidden;
+			color: $gray;
+			border-top: 1px solid $light;
+			border-bottom: 1px solid $light;
+			transition: all 0.3s linear;
+
+			&>li {
+				font-weight: 300;
+				font-size: rem(22);
+
+				&:not(:last-child) {
+					margin-bottom: rem(15);
+				}
+			}
+		}
+
+		&--active {
+			height: auto;
+			padding: rem(15) 0;
+			transition: all 0.3s linear;
+		}
+
+		&--no-arrow {
+			margin-left: rem(46);
+		}
+
+		&-btn {
+			& .icon--arrow-short {
+				width: rem(24);
+				height: rem(18);
+				margin-right: rem(15);
+				vertical-align: middle;
+				transition: transform 0.3s linear;
+				stroke: $orange;
+			}
+
+			&--rotate {
+				& .icon--arrow-short {
+					transform: rotate(-180deg);
+					transition: transform 0.3s linear;
+				}
+			}
+		}
+	}
+
+	&__lang {
+		display: inline-block;
+		margin-bottom: rem(60);
+
+		&-item {
+			float: left;
+			margin-right: rem(40);
+			font-weight: 400;
+			font-size: rem(30);
+
+			& :hover {
+				color: $orange;
+			}
+
+			&--active {
+				color: $orange;
+				pointer-events: none;
+			}
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		width: max(220px, 35vw);
+		pointer-events: none;
+	}
+}

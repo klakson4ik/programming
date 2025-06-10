@@ -1,0 +1,38 @@
+@import "~style";
+
+$block-name: "b-vacancy-list-item";
+
+.#{$block-name} {
+	display: flex;
+	gap: rem(15);
+	align-items: center;
+	justify-content: space-between;
+	padding: rem(20) rem(30);
+	cursor: pointer;
+	transition: all 0.5s ease;
+
+	&:hover {
+		.b-button {
+			color: $white;
+			background-color: $orange;
+			transition: all 0.5s ease;
+
+			& .icon {
+				stroke: $white;
+			}
+		}
+
+		& .#{$block-name}__text {
+			color: $orange;
+		}
+	}
+
+	& .b-button {
+		display: none;
+
+		@include breakpoint(mobile) {
+			display: unset;
+			flex-shrink: 0;
+		}
+	}
+}

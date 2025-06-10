@@ -1,0 +1,9 @@
+@import "~style";
+
+$block-name: "b-form";
+
+.#{$block-name} {
+	& .b-select {
+		width: 300px;
+	}
+}

@@ -1,0 +1,61 @@
+@import "~style";
+
+$block-name: "b-error-404";
+
+.#{$block-name} {
+	&__info {
+		display: inline-block;
+		width: 100%;
+
+		@include breakpoint(laptop) {
+			width: 45%;
+		}
+
+		.c-h1 {
+			margin-bottom: 2rem;
+		}
+
+		p {
+			margin-bottom: 2rem;
+		}
+
+		.b-button {
+			margin-top: 4.6rem;
+			margin-bottom: 4.5rem;
+			padding: 13px 24px 13px 25px;
+			font-size: 17px;
+		}
+
+		a {
+			color: $orange;
+
+			img {
+				width: 60px;
+				margin-right: 5px;
+				margin-left: 10px;
+				vertical-align: text-top;
+				transform: rotate(180deg);
+				transition: 0.2s;
+			}
+		}
+
+		a:hover {
+			text-align: right;
+
+			img {
+				margin-right: 15px;
+				margin-left: 0;
+			}
+		}
+	}
+
+	img {
+		display: none;
+
+		@include breakpoint(laptop) {
+			display: inline-block;
+		}
+
+		width: 45%;
+	}
+}

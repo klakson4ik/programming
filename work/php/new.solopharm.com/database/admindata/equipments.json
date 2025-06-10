@@ -1,0 +1,10 @@
+{
+	"title": "Оборудование",
+	"data": {
+		"title": "text",
+		"img": "string",
+		"form": "text",
+		"manufacturer": "text",
+		"performance": "text"
+	}
+}

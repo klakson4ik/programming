@@ -1,0 +1,12 @@
+@import "~style";
+
+$block-name: "b-press-pagination";
+
+.#{$block-name} {
+	a {
+		margin: auto;
+		margin-top: rem(50);
+		font-size: 18px;
+		text-align: center;
+	}
+}

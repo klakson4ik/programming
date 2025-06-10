@@ -1,0 +1,98 @@
+@import "~style";
+
+$block-name: "b-product-filter-mobile";
+
+.#{$block-name} {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: inherit;
+	padding-top: rem(75);
+	overflow: auto;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: rem(5);
+
+		@include breakpoint(small){
+			margin-bottom: rem(15);
+		}
+
+		&-title {
+			font-weight: 700;
+			font-size: max(3vh, 20px);
+		}
+	}
+
+	&__close {
+		color: $orange;
+		font-weight: 400;
+		font-size: max(2.2vh, 15px);
+		cursor: pointer;
+	}
+
+	&__item {
+		height: fit-content;
+
+		& > label {
+			padding-top: 10px;
+			padding-bottom: 10px;
+
+			&.active {
+				color: $orange;
+			}
+		}
+	}
+
+	&__filters {
+		display: flex;
+		flex-direction: column;
+		height: fit-content;
+		row-gap: 1px;
+		padding-bottom: rem(20);
+	}
+
+	&__dropdown-button {
+		cursor: pointer;
+	}
+
+	&__dropdown-container {
+		overflow: hidden;
+	}
+
+	&__dropdown-list {
+		margin-top: calc(-1 * var(--item-height, calc(100% + 49px)));
+		padding: 10px 0;
+		transition: margin-top 0.4s ease;
+
+		&.show {
+			margin-top: 0;
+		}
+	}
+
+	&__dropdown-item {
+		position: relative;
+		padding-left: rem(16);
+
+		&::after {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			border-bottom: 1px solid $light;
+			opacity: 0.5;
+			content: "";
+		}
+
+		label::before {
+			content: none;
+		}
+
+		label > span {
+			padding: 20px 0;
+			line-height: 1;
+		}
+	}
+}

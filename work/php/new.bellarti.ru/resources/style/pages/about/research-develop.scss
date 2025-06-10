@@ -1,0 +1,25 @@
+@use "base" as *;
+
+.b-research-develop {
+	display: flex;
+	gap: 3rem;
+
+	@include breakpoint(lg) {
+		flex-direction: column;
+	}
+
+	&__video,
+	&__content {
+		flex-basis: 100%;
+	}
+
+	& .b-video__vk-video{
+		height: 30.8rem;
+		@include breakpoint(lg) {
+			height: 40rem;
+		}
+		@include breakpoint(lg) {
+			height: 30rem;
+		}
+	}
+}

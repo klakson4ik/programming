@@ -1,0 +1,11 @@
+{
+	"title": "Площадки",
+	"data": {
+		"title": "string",
+		"desc": "text",
+		"img": "string",
+		"text": "text",
+		"btn": "string",
+		"action": "string"
+	}
+}

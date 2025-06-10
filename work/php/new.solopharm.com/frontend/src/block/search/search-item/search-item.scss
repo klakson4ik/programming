@@ -1,0 +1,20 @@
+@import "~style";
+
+$block-name: "b-search-item";
+
+.#{$block-name} {
+	margin-bottom: rem(50);
+	padding-top: rem(50);
+	border-top: 1px solid $light;
+
+	&__tag {
+		margin-right: rem(10);
+		color: $orange;
+	}
+
+	&__title {
+		display: block;
+		margin-bottom: rem(20);
+		font-weight: 700;
+	}
+}

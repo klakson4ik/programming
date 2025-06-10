@@ -1,0 +1,60 @@
+module.exports = {
+    docRoot: '../public',
+    buildPath: '../public/build',
+    hotPort: 8889,
+    mainStyleType: 'postcss-scss',
+    mainTemplateType: 'blade',
+    entry: {
+        main: ['./src/entry/main.js'],
+        policy: ['./src/entry/policy.js'],
+        product: ['./src/entry/product.js'],
+		partners: ['./src/entry/partners.js'],
+        'product-item': ['./src/entry/product-item.js'],
+        production: ['./src/entry/production.js'],
+        technology: ['./src/entry/technology.js'],
+        gallery: ['./src/entry/gallery.js'],
+        press: ['./src/entry/press.js'],
+        contacts: ['./src/entry/contacts.js'],
+        release: ['./src/entry/release.js'],
+        legal: ['./src/entry/legal.js'],
+        sites: ['./src/entry/sites.js'],
+        club: ['./src/entry/club.js'],
+        tender: ['./src/entry/tender.js'],
+        supplier: ['./src/entry/supplier.js'],
+        search: ['./src/entry/search.js'],
+        internship: ['./src/entry/internship.js'],
+        'internship-laboratory': ['./src/entry/internship-laboratory.js'],
+        vacancy: ['./src/entry/vacancy.js'],
+        'adverse-reaction': ['./src/entry/adverse-reaction.js'],
+		'soft-form-plant' : ['./src/entry/soft-form-plant.js'],
+        '.img': ['./src/entry/.img.js'],
+    },
+    stats: {},
+    https: false,
+    images: {
+        bypassOnDebug: true,
+        gifsicle: {
+            interlaced: false,
+        },
+        optipng: {
+            optimizationLevel: 7,
+        },
+        pngquant: {
+            enabled: false,
+        },
+        mozjpeg: {
+            quality: 93,
+        },
+    },
+    base64MaxFileSize: 10000,
+    aliases: { // Альтернативные имена для путей, например "my_plugin" : "src/component/alert"
+    },
+    providePlugin: { // Автоматическая подгрузка модулей через providePlugin
+    },
+    exposeGlobal: [
+    ],
+    resolve: {},
+    module: {},
+    output: {},
+    cssProcessing: [],
+};

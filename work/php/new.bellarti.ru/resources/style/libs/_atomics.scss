@@ -1,0 +1,203 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "function" as *;
+
+.c-container {
+	@include container();
+}
+
+.c-rel {
+	position: relative;
+}
+
+.c-pos {
+	position: absolute;
+}
+
+.c-h1-hidden {
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+.c-h1 {
+	margin: 0;
+	@include h1();
+}
+
+.c-h2 {
+	@include h2();
+}
+
+.c-h3 {
+	@include h3();
+}
+
+.c-h4 {
+	@include h4();
+}
+
+.c-font-subtitle {
+	font-size: 2.4rem;
+	font-weight: 700;
+
+	@include breakpoint(lg) {
+		font-size: 2rem;
+	}
+
+	@include breakpoint(md) {
+		font-size: 1.6rem;
+	}
+}
+
+.c-font-icon {
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+.c-font-tab {
+	font-size: 1.6;
+	font-weight: 400;
+}
+
+.c-link {
+	font-size: 1.2rem;
+	line-height: 1.4;
+	font-weight: 700;
+	color: var(--c-purple-dark);
+	text-decoration: underline;
+	text-transform: uppercase;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.c-link-underline {
+	color: var(--c-black);
+	text-decoration: underline;
+	transition: color var(--trans-time);
+
+	&:hover {
+		text-decoration: none;
+		color: var(--c-purple-dark);
+	}
+}
+
+.c-link-underline-hover {
+	color: var(--c-black);
+	transition: color var(--trans-time);
+
+	&:hover {
+		text-decoration: underline;
+		color: var(--c-purple-dark);
+	}
+}
+
+.c-uppercase {
+	text-transform: uppercase;
+}
+
+.c-extra-light {
+	font-weight: 200;
+}
+
+.c-light {
+	font-weight: 300;
+}
+
+.c-bold {
+	font-weight: 700;
+}
+
+.c-main-indent-top {
+	margin-top: calc(var(--header-height) + 5.9rem);
+
+	@include breakpoint(lg) {
+		margin-top: 3rem;
+	}
+}
+
+.c-indent-bottom {
+	margin-bottom: vw(125);
+
+	@include breakpoint(md) {
+		margin-bottom: 6rem;
+	}
+}
+
+.c-indent-top {
+	margin-top: vw(125);
+
+	@include breakpoint(md) {
+		margin-top: 6rem;
+	}
+}
+
+.c-off-scroll {
+	overflow-y: hidden;
+}
+
+.c-overflow-x {
+	overflow-x: hidden;
+}
+
+.c-overflow {
+	overflow: hidden;
+}
+
+.c-content-overflow-clip {
+	--overflow: clip
+}
+
+.c-trans {
+	transition: all var(--trans-time);
+}
+
+.c-trans-color {
+	transition: color var(--trans-time);
+}
+
+.c-trans-bg {
+	transition: background-color var(--trans-time);
+}
+
+.c-trans-bg-and-color {
+	transition: background-color var(--trans-time), color var(--trans-time);
+}
+
+@each $name, $breakpoint in $breakpoints {
+	.c-since-#{$name} {
+		display: block;
+
+		@include breakpoint(#{$name}) {
+			display: none;
+		}
+	}
+
+	.c-till-#{$name} {
+		display: none;
+
+		@include breakpoint(#{$name}) {
+			display: block;
+		}
+	}
+}
+
+@each $name, $color in $colors {
+	.c-bg-#{$name} {
+		background-color: $color;
+	}
+
+	.c-#{$name} {
+		color: $color;
+	}
+
+	.c-border-#{$name} {
+		border: 1px solid $color;
+	}
+}

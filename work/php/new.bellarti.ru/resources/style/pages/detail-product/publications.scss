@@ -1,0 +1,71 @@
+@use "base" as *;
+
+.b-publications {
+	margin-bottom: vw(128);
+
+	&__swiper-container {
+		position: relative;
+	}
+
+	&__title {
+		margin-bottom: vw(40);
+	}
+
+	&__cards {
+		display: flex;
+	}
+
+	&__card {
+		flex-shrink: 0;
+
+		svg {
+			transition: var(--trans-time);
+		}
+
+		&:hover svg {
+			transform: translateX(1rem);
+		}
+	}
+
+	&__swiper {
+		overflow: hidden;
+	}
+
+	&-card {
+		&__name {
+			margin-top: 2rem;
+			margin-bottom: 5px;
+		}
+
+		&__image {
+			height: 27.5rem;
+			object-fit: cover;
+
+			@include breakpoint(md) {
+				height: 26rem;
+			}
+		}
+
+		&__position {
+			margin-bottom: 1rem;
+		}
+
+		&__link {
+			margin-top: 1rem;
+			display: flex;
+			align-items: center;
+
+			& svg {
+				width: 2rem;
+				margin-left: 5px;
+			}
+		}
+
+		&__content {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			word-break: break-word;
+		}
+	}
+}

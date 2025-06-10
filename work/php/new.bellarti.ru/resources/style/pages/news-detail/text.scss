@@ -1,0 +1,41 @@
+@use "base" as *;
+
+.b-text {
+	&__wrapper {
+		max-width: 80rem;
+
+		@include breakpoint(lg) {
+			max-width: 100%;
+		}
+	}
+
+	&__text {
+		margin-bottom: 3.5rem;
+	}
+
+	&__cards {
+		display: flex;
+		align-items: center;
+	}
+
+	&__card {
+		flex-shrink: 0;
+	}
+
+	&__swiper {
+		overflow: hidden;
+	}
+
+	& picture {
+		margin-bottom: 3.5rem;
+	}
+
+	& picture,
+	& picture img {
+		width: 100%;
+	}
+
+	&__swiper-container{
+		position: relative;
+	}
+}

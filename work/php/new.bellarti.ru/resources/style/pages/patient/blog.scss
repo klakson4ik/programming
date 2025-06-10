@@ -1,0 +1,61 @@
+@use "base" as *;
+
+.b-blog {
+	&__swiper-container {
+		position: relative;
+	}
+
+	&__cards {
+		display: flex;
+	}
+
+	&__card {
+		flex-shrink: 0;
+
+		&:hover img {
+			transform: scale(1.1);
+		}
+	}
+
+
+	&__swiper {
+		overflow: hidden;
+	}
+
+	&-card {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		&__wrapper-img {
+			margin: 0 auto 2rem auto;
+			overflow: hidden;
+
+			& img {
+				transition: var(--trans-time);
+			}
+		}
+
+		@include breakpoint(sm) {
+			gap: 1.5rem;
+		}
+
+		&__desc {
+			display: -webkit-box;
+			-webkit-line-clamp: 5;
+			overflow: hidden;
+			-webkit-box-orient: vertical;
+			word-break: break-all;
+		}
+	}
+}
+
+@keyframes a-opacity {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

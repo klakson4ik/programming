@@ -1,0 +1,37 @@
+@use "base" as *;
+
+.b-content-event {
+	&__column {
+		display: flex;
+		gap: 3rem;
+		justify-content: space-between;
+
+		@include breakpoint(md) {
+			flex-direction: column;
+		}
+	}
+
+	&__tabs {
+		margin-bottom: 3.5rem;
+	}
+
+	&__left {
+		flex-basis: 100%;
+	}
+
+	&__right {
+		flex-basis: max(vw(377), 28rem);
+		flex-shrink: 0;
+
+		& .b-calendar {
+			position: sticky;
+			top: 14rem;
+		}
+
+		@include breakpoint(md){
+			order: -1;
+			width: 28rem;
+			align-self: center;
+		}
+	}
+}

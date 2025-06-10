@@ -1,0 +1,85 @@
+@use "base" as *;
+
+.b-example {
+	&__swiper-container {
+		position: relative;
+	}
+
+	&__swiper {
+		overflow-x: hidden;
+	}
+
+	&__cards {
+		display: flex;
+	}
+
+	&__card {
+		flex-shrink: 0;
+	}
+
+	&__action .nav {
+		top: 23rem !important;
+
+		@include breakpoint(lg) {
+			top: vw(400) !important;
+		}
+
+		@include breakpoint(md) {
+			top: 15rem !important;
+		}
+	}
+
+	&-card {
+		&__imgs {
+			display: flex;
+			gap: 1.5rem;
+			margin-bottom: 2rem;
+			justify-content: space-between;
+
+			@include breakpoint(lg) {
+				gap: 8px;
+			}
+
+			@include breakpoint(md) {
+				justify-content: center;
+			}
+		}
+
+		&__title {
+			margin-bottom: 1.5rem;
+		}
+
+		&__name {
+			margin-bottom: 5px;
+		}
+
+		&__town {
+			margin-bottom: 2rem;
+		}
+
+		&__btn {
+			display: flex;
+			align-items: center;
+			font-size: 1.6rem;
+			gap: 5px;
+
+			&:hover {
+				color: var(--c-purple-dark);
+			}
+		}
+
+		&__icon {
+			transition: transform var(--trans-time);
+			&.icon--active {
+				transform: rotate(-90deg);
+			}
+		}
+
+		&__dropdown {
+			overflow: hidden;
+			transition:
+				height var(--trans-time),
+				padding 0.3s;
+		}
+	}
+}

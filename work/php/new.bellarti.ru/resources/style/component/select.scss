@@ -1,0 +1,55 @@
+@use 'base' as *;
+
+.b-select {
+	width: inherit;
+	height: inherit;
+	position: relative;
+
+	&__btn {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: max(vw(25), 2.5rem);
+		padding: 1.1rem;
+	}
+
+	&__dropdown {
+		position: absolute;
+		z-index: 2;
+		background-color: inherit;
+		width: inherit;
+		overflow: hidden;
+		transition:
+			height var(--trans-time),
+			padding var(--trans-time);
+	}
+
+	&__item {
+		padding: 5px 1.1rem;
+
+		&:hover {
+			background-color: var(--c-purple-light);
+		}
+
+		&.selected {
+			pointer-events: none;
+			cursor: none;
+			background-color: var(--c-purple);
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	& button > span {
+		font-size: 1.6rem;
+		font-family: "Inter", Helvetica, Arial;
+		line-height: 1.3;
+		font-weight: 400;
+		color: var(--c-black);
+	}
+}

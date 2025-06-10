@@ -1,0 +1,40 @@
+@import "~style";
+
+$block-name: "b-tender-procedures";
+
+.#{$block-name} {
+	display: flex;
+	flex-wrap: wrap;
+
+	@include breakpoint(laptop) {
+		flex-wrap: nowrap;
+	}
+
+	gap: rem(65);
+	align-items: start;
+
+	&__column {
+		@include breakpoint(laptop) {
+			flex-basis: calc(50% - rem(33));
+		}
+
+		&--img {
+			display: none;
+
+			@include breakpoint(laptop) {
+				display: block;
+				width: 100%;
+				max-width: rem(457);
+			}
+		}
+
+		&--frame {
+			flex-grow: 1;
+			min-width: fit-content;
+			height: fit-content;
+			padding-top: 24px;
+			border: 1px solid $light;
+			border-radius: 8px;
+		}
+	}
+}

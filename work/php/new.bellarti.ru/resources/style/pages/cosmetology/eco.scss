@@ -1,0 +1,61 @@
+@use "base" as *;
+
+.b-eco {
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		gap: 3rem;
+		align-items: self-end;
+
+		@include breakpoint(lg) {
+			align-items: center;
+		}
+
+		@include breakpoint(md) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	&__column {
+		&--right {
+			flex-shrink: 0;
+
+			@include breakpoint(md) {
+				flex-shrink: unset;
+			}
+		}
+
+		@include breakpoint(lg){
+			flex-basis: 50%;
+		}
+
+		@include breakpoint(md) {
+			flex-basis: auto;
+		}
+	}
+
+	&__desc {
+		margin-bottom: vmax(34);
+	}
+
+	&__subtitle {
+		margin-bottom: vmax(35);
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		@include breakpoint(sm){
+			gap: 1rem;
+		}
+	}
+
+	&__item {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+	}
+}

@@ -1,0 +1,48 @@
+
+include:
+  - project: "libs/cicd-includes"
+    # "/templates/.base-tasks-node-16.yml"        -- для проектов с node.js 16-й версии
+    # "/templates/.base-tasks-node-18.yml"        -- для проектов с node.js 18-й версии
+    file: "/templates/.base-tasks-node-18.yml"
+
+
+# СБОРКА FRONTEND-А
+# =================
+build_frontend:
+  extends: .task_frontend_build
+  variables:
+    BUILDS_PATH: www/build
+
+# ВЫКЛАДКА КОДА НА ТИТАН
+# ======================
+deploy_titan:
+  extends: .task_code_deploy_titan
+
+
+# ВЫКЛАДКА FRONTEND-А НА ТИТАН
+# ============================
+deploy_frontend_titan:
+  extends: .task_frontend_deploy_titan
+  variables:
+    BUILDS_PATH: www/build
+
+# ВЫКЛАДКА КОДА НА ХОСТИНГ
+# ========================
+deploy_hosting:
+  extends: .task_code_deploy_hosting
+  variables:
+    SSH_HOST: 195.24.64.249
+    SSH_LOGIN: $HOSTING_LOGIN
+    SSH_PASSWORD: $HOSTING_PASSWORD
+    SSH_PORT: $HOSTING_PORT
+
+# ВЫКЛАДКА FRONTEND-А НА ХОСТИНГ
+# ==============================
+deploy_frontend_hosting:
+  extends: .task_frontend_deploy_hosting
+  variables:
+    SSH_HOST: 195.24.64.249
+    SSH_LOGIN: $HOSTING_LOGIN
+    SSH_PASSWORD: $HOSTING_PASSWORD
+    SSH_PORT: $HOSTING_PORT
+    BUILDS_PATH: www/build

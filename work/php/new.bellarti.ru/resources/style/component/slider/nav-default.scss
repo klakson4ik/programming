@@ -1,0 +1,46 @@
+@use "base" as *;
+
+.nav-default {
+	& .nav {
+		--indent-arrow: -7.5rem;
+		position: absolute;
+		top: 45%;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		gap: 1rem;
+
+		&-prev {
+			position: absolute;
+			left: var(--indent-arrow);
+		}
+
+		&-next {
+			position: absolute;
+			transform: rotate(180deg);
+			right: var(--indent-arrow);
+		}
+
+		& button {
+			padding: vw(20);
+			border-radius: 100%;
+			background-color: rgba(188, 171, 255, 0.2);
+
+			&:hover {
+				background-color: var(--c-purple-light);
+			}
+
+			@include breakpoint(xl) {
+				background-color: rgba(213, 207, 238, 0.5);
+			}
+
+			@include breakpoint(sm) {
+				padding: 8px;
+			}
+		}
+
+		@include breakpoint(xl) {
+			--indent-arrow: 0;
+		}
+	}
+}

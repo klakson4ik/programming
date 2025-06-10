@@ -1,0 +1,31 @@
+@use "base" as *;
+
+.input {
+	width: inherit;
+	padding: 1.5rem 2.3rem;
+	border-radius: 4px;
+	outline: none;
+	margin-bottom: 5px;
+
+	&::placeholder {
+		font-size: 1.6rem;
+		color: var(--c-gray);
+	}
+
+	&:hover{
+		outline: 1px solid var(--c-purple-light);
+	}
+
+	&:focus {
+		outline: 2px solid var(--c-purple);
+	}
+
+	&.invalid {
+		outline: 2px solid red;
+
+		&::placeholder {
+			color: red;
+		}
+	}
+
+}

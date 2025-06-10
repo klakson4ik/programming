@@ -1,0 +1,179 @@
+@import "~style";
+
+$block-name: "b-main-manufacturer-block";
+
+.#{$block-name} {
+	.swiperMf {
+		width: 100%;
+		overflow: hidden;
+
+		.swiper-slide {
+			.imgarea {
+				position: relative;
+				overflow: hidden;
+
+				img {
+					transform: scale(1);
+					transition: 1s;
+				}
+			}
+
+			p {
+				color: #333;
+			}
+
+			h3 {
+				position: absolute;
+				bottom: 2rem;
+				z-index: 4;
+				width: 100%;
+				color: white;
+				font-weight: 700;
+				font-size: 20px;
+				font-style: normal;
+				line-height: 20px;
+				text-align: center;
+				text-transform: uppercase;
+
+				@media (width <= 500px) {
+					top: 75%;
+					font-size: 40px;
+				}
+			}
+		}
+
+		.swiper-slide:hover {
+			.imgarea {
+				img {
+					transform: scale(1.5);
+				}
+			}
+		}
+
+		div.nav {
+			position: relative;
+			display: block;
+			display: flex;
+
+			.buttons {
+				display: inline-block;
+				min-width: 134px;
+				max-width: 30%;
+			}
+
+			.swiper-pagination {
+				position: relative;
+				top: 5px;
+				left: 0;
+				display: inline-flex;
+				max-width: 80%;
+				text-align: left;
+
+				.swiper-pagination-bullet {
+					height: 2px;
+					margin-right: 0;
+					margin-left: 0;
+					background-color: rgb(53 53 53);
+					border-radius: 0;
+					transition: 0.5s;
+				}
+
+				.swiper-pagination-bullet-active {
+					background-color: $orange;
+				}
+			}
+		}
+
+		@include breakpoint(laptop) {
+			div.nav {
+				display: none;
+			}
+		}
+
+		div.nav {
+			height: 40px;
+			margin-bottom: 20px;
+			padding-top: 20px;
+			padding-right: 20px;
+
+			button {
+				position: relative;
+				z-index: 2;
+				float: right;
+				width: 52px;
+				height: 13px;
+				background-image: url("/images/icons/arrow-long.svg");
+				background-repeat: no-repeat;
+				cursor: pointer;
+			}
+
+			.button-right {
+				margin-right: 10px;
+				transform: rotate(180deg);
+			}
+
+			button:hover {
+				background-image: url("/images/icons/ar-dark.png");
+			}
+
+			button:hover::before {
+				position: absolute;
+				top: -15px;
+				right: -10px;
+				z-index: 30;
+				width: 42px;
+				height: 42px;
+				background-image: url("/images/icons/arrow-2-hover-effect.svg");
+				cursor: pointer;
+				content: "";
+			}
+		}
+
+		a {
+			width: 50%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		p {
+			margin-top: 0.6rem;
+			color: #333;
+		}
+	}
+
+	&__desc {
+		margin-bottom: rem(40);
+	}
+
+	&__header {
+		display: inline;
+		width: 100%;
+
+		h2 {
+			display: inline-block;
+		}
+
+		a {
+			display: inline-block;
+			width: 38%;
+			margin-top: 2.78rem;
+			color: #333;
+			font-weight: 500;
+			font-size: 14px;
+			font-style: normal;
+			line-height: 14px;
+			text-align: right;
+			text-transform: uppercase;
+		}
+	}
+
+	&__nav {
+		margin-bottom: rem(20);
+
+		@include breakpoint(laptop){
+			display: none;
+		}
+	}
+}

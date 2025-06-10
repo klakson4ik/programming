@@ -1,0 +1,31 @@
+.select2-container--default .select2-selection--single {
+    border: 1px solid #a3a5a5;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #000;
+}
+
+.select2-container {
+    min-width: 272px;
+    max-width: 272px;
+    width: 272px;
+}
+
+.c-attrs-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.c-attrs-elem-title {
+    font-weight: 600;
+}
+
+.c-attrs-row {
+    margin-bottom: 10px;
+}
+
+.c-attrs-label {
+    margin-right: 8px;
+}

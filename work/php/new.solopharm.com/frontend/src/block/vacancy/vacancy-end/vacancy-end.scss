@@ -1,0 +1,23 @@
+@import "~style";
+
+$block-name: "b-vacancy-end";
+
+.#{$block-name} {
+	position: relative;
+	width: 100%;
+
+	&__text {
+		margin-bottom: rem(35);
+		font-weight: 700;
+		font-size: rem(28);
+	}
+
+	&__s {
+		position: absolute;
+		top: rem(-30);
+		right: 0;
+		z-index: -1;
+		width: rem(186);
+		opacity: 0.8;
+	}
+}

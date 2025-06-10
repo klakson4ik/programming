@@ -1,0 +1,54 @@
+@use "sass:map";
+@use "base" as *;
+
+.b-faq {
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: vmax(50);
+	}
+
+	&__item {
+		cursor: pointer;
+		padding-bottom: 1.5rem;
+		border-bottom: 1px solid var(--c-purple-dark);
+
+		&:hover {
+			border-bottom-color: var(--c-purple-light);
+			& .b-faq__caption {
+				color: var(--c-purple-light);
+			}
+
+			& .b-faq__icon {
+				color: var(--c-purple-light);
+			}
+		}
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0 2rem;
+	}
+
+	&__icon {
+		transition: color var(--trans-time);
+
+		& svg {
+			transition: transform var(--trans-time);
+		}
+		&.icon--active svg{
+			transform: rotate(-90deg);
+		}
+	}
+
+	&__dropdown {
+		overflow: hidden;
+		transition: height var(--trans-time), margin-top var(--trans-time);
+
+		&.dropdown--active {
+			margin-top: 1.5rem;
+		}
+	}
+}

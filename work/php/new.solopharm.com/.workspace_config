@@ -1,0 +1,9 @@
+project solopharm
+node 18
+path_to_frontend frontend
+ln /storage/app
+
+vphp artisan vendor:publish --tag=lfm_public
+rsync /public/vendor
+
+cp /.env

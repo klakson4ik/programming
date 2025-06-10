@@ -1,0 +1,28 @@
+@use 'sass:list';
+@use 'sass:string';
+
+@mixin font-face($name, $path, $weight: normal, $style: normal, $woff2: false) {
+	$src: if($woff2, list.append(null, url($path + '.woff2') format(string.quote('woff2'))), null);
+
+	@font-face {
+		font-weight: $weight;
+		font-family: string.quote($name);
+		font-style: $style;
+		src: $src;
+		font-display: swap;
+	}
+}
+
+@mixin breakpoint($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media (min-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	} @else if type-of($breakpoint) == 'number' {
+		@media (min-width: #{$breakpoint}px) {
+			@content;
+		}
+	} @else {
+		@warn "Нет брейкпоина #{"" + $breakpoint}. Доступнные значения: #{map-keys($breakpoints)}.";
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"title": "Торговые предложения",
+	"data": {
+		"title": "string",
+		"img": "string",
+		"indications": "text",
+		"scope": "text",
+		"compound": "text",
+		"pharm": "text",
+		"file":"string",
+		"url": "string",
+		"youtube": "string"
+	}
+}

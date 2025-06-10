@@ -1,0 +1,89 @@
+@import "~style";
+
+$block-name: "b-vacancy-item";
+
+.#{$block-name} {
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(30);
+		width: inherit;
+	
+		@include breakpoint(laptop) {
+			flex-wrap: nowrap;
+		}
+	}
+
+	&__column {
+		@include breakpoint(laptop) {
+			flex-basis: calc(50% - rem(30));
+		}
+
+		&--desc {
+			margin-top: rem(50);
+
+			&>strong,
+			&>p>strong {
+				display: block;
+				margin-bottom: rem(24);
+				font-size: rem(24);
+			}
+
+			&>ul:not(:last-child) {
+				margin-bottom: rem(50);
+				padding-bottom: rem(50);
+				border-bottom: 1px solid $light;
+			}
+
+			& li {
+				margin-left: rem(20);
+				padding-left: rem(15);
+				font-size: rem(20);
+				line-height: 1.6;
+				list-style: disc;
+			}
+		}
+	}
+
+	&__dynamic {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+
+		&-top {
+			margin-bottom: rem(35);
+
+			@include breakpoint(laptop) {
+				position: sticky;
+				top: rem(100);
+				margin-bottom: rem(75);
+			}
+
+			&-title {
+				word-break: break-word;
+			}
+		}
+
+		&-bottom {
+			display: none;
+
+			@include breakpoint(laptop) {
+				position: sticky;
+				bottom: rem(85);
+				display: block;
+			}
+		}
+	}
+
+	&__social-mobile {
+		display: block;
+		margin-top: rem(10);
+		margin-bottom: rem(40);
+
+		@include breakpoint(laptop) {
+			display: none;
+		}
+	}
+}

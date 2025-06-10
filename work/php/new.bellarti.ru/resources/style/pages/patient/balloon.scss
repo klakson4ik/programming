@@ -1,0 +1,26 @@
+.b-balloon {
+	position: relative;
+	padding: 3rem;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		margin-top: 1rem;
+	}
+
+	&__close {
+		position: absolute;
+		top: 1.5rem;
+		right: 1.5rem;
+		transition: transform var(--trans-time);
+
+		& svg > path {
+			stroke-width: 2;
+		}
+
+		&:hover {
+			transform: rotate(90deg);
+		}
+	}
+}

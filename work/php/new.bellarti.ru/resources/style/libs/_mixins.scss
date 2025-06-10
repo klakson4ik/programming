@@ -1,0 +1,80 @@
+@use "sass:map";
+@use "sass:meta";
+@use "variables" as *;
+
+@mixin breakpoint($breakpoint) {
+    @if map.has-key($breakpoints, $breakpoint) {
+        @media (max-width: map.get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else if meta.type-of($breakpoint) == "number" {
+        @media (max-width: #{$breakpoint}px) {
+            @content;
+        }
+    } @else {
+        @warn "Нет брейкпоина #{"" + $breakpoint}. Доступнные значения: #{map-keys(variables.$breakpoints)}.";
+    }
+}
+
+@mixin container() {
+    width: 100%;
+    margin: 0 auto;
+    max-width: $container-width;
+	@include container-padding();
+
+}
+
+@mixin container-padding(){
+	padding: 0 4rem;
+
+    @include breakpoint(xl) {
+        padding: 0 3rem;
+    }
+
+    @include breakpoint(lg) {
+        padding: 0 2rem;
+    }
+
+    @include breakpoint(md) {
+        padding: 0 1.5rem;
+    }
+}
+
+@mixin adaptiveFS($fontSize){
+	font-size: #{$fontSize}rem;
+	@include breakpoint(xl){
+		font-size: #{calc($fontSize * 90 / 100)}rem;
+	}
+
+	@include breakpoint(lg){
+		font-size: #{calc($fontSize * 75 / 100)}rem;
+	}
+
+	@include breakpoint(md){
+		font-size: #{calc($fontSize * 65 / 100)}rem;
+	}
+
+	@include breakpoint(sm){
+		font-size: #{calc($fontSize * 50 / 100)}rem;
+	}
+}
+
+@mixin h4(){
+	font-weight: 700;
+	@include adaptiveFS(3.2);
+}
+
+@mixin h3(){
+	font-weight: 700;
+	@include adaptiveFS(4);
+}
+
+@mixin h2(){
+	font-weight: 700;
+	@include adaptiveFS(5.2);
+}
+
+@mixin h1(){
+	font-weight: 700;
+	@include adaptiveFS(8);
+}

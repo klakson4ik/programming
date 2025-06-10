@@ -1,0 +1,33 @@
+@use "base" as *;
+
+.b-standard {
+	display: flex;
+	align-items: self-end;
+	justify-content: space-between;
+	gap: 4rem;
+
+	@include breakpoint(lg) {
+		flex-wrap: wrap;
+	}
+
+	&__column {
+		flex-basis: 100%;
+
+		&--video {
+			width: inherit;
+			height: inherit;
+
+			& .b-video__vk-video {
+					height: 33.2rem;
+
+					@include breakpoint(lg){
+						height: 40rem;
+					}
+
+					@include breakpoint(sm){
+						height: 30rem;
+					}
+			}
+		}
+	}
+}

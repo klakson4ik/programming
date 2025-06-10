@@ -1,0 +1,41 @@
+@use "base" as *;
+
+.b-partners {
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		align-items: center;
+		justify-content: center;
+
+		&-items {
+			width: 18.5rem;
+			height: 18.5rem;
+
+			@include breakpoint(sm) {
+				width: 11rem;
+				height: 11rem;
+			}
+		}
+	}
+
+	&__item {
+		display: block;
+		height: inherit;
+		width: inherit;
+		justify-items: center;
+		align-content: center;
+
+		&-image {
+			transition: filter var(--trans-time);
+			filter: grayscale(1);
+			width: inherit;
+			height: inherit;
+			object-fit: contain;
+
+			&:hover {
+				filter: grayscale(0);
+			}
+		}
+	}
+}

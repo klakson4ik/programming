@@ -1,0 +1,14 @@
+User-Agent: *
+Disallow: /*?
+Disallow: /search
+Disallow: /policy
+Disallow: /admin/
+Disallow: /*ysclid=
+Disallow: /legal
+Disallow: /switch-lang/*
+Disallow: /*-or-*
+Disallow: /storage/files/static/memo.pdf
+Disallow: /upload/files/memo.pdf
+Allow: /*.js?
+
+Sitemap: https://solopharm.com/sitemap.xml

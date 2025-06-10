@@ -1,0 +1,18 @@
+{
+	"title": "Клуб",
+	"data": {
+		"title": "text",
+		"desc": "text",
+		"img": "string",
+		"youtube": "string", 
+		"block_1_title": "text",
+		"block_1_desc": "text",
+		"block_1_text": "string",
+		"block_2_title": "text",
+		"block_2_desc": "text",
+		"block_2_img": "string",
+		"block_2_subtitle": "text",
+		"block_2_text": "text",
+		"block_3_text": "text"
+	}
+}

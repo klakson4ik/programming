@@ -1,0 +1,70 @@
+@use "base" as *;
+
+.b-header__menu .b-menu {
+	display: block;
+
+	@include breakpoint(xl){
+		font-size: 1.4rem;
+	}
+
+	&__level--root {
+		display: flex;
+		gap: vw(40);
+
+		& > li {
+			position: relative;
+			flex-shrink: 0;
+
+			& > ul li > a {
+				display: block;
+				padding: 1.2rem 1.7rem;
+			}
+
+			& > ul li:not(:last-child) > a {
+				border-bottom: 1px solid var(--c-gray-light);
+			}
+		}
+
+		& li:hover {
+			& > a {
+				color: var(--c-purple);
+			}
+			& > ul {
+				display: flex;
+				visibility: visible;
+				opacity: 1;
+				transition: all 0.3s ease;
+			}
+
+			& > .b-menu__level--1 {
+				top: 110%;
+			}
+
+			& > .b-menu__level--2 {
+				left: 101%;
+			}
+		}
+	}
+
+	&__level--1,
+	&__level--2 {
+		position: absolute;
+		flex-direction: column;
+		min-width: 18rem;
+		background-color: rgba(255, 255, 255, 0.7);
+		backdrop-filter: blur(3px);
+		box-shadow: 0 0 10px var(--c-gray-light);
+		visibility: hidden;
+		opacity: 0;
+		transition: all 0.3s ease;
+	}
+
+	&__level--1 {
+		top: 220%;
+	}
+
+	&__level--2 {
+		top: 0;
+		left: 110%;
+	}
+}

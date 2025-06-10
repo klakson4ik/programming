@@ -1,0 +1,8 @@
+{
+	"title": "Оборудование",
+	"data": {
+		"title": "text",
+		"img": "string",
+		"data": "json"
+	}
+}

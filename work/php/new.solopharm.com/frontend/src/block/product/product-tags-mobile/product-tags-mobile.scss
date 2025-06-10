@@ -1,0 +1,45 @@
+@import "~style";
+
+$block-name: "b-product-tags-mobile";
+
+.#{$block-name} {
+	@include breakpoint(laptop) {
+		display: none;
+	}
+
+	&__container {
+		width: 86vw;
+		margin-bottom: rem(30);
+		overflow: hidden;
+
+		@include breakpoint(small){
+			width: 90vw;
+		}
+	}
+
+	&__slider {
+		color: $orange;
+		font-weight: 400;
+	}
+
+
+	&__del {
+		margin-left: rem(5);
+	}
+
+	&__tag {
+		width: fit-content;
+		padding: rem(5) rem(10);
+		color: $white;
+		background-color: $orange;
+
+
+		& .icon {
+			width: rem(12);
+			height: rem(12);
+			vertical-align: middle;
+			stroke: $white;
+		}
+
+	}
+}

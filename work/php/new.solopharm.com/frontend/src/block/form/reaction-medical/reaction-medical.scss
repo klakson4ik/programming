@@ -1,0 +1,155 @@
+@import "~style";
+@import "./add-drug-btn/add-drug-btn";
+
+$block-name: "b-reaction-medical";
+
+.#{$block-name} {
+	&__info {
+		margin-bottom: rem(25);
+	}
+
+	&__policy {
+		flex-basis: rem(750);
+
+		& .b-checkbox:first-child {
+			margin-bottom: rem(10);
+		}
+	}
+
+	&__subtitle,
+	& .subtitle {
+		margin-bottom: rem(20);
+		font-weight: 700;
+		font-size: rem(20);
+	}
+
+	&__radio {
+		margin-bottom: rem(40);
+
+		& .b-radio {
+			&__caption {
+				margin-bottom: rem(24);
+			}
+
+			&__row {
+				display: flex;
+				gap: rem(30) rem(70);
+				justify-content: start;
+			}
+		}
+	}
+
+	&__fields {
+		margin-bottom: rem(50);
+
+		&--last {
+			margin-bottom: 0;
+		}
+	}
+
+	&__field,
+	& .field {
+		flex-basis: 100%;
+		margin-bottom: rem(30);
+	}
+
+	&__btn {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+
+		& .b-button__icon {
+			display: none;
+
+			@include breakpoint(small) {
+				display: block;
+			}
+		}
+	}
+
+	&__error {
+		color: $error;
+		visibility: hidden;
+		opacity: 0;
+		transition: all 0.5s ease;
+
+		&--active {
+			visibility: visible;
+			opacity: 1;
+			transition: all 0.5s ease;
+
+			&~.submit {
+				color: $error;
+				border-color: $error;
+
+				&:hover {
+					color: $white;
+					border-color: $orange;
+				}
+			}
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(30) rem(30);
+		align-items: baseline;
+		justify-content: space-between;
+
+		@include breakpoint(tablet) {
+			flex-wrap: nowrap;
+		}
+	}
+
+	&__notice {
+		margin-bottom: rem(16);
+
+		&>span {
+			color: $orange;
+		}
+	}
+
+	&__other {
+		&-del, &-add {
+			height: 0;
+			visibility: hidden;
+			opacity: 0;
+			transition: all 0.5s ease;
+			will-change: contents;
+
+			&--active {
+				height: auto;
+				visibility: visible;
+				opacity: 1;
+				transition: all 0.5s ease;
+			}
+		}
+	}
+
+	&__appear{
+		&-title {
+			margin-bottom: rem(20);
+			font-weight: 400;
+			font-size: ren(20);
+			font-style: italic;
+			text-decoration: underline;
+			animation: a-opacity 0.5s forwards;
+		}
+	}
+}
+
+.suspect, .other {
+	animation: a-opacity 1s forwards;
+}
+
+@keyframes a-opacity {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

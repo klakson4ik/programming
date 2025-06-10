@@ -1,0 +1,16 @@
+{
+	"title": "Производственные площадки",
+	"data": {
+		"img": "string",
+		"block_1_title": "text",
+		"block_1_desc": "text",
+		"block_1_img": "string",
+		"block_1_subtitle": "text",
+		"block_1_data": "json",
+		"block_2_title": "text",
+		"block_2_data": "json",
+		"block_2_desc": "text",
+		"block_2_img": "string",
+		"block_3_title": "text"
+	}
+}

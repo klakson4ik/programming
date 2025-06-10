@@ -1,0 +1,215 @@
+@import "~style";
+
+$block-name: "b-footer";
+
+.#{$block-name} {
+	position: relative;
+	padding-top: rem(64);
+
+	@include breakpoint(laptop) {
+		padding-top: rem(84);
+	}
+
+	&__row {
+		&-top {
+			margin-bottom: rem(53);
+
+			@include breakpoint(laptop) {
+				margin-bottom: rem(53);
+			}
+		}
+
+		&-middle {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			margin-bottom: rem(25);
+			padding-bottom: rem(30);
+
+			@include breakpoint(laptop) {
+				flex-direction: row;
+				border-bottom: 1px solid $gray;
+			}
+
+			& > div {
+				@include breakpoint(laptop) {
+					order: unset;
+				}
+			}
+		}
+	}
+
+	&__column {
+		&-start {
+			order: 3;
+
+			@include breakpoint(laptop) {
+				flex-shrink: 1;
+				align-self: flex-end;
+				order: unset;
+				margin-right: rem(55);
+				padding-bottom: rem(85);
+			}
+
+			@include breakpoint(desktop) {
+				flex: 1 0 rem(277);
+				margin-right: rem(85);
+			}
+		}
+
+		&-center {
+			order: 2;
+			margin-bottom: rem(30);
+			padding: rem(50) 0;
+			border-top: 1px solid $gray;
+			border-bottom: 1px solid $gray;
+
+			@include breakpoint(laptop) {
+				flex: 0 1 rem(342);
+				max-width: unset;
+				margin-right: rem(90);
+				margin-bottom: unset;
+				padding: unset;
+				border-top: unset;
+				border-bottom: unset;
+			}
+
+			@include breakpoint(desktop) {
+				max-width: unset;
+				margin-right: rem(90);
+			}
+		}
+
+		&-end {
+			order: 1;
+			margin-bottom: rem(30);
+
+			@include breakpoint(laptop) {
+				flex: 1 0 rem(435);
+				margin-bottom: unset;
+			}
+		}
+	}
+
+	&__menu {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: rem(40) rem(35);
+
+		& > a {
+			color: $white;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__info {
+		color: $white;
+
+		a:hover {
+			text-decoration: underline !important;
+		}
+
+		&-text {
+			display: block;
+			display: flex;
+			margin-bottom: rem(35);
+
+			&::before {
+				margin-right: rem(15);
+			}
+
+			&--address {
+				&::before {
+					content: url("/images/icons/address.svg");
+				}
+			}
+
+			&--phone {
+				&::before {
+					content: url("/images/icons/phone.svg");
+				}
+			}
+
+			&--email {
+				&::before {
+					content: url("/images/icons/email.svg");
+				}
+			}
+
+			&--none {
+				&::before {
+					opacity: 0;
+					content: url("/images/icons/email.svg");
+				}
+			}
+		}
+	}
+
+	&__s-logo {
+		position: absolute;
+		top: rem(110);
+		left: rem(5);
+		pointer-events: none;
+
+		@include breakpoint(laptop) {
+			top: unset;
+		}
+
+		@include breakpoint(desktop) {
+			top: 180px;
+			left: -80px;
+		}
+	}
+
+	&__row-bottom {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(20) rem(40);
+		justify-content: space-between;
+		margin-bottom: rem(20);
+		color: $white;
+		font-weight: 300;
+		font-size: rem(18);
+
+		&-policy:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__sociate {
+		& img {
+			transition: all 0.3s ease;
+
+			&:hover {
+				transform: scale(1.1);
+				filter: grayscale(0.6);
+				transition: all 0.3s ease;
+			}
+		}
+	}
+
+	&__techart-mark{
+		margin-bottom: rem(10);
+		color: $white;
+		font-size: rem(14);
+		text-align: end;
+
+		&-link {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__adverse-reaction{
+		color: $orange;
+		text-decoration: underline;
+
+		&:hover {
+			color: $white;
+		}
+	}
+}

@@ -1,0 +1,52 @@
+
+.content-area {
+    border: 1px dashed black;
+    width: 20%;
+    height: 500px;
+    overflow-y: auto;
+}
+
+.resp-area {
+    border: 1px dashed black;
+    width: 20%;
+}
+.content-area a,
+.content-area p {
+    border: 1px dashed black;
+    width: 80%;
+}
+
+.resp-area p {
+    border: 1px dashed black;
+    width: 80%;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.user-msg {
+    margin-left: 19%;
+    border: 1px solid orange;
+    background: #fff5d7;
+}
+
+.bot-msg {
+    margin-right: 15%;
+    border: 1px solid orange;
+    background: #7bc568;
+}
+
+.user-msg:nth-last-child(-n+2),
+.bot-msg:last-child{
+    animation: myAnim 1s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+	0%
+	{
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

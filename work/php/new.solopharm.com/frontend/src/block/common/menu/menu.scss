@@ -1,0 +1,122 @@
+@import "~style";
+
+$block-name: "b-menu";
+
+.#{$block-name} {
+	display: none;
+
+	@include breakpoint(laptop) {
+		display: block;
+	}
+
+	& li>a {
+		font-size: rem(13);
+		font-style: normal;
+		line-height: rem(15);
+		white-space: nowrap;
+		cursor: pointer;
+
+		@include breakpoint(desktop) {
+			font-size: rem(14);
+		}
+
+		&:hover {
+			color: $orange;
+		}
+	}
+
+	&__level {
+		& li {
+			position: relative;
+		}
+
+		&--root {
+			display: flex;
+
+			&>li {
+				position: relative;
+				margin-right: rem(15);
+				font-weight: 400;
+				text-transform: uppercase;
+
+				@include breakpoint(desktop) {
+					margin-right: rem(20);
+				}
+
+				&>ul li>a {
+					display: block;
+					padding: rem(12) rem(17);
+					text-transform: none;
+				}
+
+				&>ul li:not(:last-child)>a {
+					border-bottom: 1px solid $light;
+				}
+			}
+
+			& li:hover>ul {
+				display: flex;
+				visibility: visible;
+				opacity: 1;
+				transition: all 0.3s ease;
+			}
+
+			& li:hover>.#{$block-name}__level--1 {
+				top: 100%;
+			}
+
+			& li:hover>.#{$block-name}__level--2 {
+				left: 100%;
+			}
+		}
+
+		&--1,
+		&--2 {
+			position: absolute;
+			flex-direction: column;
+			min-width: rem(180);
+			font-weight: 400 !important;
+			background-color: $white;
+			box-shadow: 0 0 10px $light;
+			visibility: hidden;
+			opacity: 0;
+			transition: all 0.3s ease;
+		}
+
+		&--1 {
+			top: 200%;
+		}
+
+		&--2 {
+			top: 0;
+			left: 110%;
+			border-left: 2px solid $light;
+		}
+	}
+
+	&--arrow {
+		display: flex !important;
+		align-items: center;
+		justify-content: space-between;
+
+		&::after {
+			width: rem(10);
+			height: rem(13);
+			margin-left: rem(20);
+			transform: rotate(-90deg);
+			content: url("/images/icons/arrow-short.svg");
+		}
+	}
+
+	&__btn {
+		& .icon--arrow-short {
+			width: rem(13);
+			height: rem(10);
+			margin-bottom: rem(4);
+			margin-left: rem(3);
+			vertical-align: middle;
+			transition: transform 0.3s linear;
+			stroke: $orange;
+		}
+	}
+}

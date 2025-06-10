@@ -1,0 +1,71 @@
+@import "~style";
+
+$block-name: "b-technology-products";
+
+.#{$block-name} {
+	&__list {
+		margin-top: rem(100);
+
+		&-empty {
+			margin-top: 0;
+		}
+	}
+
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr;
+
+		@include breakpoint(481){
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include breakpoint(tablet){
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include breakpoint(laptop){
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		gap: rem(21);
+		animation: a-opacity 0.7s forwards;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-right: rem(12);
+		padding-left: rem(25);
+		word-break: break-word;
+		border: 1px solid $light;
+		border-radius: 5px;
+		cursor: pointer;
+
+		&>p {
+			font-weight: 700;
+			font-size: rem(13);
+		}
+
+		&:hover>img {
+			opacity: 1;
+		}
+
+		&>img {
+			width: 100%;
+			max-width: rem(90);
+			margin-left: rem(10);
+			opacity: 0.5;
+		}
+	}
+
+	@keyframes a-opacity {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+}

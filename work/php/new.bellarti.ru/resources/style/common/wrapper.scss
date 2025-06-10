@@ -1,0 +1,58 @@
+@use "base" as *;
+
+.wrapper {
+	--header-height: 9.2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+
+	&__header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		width: 100%;
+		height: var(--header-height);
+		background-color: rgba(255, 255, 255, 0.7);
+		backdrop-filter: blur(3px);
+		box-shadow: 0 0 10px var(--c-gray-light);
+	}
+
+	&__content {
+		flex-grow: 1;
+		position: relative;
+		overflow: var(--overflow);
+	}
+
+	&__breadcrumbs {
+		position: absolute;
+		top: var(--header-height);
+		left: 50%;
+		transform: translateX(-50%);
+		margin-top: 5.9rem;
+		z-index: 1;
+
+		@include breakpoint(lg) {
+			margin-top: 3rem;
+		}
+	}
+
+	@include breakpoint(lg) {
+		--header-height: 7.2rem;
+
+		&__header {
+			background-color: var(--c-white);
+			backdrop-filter: unset;
+		}
+
+		&__content {
+			margin-top: var(--header-height);
+			position: unset;
+		}
+	}
+
+	@include breakpoint(md) {
+		--header-height: 6.2rem;
+	}
+}

@@ -1,0 +1,17 @@
+@forward 'layout';
+@forward "common";
+
+
+@forward "pages/contacts/top-info";
+@forward "pages/contacts/production";
+@forward "pages/contacts/main-office";
+@forward "pages/contacts/representatives";
+@forward "pages/contacts/partners";
+@forward "pages/contacts/map-infos";
+
+@forward 'component/pagination/side';
+@forward 'component/select';
+@forward 'component/trash';
+
+@forward 'pages/patient/ymap';
+@forward 'pages/patient/balloon';

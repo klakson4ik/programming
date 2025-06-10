@@ -1,0 +1,121 @@
+@use "base" as *;
+
+.b-footer {
+	padding-top: vw(65);
+	padding-bottom: vw(50);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	@include breakpoint(md) {
+		padding: 4rem 0;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		flex-shrink: 3;
+
+		&-title {
+			font-size: 1.6rem;
+			margin-bottom: 1.1rem;
+		}
+
+		&>a:not(:last-child):hover {
+			color: var(--c-purple);
+		}
+	}
+
+	&__caption {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+
+		& a.c-link-underline-hover {
+			padding: 0;
+			margin: 0 5px;
+		}
+	}
+
+	&__row {
+		&--top {
+			display: flex;
+			gap: vw(40);
+			justify-content: space-between;
+			margin-bottom: vw(70);
+		}
+
+		&--bottom {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			@include breakpoint(1130) {
+				flex-direction: column;
+				gap: 1rem 5rem;
+				align-items: start;
+			}
+
+			@include breakpoint(md) {
+				gap: 1rem 5rem;
+				flex-wrap: wrap;
+			}
+		}
+	}
+
+	&__bottom-column {
+		display: flex;
+		gap: vw(100);
+
+		@include breakpoint(1130) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+		}
+
+		@include breakpoint(md) {
+			gap: 1rem 10rem;
+			flex-wrap: wrap;
+			flex-basis: 100%;
+		}
+	}
+
+	&__solopharm,
+	&__stamp{
+		padding: 0;
+	}
+
+	&__solopharm,
+	&__youtube {
+		display: flex;
+		align-items: center;
+		gap: 1.2rem;
+	}
+
+	&__youtube,
+	&__vkontakte,
+	&__telegram {
+		&:hover {
+			text-decoration: underline;
+			color: var(--c-purple-dark);
+		}
+	}
+
+	&__feedback-btn {
+		width: fit-content;
+		text-transform: uppercase;
+		padding: 1.4rem 2.2rem 1rem;
+		border-radius: 4px;
+
+		&:hover {
+			background-color: var(--c-purple-dark);
+		}
+	}
+
+	&-techart {
+		text-align: right;
+		margin-top: 30px;
+		font-size: 12px;
+	}
+}

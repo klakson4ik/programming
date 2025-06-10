@@ -1,0 +1,48 @@
+@import "~style";
+
+$block-name: 'b-partners-list';
+
+.#{$block-name} {
+	display: grid;
+	gap: rem(30);
+
+	@include breakpoint(laptop) {
+		gap: rem(60) rem(75);
+	}
+
+	&--tree-row {
+		@include breakpoint(laptop) {
+			grid-auto-flow: column;
+			grid-template-rows: repeat(3, 1fr);
+		}
+	}
+
+	&--line-top {
+		.#{$block-name}__item {
+			padding: rem(25) 0 0;
+			border-top: 2px solid $orange;
+			border-bottom: none;
+		}
+	}
+
+	&--horizontal {
+		@include breakpoint(laptop) {
+			grid-auto-flow: row;
+			grid-template-rows: unset;
+			grid-template-columns: repeat(3, minmax(rem(225), rem(285)));
+			gap: rem(30);
+			justify-content: space-between;
+		}
+	}
+
+	&__item {
+		display: grid;
+		gap: rem(10);
+		padding-bottom: rem(25);
+		border-bottom: 2px solid $orange;
+	}
+
+	&__header {
+		margin: 0 !important;
+	}
+}

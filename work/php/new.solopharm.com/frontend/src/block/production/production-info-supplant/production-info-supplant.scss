@@ -1,0 +1,199 @@
+@import "~style";
+
+$block-name: "b-production-info-supplant";
+
+.#{$block-name} {
+	width: 100%;
+
+	&__slides {
+		width: 100%;
+		margin-bottom: 2rem;
+
+		@include breakpoint(laptop) {
+			margin-bottom: 6.7rem;
+		}
+
+		div {
+			display: inline-block;
+			width: calc(33% - 15px);
+			margin-right: 15px;
+
+			img {
+				margin-bottom: 15px;
+
+				@include breakpoint(laptop) {
+					margin-bottom: 40px;
+				}
+			}
+		}
+
+		div:last-child {
+			margin: 0;
+		}
+	}
+
+	.img-area,
+	.text-area {
+		display: inline-block;
+		width: 100%;
+		vertical-align: top;
+
+		.c-h2 {
+			margin-top: 1.3rem;
+			font-size: 20px;
+
+			p {
+				margin-top: 0;
+			}
+		}
+
+		@include breakpoint(laptop) {
+			width: 46%;
+		}
+	}
+
+	.img-area {
+		width: 100%;
+		margin: 30px 0 0;
+
+		@include breakpoint(laptop) {
+			width: 44%;
+			margin-top: 0;
+			margin-left: 9.4%;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.left {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		margin-bottom: 50px;
+		vertical-align: top;
+
+		@include breakpoint(laptop) {
+			width: 44%;
+		}
+
+		@include breakpoint(laptop) {
+			margin-bottom: 0;
+		}
+
+		ul {
+			width: 40%;
+
+			li:last-child {
+				white-space: nowrap;
+			}
+		}
+
+		div {
+			margin: 4.2rem 0 0;
+		}
+	}
+
+	.right {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		vertical-align: top;
+
+		@include breakpoint(laptop) {
+			width: 44%;
+		}
+
+		li {
+			width: 60%;
+		}
+	}
+
+	.right::after {
+		position: absolute;
+		right: -60px;
+		bottom: 0;
+		width: 190px;
+		height: 192px;
+		background-image: url("/images/22.png");
+		background-size: 100%;
+		opacity: 0.5;
+		content: "";
+
+		@include breakpoint(small) {
+			right: -20px;
+		}
+	}
+
+	.left::after {
+		position: absolute;
+		right: -50px;
+		bottom: -30px;
+		z-index: 10;
+		width: 300px;
+		height: 192px;
+		background-image: url("/images/33.png");
+		background-size: 100%;
+		opacity: 0.5;
+		content: "";
+
+		@include breakpoint(small) {
+			right: -15px;
+		}
+	}
+
+	.p-border {
+		position: relative;
+		z-index: 2;
+		width: 40%;
+		margin-top: 0.8rem;
+		margin-bottom: 1.7rem;
+		padding: 13px 0 12px;
+		color: $orange;
+		font-weight: 700;
+		line-height: 100%;
+		text-align: center;
+		background-color: white;
+		border: 2.3px solid $orange;
+		border-radius: 32.5px;
+	}
+
+	.text-area {
+		p {
+			margin-top: 2rem;
+		}
+	}
+
+	ul {
+		position: relative;
+		margin-top: 1.6rem;
+		margin-left: 2.5rem;
+		padding-left: 1rem;
+
+		li {
+			position: relative;
+			margin-bottom: 18px;
+		}
+
+		li::before {
+			position: absolute;
+			left: -2.2rem;
+			width: 20px;
+			height: 20px;
+			background-color: white;
+			border: 2.3px solid $orange;
+			border-radius: 100%;
+			content: "";
+		}
+	}
+
+	ul::before {
+		position: absolute;
+		top: -32px;
+		bottom: 10px;
+		left: -0.7rem;
+		border-left: $orange solid 2.3px;
+		content: "";
+	}
+}

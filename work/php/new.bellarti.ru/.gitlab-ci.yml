@@ -1,0 +1,94 @@
+include:
+  - project: "libs/cicd-includes"
+    file:
+      - "/templates/.base-tasks-node-20.yml"
+      - "/templates/.base-tasks-php-8-2.yml"
+
+
+# СБОРКА FRONTEND-А
+# =================
+build_frontend:
+  extends: .task_frontend_build
+  variables:
+    FRONTEND_PATH: resources
+    BUILDS_PATH: public/build
+    BUILD_DEV: "no"
+  cache:
+    key: $CACHE_KEY
+    paths:
+    - $FRONTEND_PATH/../node_modules/
+  artifacts:
+    name: prod-$CI_JOB_STARTED_AT
+    paths:
+    - $BUILDS_PATH
+  script:
+    - echo "Собираю Frontend на Титан!"
+    - pwd
+    - yarn
+    - yarn run build
+
+# ВЫКЛАДКА КОДА НА ТИТАН
+# ============================
+deploy_titan:
+  extends: .task_code_vendor_deploy_titan
+
+# ВЫКЛАДКА FRONTEND-А НА ТИТАН
+# ============================
+deploy_frontend_titan:
+  extends: .task_frontend_deploy_titan
+  variables:
+    BUILDS_PATH: public/build
+    FRONTEND_PATH: resources
+    BUILD_DEV: "no"
+  script:
+    - echo "Frontend на Титан!"
+    - |
+      # определяем путь к сайту проекта
+      PROJECT=`cat .workspace_config | grep -E '^project .+$' | sed 's/project //'`
+      SITE_DIR="/projects/webpages/projects/$PROJECT/site/$HOST_NAME"
+      echo "Каталог проекта на Титане - $SITE_DIR"
+    - SCP_DEST="$TITAN_USER@$TITAN_HOST:$SITE_DIR"
+    - |
+      # выкладываем каталог со сборками
+      if [ ! -d $BUILDS_PATH ] ; then
+        echo Каталог $BUILDS_PATH не доступен для копирования на удалённую машину! Попробуйте повторить сборку перед повторной выкладкой.
+        exit 1
+      fi
+      rsync -e "$SSH_COMMAND" -rOl ./$BUILDS_PATH/ $SCP_DEST/$BUILDS_PATH/
+
+
+# ВЫКЛАДКА КОДА НА ХОСТИНГ
+# ========================
+deploy_hosting:
+  extends: .task_code_vendor_deploy_hosting
+  variables:
+    SSH_PORT: 58022
+    SSH_HOST: $HOSTING_HOST
+    SSH_LOGIN: $HOSTING_LOGIN
+    SSH_PASSWORD: $HOSTING_PASSWORD
+
+    SITE_DIR: /srv/www/bellarti/current
+
+# ВЫКЛАДКА FRONTEND-А НА ХОСТИНГ
+# ==============================
+deploy_frontend_hosting:
+  extends: .task_frontend_deploy_hosting
+  variables:
+    SSH_PORT: 58022
+    SSH_HOST: $HOSTING_HOST
+    SSH_LOGIN: $HOSTING_LOGIN
+    SSH_PASSWORD: $HOSTING_PASSWORD
+    SITE_DIR: /srv/www/bellarti/current
+    BUILDS_PATH: public/build
+    FRONTEND_PATH: resources
+    BUILD_DEV: "no"
+  script:
+    - SCP_DEST="$SSH_LOGIN@$SSH_HOST:$SITE_DIR"
+    - echo "$SCP_DEST"
+    - |
+      # выкладываем каталог со сборками
+      if [ ! -d $BUILDS_PATH ] ; then
+        echo Каталог $BUILDS_PATH не доступен для копирования на удалённую машину! Попробуйте повторить сборку перед повторной выкладкой.
+        exit 1
+      fi
+      rsync -e "sshpass -p $SSH_PASSWORD ssh -o StrictHostKeyChecking=no -p $SSH_PORT -l $SSH_LOGIN" -rOl ./$BUILDS_PATH/ $SCP_DEST/$BUILDS_PATH/

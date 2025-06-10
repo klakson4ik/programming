@@ -1,0 +1,57 @@
+@use "base" as *;
+
+.b-popular-destinations {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	&__title {
+		margin-bottom: 3.5rem;
+		padding-top: 8.2rem;
+
+		@include breakpoint(md) {
+			margin-bottom: 2rem;
+		}
+	}
+
+	&__info {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		padding-bottom: 8.2rem;
+		gap: 2rem;
+
+		@include breakpoint(lg) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include breakpoint(md) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include breakpoint(sm) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		&-desc {
+			display: flex;
+
+			@include breakpoint(md) {
+				flex-direction: column;
+			}
+
+			@include breakpoint(sm) {
+				word-break: break-word;
+			}
+
+			& svg {
+				margin-right: 2rem;
+
+				@include breakpoint(md) {
+					margin: 0 0 1rem;
+				}
+			}
+		}
+	}
+
+
+}

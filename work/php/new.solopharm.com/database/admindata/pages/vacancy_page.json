@@ -1,0 +1,15 @@
+{
+	"title": "Вакансии",
+	"data": {
+		"title": "text",
+		"block_1_title": "text",
+		"block_1_desc": "text",
+		"block_1_caption": "string",
+		"block_1_url": "string",
+		"block_1_img": "string",
+		"block_2_title": "text",
+		"block_2_desc": "text",
+		"block_2_btn": "string",
+		"block_2_action": "string"
+	}
+}

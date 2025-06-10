@@ -1,0 +1,35 @@
+@import "~style";
+
+$block-name: "b-product-list";
+
+.#{$block-name} {
+	&__items {
+		display: grid;
+		grid: auto-flow / repeat(auto-fit, minmax(rem(253), 1fr));
+		gap: 1rem;
+
+		&--left {
+			grid: auto-flow / repeat(auto-fill, minmax(rem(253), 1fr));
+		}
+
+		@for $i from 1 to 16 {
+			& > div:nth-child(#{$i}) {
+				animation: a-opacity #{0.3 * $i}s forwards;
+			}
+		}
+	}
+
+	&__item:hover {
+		z-index: 1;
+	}
+}
+
+@keyframes a-opacity {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

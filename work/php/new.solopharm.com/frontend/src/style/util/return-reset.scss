@@ -1,0 +1,110 @@
+@mixin return() {
+	@include return-h;
+	@include return-p;
+	@include return-ul;
+	@include return-ol;
+	@include return-table;
+}
+
+@mixin return-h() {
+	& h1 {
+		margin-bottom: 15px;
+		font-weight: 900;
+		font-size: 28px;
+	}
+
+	& h2 {
+		margin-bottom: 15px;
+		font-weight: 900;
+		font-size: 26px;
+	}
+
+	& h3 {
+		margin-bottom: 15px;
+		font-weight: 900;
+		font-size: 24px;
+	}
+
+	& h4 {
+		margin-bottom: 15px;
+		font-weight: 900;
+		font-size: 22px;
+	}
+
+	& h5 {
+		margin-bottom: 15px;
+		font-weight: 900;
+		font-size: 20px;
+	}
+
+	& h6 {
+		margin-bottom: 15px;
+		font-weight: 900;
+		font-size: 18px;
+	}
+}
+
+@mixin return-p() {
+	& p {
+		margin: 0 0 15px;
+	}
+}
+
+@mixin return-ul() {
+	& ul {
+		display: block;
+		margin: 0 0 15px 25px;
+		padding: 0;
+	}
+
+	& ul ul {
+		margin-top: 15px;
+	}
+
+	& ul li {
+		margin: 0 0 10px;
+		list-style: outside disc;
+	}
+}
+
+@mixin return-ol() {
+	& ol {
+		display: block;
+		margin: 0 0 15px 25px;
+		padding: 0;
+	}
+
+	& ol ol {
+		margin-top: 15px;
+	}
+
+	& ol li {
+		margin: 0 0 10px;
+		list-style: outside decimal;
+	}
+}
+
+@mixin return-table() {
+	& table {
+		width: 100%;
+		margin-bottom: 15px;
+		table-layout: fixed;
+	}
+
+	& th {
+		padding: 10px;
+		font-weight: 900;
+	}
+
+	& thead th {
+		text-align: center;
+		background-color: #f1f1f1;
+		border: 1px solid #ddd;
+	}
+
+	& td {
+		padding: 10px;
+		background-color: #fff;
+		border: 1px solid #ddd;
+	}
+}

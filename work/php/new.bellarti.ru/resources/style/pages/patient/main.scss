@@ -1,0 +1,14 @@
+@use 'base' as *;
+
+.b-main {
+	@include breakpoint(sm) {
+		overflow-x: hidden;
+		&__picture {
+			& img {
+				max-width: 180%;
+				object-fit: cover;
+				object-position: -10rem 0;
+			}
+		}
+	}
+}

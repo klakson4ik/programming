@@ -1,0 +1,9 @@
+project solopharm
+
+ln /storage/app/public
+ln /storage/app/vars
+
+cp .env
+prepare vcomposer install
+rsyncd vendor
+rsyncd /public/vendor

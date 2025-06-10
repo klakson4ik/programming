@@ -1,0 +1,57 @@
+@use "base" as *;
+
+.b-main {
+	&__swiper {
+		margin-bottom: vw(32);
+		overflow: hidden;
+	}
+
+	&__action {
+		@include container();
+	}
+
+	&__cards {
+		display: flex;
+	}
+
+	&__card {
+		flex-shrink: 0;
+	}
+
+	&-card {
+		position: relative;
+
+		&__info {
+			position: absolute;
+			left: 50%;
+			top: 60%;
+			transform: translate(-50%, -50%);
+		}
+
+		&__icon svg {
+			width: vw(450);
+
+			@include breakpoint(sm) {
+				width: 13rem;
+			}
+		}
+
+		&__title {
+			margin-bottom: vw(28);
+		}
+
+		&__desc {
+			font-size: 2rem;
+			max-width: 50%;
+
+			@include breakpoint(md) {
+				font-size: 1.4rem;
+			}
+		}
+
+		& img {
+			width: 100%;
+			aspect-ratio: 16 / 9;
+		}
+	}
+}

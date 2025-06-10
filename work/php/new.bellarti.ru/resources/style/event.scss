@@ -1,0 +1,12 @@
+@forward 'layout';
+
+@forward "common";
+
+@forward 'pages/news/main';
+@forward 'pages/news/content-event';
+@forward 'pages/news/tabs';
+@forward 'pages/news/card-event';
+@forward 'pages/news/cards-event';
+
+@forward 'component/calendar';
+@forward 'component/trash';

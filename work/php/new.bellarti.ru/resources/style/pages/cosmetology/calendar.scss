@@ -1,0 +1,240 @@
+@use "base" as *;
+
+.b-calendar {
+	position: relative;
+	&__headers {
+		display: flex;
+		align-items: center;
+		font-size: 1.4rem;
+		width: 100%;
+	}
+
+	&__header {
+		flex-basis: 14.28%;
+		padding: 0 2rem 2rem;
+
+		@include breakpoint(sm) {
+			padding: 0 5px 5px;
+		}
+	}
+
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		position: relative;
+		flex-basis: 14.28%;
+		padding: 2rem;
+		min-height: 14.5rem;
+
+		@include breakpoint(lg) {
+			min-height: 11rem;
+			padding: 1rem;
+		}
+
+		@include breakpoint(md) {
+			padding: 5px;
+			min-height: 7rem;
+			position: unset;
+		}
+
+		@include breakpoint(sm) {
+			padding: 5px;
+			min-height: 5rem;
+		}
+
+		&--event {
+			background-color: var(--c-purple);
+			cursor: pointer;
+		}
+
+		&--out {
+			& .b-calendar__number {
+				color: var(--c-purple-light-very);
+			}
+		}
+
+		&--event.b-calendar__item--out {
+			& .b-calendar__number {
+				color: var(--c-white);
+			}
+		}
+
+		&--event.b-calendar__item--passed {
+			background-color: var(--c-purple-light-very);
+			color: var(--c-white);
+			border-color: var(--c-white);
+
+			& .b-calendar__time {
+				color: var(--c-white);
+			}
+
+			@media (min-width: 768px) {
+				&:hover .b-calendar__dropdown {
+					background-color: var(--c-purple-light-very);
+				}
+			}
+
+			@include breakpoint(md) {
+				& .b-calendar__dropdown {
+					background-color: var(--c-purple-light-very);
+				}
+			}
+		}
+
+		&--current {
+			border: 2px solid var(--c-purple-dark);
+			& .b-calendar__number {
+				color: var(--c-purple-dark);
+			}
+		}
+
+		@media (min-width: 768px) {
+			&:hover {
+				& .b-calendar__dropdown {
+					height: 200%;
+					width: 200%;
+					z-index: 1;
+					background-color: var(--c-purple);
+					padding: 2rem;
+				}
+				&:nth-child(7n) {
+					& .b-calendar__dropdown {
+						transform: translateX(-50%);
+					}
+				}
+				&:nth-last-child(-n + 7) {
+					& .b-calendar__dropdown {
+						transform: translateY(-50%);
+					}
+				}
+				&:last-child {
+					& .b-calendar__dropdown {
+						transform: translate(-50%, -50%);
+					}
+				}
+			}
+		}
+	}
+
+	&__dropdown {
+		z-index: -1;
+		top: 0;
+		left: 0;
+		padding: 0;
+		position: absolute;
+		height: 0;
+		width: 0;
+		overflow: hidden;
+		transition: all var(--trans-time);
+		display: flex;
+		flex-direction: column;
+
+		@include breakpoint(md) {
+			bottom: 0;
+			left: 0;
+			top: unset;
+			transition:
+				width var(--trans-time),
+				height var(--trans-time),
+				background-color var(--trans-time);
+
+			&--active {
+				z-index: 1;
+				height: 50%;
+				width: 100%;
+				background-color: var(--c-purple);
+				overflow: auto;
+				padding: 2rem;
+			}
+		}
+
+		@include breakpoint(sm) {
+			&--active {
+				height: 75%;
+			}
+		}
+
+		& .b-calendar__title {
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__time {
+		opacity: 0.5;
+		word-break: break-all;
+	}
+
+	&__title {
+		word-break: break-all;
+		hyphens: auto;
+		margin-bottom: 5px;
+	}
+
+	&__desc {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+		word-break: break-all;
+		hyphens: auto;
+	}
+
+	&__events {
+		font-size: 1.4rem;
+		@include breakpoint(md) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			& > .b-calendar__event {
+				display: none;
+			}
+		}
+	}
+
+	&__event {
+		display: block;
+		&--inactive {
+			display: none;
+		}
+
+		&:hover {
+			& .b-calendar__title {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__count {
+		@include breakpoint(sm) {
+			font-size: 1.8rem;
+			font-weight: 700;
+			& > span {
+				display: none;
+			}
+		}
+	}
+
+	&__number {
+		margin-bottom: 1rem;
+
+		@include adaptiveFS(2.8);
+
+		@include breakpoint(sm) {
+			margin-bottom: 5px;
+		}
+	}
+
+	&__close-icon {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		transform: rotate(90deg);
+
+		& > svg {
+			width: 1.5rem;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+@import "~style";
+
+$block-name: "b-input";
+
+.#{$block-name} {
+	&__field {
+		border: 1px solid black;
+	}
+}

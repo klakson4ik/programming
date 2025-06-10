@@ -1,0 +1,117 @@
+@import "~style";
+
+$block-name: "b-news-detail";
+
+.#{$block-name} {
+	&__header {
+		margin-bottom: 2rem !important;
+		font-size: 1.6rem !important;
+
+		@include breakpoint(tablet) {
+			font-size: 45px !important;
+		}
+	}
+
+	&__date {
+		color: #828282;
+	}
+
+	&__text {
+		margin-top: 3rem;
+		font-size: 20px;
+
+		a {
+			color: #fc6649 !important;
+
+			:hover {
+				text-decoration: underline;
+			}
+		}
+
+		a * {
+			color: #fc6649 !important;
+		}
+
+		@include return;
+	}
+
+	&__img {
+		width: auto;
+		margin-top: 1rem;
+	}
+
+	&__tag {
+		margin-top: 4rem;
+		margin-bottom: 2rem;
+		font-size: 20px;
+
+		a {
+			color: $orange;
+		}
+
+		a:hover {
+			color: $orange;
+			text-decoration: underline;
+		}
+	}
+
+	&__socials {
+		margin-top: rem(40);
+
+		& > ul {
+			display: flex;
+		}
+
+		& .icon {
+			width: rem(36);
+			height: rem(36);
+			margin-right: rem(15);
+			vertical-align: middle;
+
+			&--vk {
+				fill: #4C75A3;
+			}
+
+			&--telegram {
+				fill: #229ED9;
+			}
+
+			&--wa {
+				fill: #40c351;
+			}
+
+			&--ok {
+				fill: #F68634;
+			}
+
+			&--ln {
+				fill: #0077B5;
+			}
+
+			&:hover {
+				fill: $orange;
+			}
+		}
+	}
+}
+
+@include breakpoint(mobile) {
+	.#{$block-name}.c-container {
+		width: 100%;
+		margin-left: 0;
+	}
+}
+
+@include breakpoint(laptop) {
+	.#{$block-name}.c-container {
+		width: 80%;
+		margin-left: 0;
+	}
+}
+
+@include breakpoint(big) {
+	.#{$block-name}.c-container {
+		width: 74.5%;
+		margin-left: 0;
+	}
+}

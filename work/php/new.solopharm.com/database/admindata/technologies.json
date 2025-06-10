@@ -1,0 +1,10 @@
+{
+	"title": "Технологии",
+	"data": {
+		"title": "text",
+		"text": "text",
+		"img": "string",
+		"svg": "string",
+		"youtube": "text"
+	}
+}

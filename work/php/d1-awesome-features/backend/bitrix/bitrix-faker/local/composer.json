@@ -1,0 +1,10 @@
+{
+    "name": "techart/project",
+    "description": "",
+    "require": {
+        "ext-mbstring": "*",
+        "php": ">=5.6",
+        "techart/bitrix.tao": "1.x.x",
+        "fakerphp/faker": "^1.21"
+    }
+}

@@ -1,0 +1,7 @@
+MAILTO=kozlova@techart.ru
+
+# Ежеднедельно генерировать sitemap
+0 4 * * 1 cd /home/solo/site; php artisan make:sitemap
+
+# Еженедельно обновлять список вакансий с hh
+0 4 * * 1 cd /home/solo/site; php artisan make:hh

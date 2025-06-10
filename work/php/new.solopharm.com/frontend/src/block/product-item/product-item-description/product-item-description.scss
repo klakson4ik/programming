@@ -1,0 +1,277 @@
+@import "~style";
+
+$block-name: "b-product-item-description";
+
+.#{$block-name} {
+	position: relative;
+	margin-top: rem(30);
+
+	&__img {
+		position: relative;
+		margin-bottom: rem(40);
+		padding-bottom: rem(40);
+		border-bottom: 1px solid $light;
+
+		& > img {
+			width: 100%;
+			max-width: rem(711);
+			margin-bottom: rem(30);
+		}
+	}
+
+	&__chars {
+		position: absolute;
+		top: rem(-5);
+		right: 0;
+		display: flex;
+		gap: rem(20);
+		align-items: center;
+	}
+
+	&__char {
+		color: gray;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 1.3;
+
+		&--soon {
+			padding: rem(3) rem(16.5);
+			border: rem(2) solid $orange;
+			border-radius: rem(50);
+		}
+
+		&--vital {
+			display: flex;
+			gap: rem(3);
+			align-items: center;
+
+			&::after {
+				position: absolute;
+				left: 105%;
+				display: inline-flex;
+				align-items: center;
+				width: 250px;
+				padding: 10px;
+				color: $white;
+				font-weight: 300;
+				font-size: rem($font-size);
+				background-color: $black;
+				border-radius: 5px;
+				opacity: 0;
+				transition: all 0.5s ease;
+				content: attr(data-descr);
+				pointer-events: none;
+			}
+
+			&:hover::after {
+				visibility: visible;
+				opacity: 0.9;
+				transition: all 0.5s ease;
+			}
+
+			&::before {
+				position: absolute;
+				top: 8px;
+				right: -5%;
+				border: 7px solid transparent;
+				border-right: 7px solid $black;
+				opacity: 0;
+				transition: all 0.5s ease;
+				content: "";
+				pointer-events: none;
+			}
+
+			&:hover::before {
+				opacity: 0.9;
+				transition: all 0.5s ease;
+			}
+
+			svg	{
+				width: 16px;
+				height: 16px;
+				margin-bottom: 2px;
+			}
+		}
+	}
+
+	&__container {
+		&-slider,
+		&-thumbs {
+			position: relative;
+			width: 100%;
+		}
+	}
+
+	&__slider,
+	&__thumbs {
+		width: rem(340);
+
+		@include breakpoint(small) {
+			width: rem(450);
+		}
+
+		margin: 0 auto;
+	}
+
+	&__slider {
+		overflow: hidden;
+	}
+
+	&__slide,
+	&__thumb {
+		display: block;
+		text-align: center;
+		cursor: pointer;
+		opacity: 0.5;
+		transition: opacity 0.3s ease;
+
+		&-img {
+			width: 100%;
+			max-width: rem(100);
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&--active {
+			opacity: 1;
+			pointer-events: none;
+		}
+	}
+
+	&__nav {
+		display: none;
+
+		@include breakpoint(small) {
+			position: absolute;
+			top: 50%;
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			transform: translateY(-50%);
+
+			& > button {
+				cursor: pointer;
+			}
+
+			& .icon {
+				width: rem(24);
+				height: rem(15);
+				stroke: $orange;
+			}
+
+			&-left {
+				transform: rotate(90deg);
+			}
+
+			&-right {
+				transform: rotate(-90deg);
+			}
+		}
+	}
+
+	&__thumbs {
+		display: flex;
+		gap: rem(10);
+		justify-content: space-around;
+	}
+
+	&__desc {
+		ul {
+			margin-left: 1rem;
+			list-style: unset;
+		}
+
+		&-title {
+			margin-bottom: rem(40);
+			font-weight: 700;
+			font-size: rem(40);
+		}
+
+		&-text {
+			@include return;
+
+			max-width: rem(711);
+		}
+
+		margin-bottom: rem(50);
+	}
+
+	&__action {
+		position: absolute;
+
+		&-link {
+			position: relative;
+			display: block;
+			margin-bottom: rem(5);
+			cursor: pointer;
+
+			& .icon {
+				width: rem(52);
+				height: rem(52);
+				fill: $black;
+				stroke: $black;
+
+				&:hover {
+					fill: $orange;
+					stroke: $orange;
+				}
+			}
+
+			&::after {
+				position: absolute;
+				left: 130%;
+				display: inline-flex;
+				align-items: center;
+				height: rem(52);
+				padding: rem(10);
+				color: $white;
+				white-space: nowrap;
+				text-align: center;
+				background-color: $black;
+				border-radius: 5px;
+				opacity: 0;
+				transition: all 0.5s ease;
+				content: attr(data-title);
+				pointer-events: none;
+			}
+
+			&:hover::after {
+				visibility: visible;
+				opacity: 0.9;
+				transition: all 0.5s ease;
+			}
+
+			&::before {
+				position: absolute;
+				top: 18px;
+				right: -31%;
+				border: 7px solid transparent;
+				border-right: 7px solid $black;
+				opacity: 0;
+				transition: all 0.5s ease;
+				content: "";
+				pointer-events: none;
+			}
+
+			&:hover::before {
+				opacity: 0.9;
+				transition: all 0.5s ease;
+			}
+
+			&--youtube::after {
+				top: 0;
+			}
+		}
+	}
+
+	&__share {
+		width: fit-content;
+		margin-bottom: rem(30);
+
+		@include breakpoint(mobile) {
+			display: none;
+		}
+	}
+}

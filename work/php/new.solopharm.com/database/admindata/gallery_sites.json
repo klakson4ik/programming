@@ -1,0 +1,10 @@
+{
+	"title": "Галерея разводная",
+	"data": {
+		"img": "string",
+		"title": "text",
+		"link": "string",
+		"btn": "string",
+		"action": "string"
+	}
+}

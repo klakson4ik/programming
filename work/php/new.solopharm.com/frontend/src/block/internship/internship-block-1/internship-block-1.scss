@@ -1,0 +1,64 @@
+@import "~style";
+
+$block-name: "b-internship-block-1";
+
+.#{$block-name} {
+	margin-bottom: rem(50);
+
+	@include breakpoint(laptop) {
+		margin-bottom: rem(100);
+	}
+
+	&__bottom {
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__desc {
+		margin-bottom: rem(40);
+		font-weight: 300;
+	}
+
+	&__img {
+		display: block;
+		max-width: rem(1140);
+		margin-bottom: rem(65);
+		object-fit: none;
+		object-position: 75% top;
+
+		@include breakpoint(mobile) {
+			object-fit: unset;
+			object-position: unset;
+		}
+
+		@include breakpoint(laptop){
+			margin-bottom: 0;
+		}
+	}
+
+	&__text {
+		@include breakpoint(laptop) {
+			position: absolute;
+			top: 50%;
+			right: rem(15);
+			width: 40%;
+			color: $white;
+			transform: translate(0, -50%);
+
+			@include breakpoint(desktop) {
+				margin-right: rem(80);
+			}
+		}
+
+		&-title {
+			margin-bottom: rem(35);
+			font-weight: 700;
+			font-size: rem(30);
+		}
+
+		&-desc {
+			font-weight: 300;
+			line-height: 1.6;
+		}
+	}
+}

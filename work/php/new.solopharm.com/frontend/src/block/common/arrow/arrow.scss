@@ -1,0 +1,56 @@
+@import "~style";
+
+$block-name: "b-arrow";
+
+.#{$block-name} {
+	position: relative;
+	display: inline-block;
+	height: rem(20);
+	height: 35px;
+	cursor: pointer;
+
+	&:hover {
+		& > .icon {
+			transition: all 0.3s ease;
+			stroke-width: 3px;
+			stroke: $black;
+		}
+
+		&::before,
+		&::after {
+			visibility: visible;
+			opacity: 1;
+			transition: all 0.3s ease;
+		}
+	}
+
+	& .icon {
+		width: 62px;
+		height: 35px;
+		vertical-align: middle;
+		transition: all 0.3s ease;
+		stroke: $orange;
+		stroke-width: 2px;
+	}
+
+	&--left::before,
+	&--right::after {
+		position: absolute;
+		width: 35px;
+		height: 35px;
+		border: 2px solid $orange;
+		border-radius: 100%;
+		visibility: hidden;
+		opacity: 0;
+		transition: all 0.3s ease;
+		content: "";
+	}
+
+	&--right::after {
+		right: 0;
+	}
+
+	&--left::before {
+		left: 0;
+	}
+}

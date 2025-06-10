@@ -1,0 +1,62 @@
+@import "~style";
+
+$block-name: "b-wrapper";
+
+.#{$block-name} {
+	--content-mt: 5.2rem;
+
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100vh;
+
+	&--main {
+		@include breakpoint(laptop) {
+			&>.#{$block-name}__header {
+				background-color: transparent;
+				border-bottom: unset;
+			}
+		}
+
+		&>.#{$block-name}__content {
+			margin-top: unset;
+			margin-bottom: 0;
+		}
+	}
+
+	&__header {
+		position: fixed;
+		z-index: 3;
+		width: 100%;
+		height: rem(64);
+		background-color: $white;
+		border-bottom: 1px solid $light;
+		transition: all 0.5s ease;
+
+		@include breakpoint(laptop) {
+			height: rem(94);
+		}
+
+		&--white {
+			background-color: $white !important;
+			box-shadow: 0 -5px 2px -5px rgb(34 60 80 / 30%) inset;
+			transition: all 0.5s ease;
+		}
+	}
+
+	&__content {
+		flex-grow: 1;
+		margin-top: var(--content-mt);
+
+		@include breakpoint(laptop) {
+			--content-mt: 8.55rem;
+		}
+
+		@include section-margin;
+	}
+
+	&__footer {
+		flex: 0 0 rem(526);
+		background-color: $black;
+	}
+}

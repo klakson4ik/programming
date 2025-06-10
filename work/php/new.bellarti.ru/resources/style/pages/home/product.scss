@@ -1,0 +1,60 @@
+@use "base" as *;
+
+.b-product {
+	&__swiper-container {
+		position: relative;
+	}
+
+	&__swiper {
+		overflow-x: hidden;
+	}
+
+	&__cards {
+		display: flex;
+	}
+
+	&__card {
+		flex-shrink: 0;
+		padding: 3.5rem;
+		transition: background-color var(--trans-time);
+
+		&:hover {
+			background-color: var(--c-purple-light-very);
+
+			& svg {
+				animation: leftAndRight 1s linear infinite;
+			}
+		}
+	}
+
+	&-card {
+		&__link {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			margin-bottom: 1rem;
+		}
+
+		&__icon svg {
+			width: 2.6rem;
+		}
+
+		&__title {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+@keyframes leftAndRight {
+	0% {
+		transform: translateX(0);
+	}
+
+	50% {
+		transform: translateX(1rem);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}

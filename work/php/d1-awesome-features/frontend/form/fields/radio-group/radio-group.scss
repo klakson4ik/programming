@@ -1,0 +1,67 @@
+@import "~style";
+
+.b-radio-group {
+	& .b-radio {
+		position: relative;
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		width: 100%;
+
+		&__label {
+			cursor: pointer;
+		}
+
+		&.label-left > .b-radio__label {
+			order: -1;
+		}
+
+		&.check-mark,
+		&.fill {
+			.b-radio__input {
+				display: grid;
+				width: 1.15em;
+				height: 1.15em;
+				margin: 0;
+				color: currentcolor;
+				background-color: #fff;
+				border: 0.15em solid currentcolor;
+				border-radius: 50%;
+				transform: translateY(-0.075em);
+				cursor: pointer;
+				appearance: none;
+				place-content: center;
+
+				&::before {
+					width: 0.75em;
+					height: 0.75em;
+					border-radius: 50%;
+					box-shadow: inset 1em 1em currentcolor;
+					transform: scale(0);
+					transition: transform 0.12s ease-in-out;
+					content: "";
+				}
+
+				&:checked {
+					&::before {
+						transform: scale(1);
+					}
+				}
+
+				&:disabled {
+					color: gray;
+					pointer-events: none;
+
+					& + .b-radion__label {
+						cursor: default;
+					}
+				}
+			}
+		}
+
+		&.check-mark > .b-radio__input::before {
+			transform-origin: center;
+			clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+		}
+	}
+}

@@ -1,0 +1,55 @@
+@use "base" as *;
+
+.b-facts {
+	gap: 3rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include breakpoint(lg) {
+		flex-direction: column;
+	}
+
+	&__subtitle {
+		margin-bottom: 2rem;
+	}
+
+	&__content,
+	&__video {
+		flex-basis: 100%;
+	}
+
+	&__link {
+		margin-top: 3.5rem;
+		display: flex;
+		align-items: center;
+
+		& svg {
+			margin-right: 2rem;
+			transform: rotate(270deg);
+			color: var(--c-purple-dark);
+
+			@include breakpoint(sm) {
+				margin-right: 1rem;
+			}
+		}
+
+		@include breakpoint(sm) {
+			display: inline-flex;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__video {
+		height: 33.2rem;
+		width: 100%;
+
+		@include breakpoint(lg) {
+			height: 40rem;
+		}
+
+		@include breakpoint(sm) {
+			height: 30rem;
+		}
+	}
+}

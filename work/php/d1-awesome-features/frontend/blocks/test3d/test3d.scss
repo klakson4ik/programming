@@ -1,0 +1,15 @@
+@import "~style";
+
+$block-name: "b-test3d";
+
+.#{$block-name} {
+	width: 100%;
+	height: 1000px;
+	background-color: #008dd2;
+	background-position: 50%;
+
+	canvas {
+		width: 100% !important;
+		height: 100% !important;
+	}
+}

@@ -1,0 +1,10 @@
+@forward 'layout';
+
+@forward "common";
+
+@forward 'pages/news/main';
+@forward 'pages/news/content';
+@forward 'pages/news/tabs';
+@forward 'pages/news/card';
+
+@forward 'component/trash';

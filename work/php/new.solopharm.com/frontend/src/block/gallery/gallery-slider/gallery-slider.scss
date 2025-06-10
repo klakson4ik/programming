@@ -1,0 +1,124 @@
+@import "~style";
+
+$block-name: "b-gallery-slider";
+
+.#{$block-name} {
+	&__container {
+		&-slider,
+		&-thumbs {
+			width: 100%;
+			overflow: hidden;
+		}
+
+		&-slider {
+			position: relative;
+			margin-bottom: rem(30);
+		}
+
+		&-thumbs {
+			margin-top: rem(30);
+		}
+	}
+
+	&__slide,
+	&__thumb {
+		width: 100%;
+	}
+
+	&__slide {
+		max-width: rem(1140);
+	}
+
+	&__thumb {
+		max-width: rem(220);
+	}
+
+	&__nav {
+		position: absolute;
+		top: 50%;
+		z-index: 1;
+		display: none;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		height: 100%;
+		transform: translateY(-50%);
+
+		& > button {
+			width: rem(118);
+			text-align: center;
+			cursor: pointer;
+			pointer-events: none;
+		}
+
+		&-area {
+			&-left,
+			&-right {
+				position: absolute;
+				width: rem(118);
+				height: inherit;
+				background-color: $black;
+				cursor: pointer;
+				opacity: 0;
+				transition: opacity 0.3s ease-in;
+
+				&:hover {
+					opacity: 0.4;
+					transition: opacity 0.3s ease-in;
+				}
+			}
+
+			&-right {
+				right: 0;
+
+				&:hover {
+					transition: opacity 0.3s ease-in;
+					& ~ .#{$block-name}__nav-right {
+						& .icon {
+							position: relative;
+							z-index: 1;
+							stroke: $white;
+						}
+
+						& .b-arrow--right::after {
+							background-color: $orange;
+							border: unset;
+							visibility: visible;
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			&-left {
+				&:hover {
+					transition: opacity 0.3s ease-in;
+					& ~ .#{$block-name}__nav-left {
+						& .icon {
+							position: relative;
+							z-index: 1;
+							stroke: $white;
+						}
+
+						& .b-arrow--left::before {
+							background-color: $orange;
+							border: unset;
+							visibility: visible;
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__nav-2 {
+		display: none;
+
+		@include breakpoint(tablet){
+			display: block;
+		}
+
+		text-align: end;
+	}
+}

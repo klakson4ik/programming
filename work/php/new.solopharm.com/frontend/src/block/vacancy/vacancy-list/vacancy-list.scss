@@ -1,0 +1,131 @@
+@import "~style";
+
+$block-name: "b-vacancy-list";
+
+.#{$block-name} {
+	&__item {
+		position: relative;
+		margin-bottom: rem(3);
+		overflow: clip;
+
+		&-section {
+			position: sticky;
+			top: rem(64);
+			display: flex;
+			gap: rem(20);
+			align-items: center;
+			justify-content: space-between;
+			padding: rem(26) rem(30);
+			font-weight: 700;
+			font-size: rem(20);
+			background-color: $light;
+			cursor: pointer;
+			transition: all 0.3s ease;
+
+			@include breakpoint(laptop) {
+				top: rem(94);
+			}
+
+			&:hover {
+				color: $white;
+				background-color: $orange;
+				transition: all 0.3s ease;
+
+				& .#{$block-name}__icon-last,
+				.#{$block-name}__icon-first {
+					background-color: $white;
+				}
+			}
+
+			&--active {
+				background-color: $gray;
+
+				& .#{$block-name}__icon-last {
+					transform: unset;
+					transform: scaleY(1.5);
+				}
+			}
+
+			&-count {
+				display: none;
+
+				@include breakpoint(tablet) {
+					display: unset;
+					margin-left: rem(44);
+					color: $orange;
+					font-size: rem(22);
+				}
+			}
+
+			& > p {
+				pointer-events: none;
+			}
+		}
+
+		&-sub {
+			max-height: 0;
+			transition: all 0.5s ease;
+			will-change: contents;
+
+			&--active {
+				max-height: 2230px;
+				transition: all 1.5s ease;
+			}
+		}
+	}
+
+	&__icon {
+		position: relative;
+		width: rem(30);
+		height: rem(30);
+		pointer-events: none;
+
+		&-container {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: inherit;
+			transform: translate(-50%, -50%);
+		}
+
+		&-first,
+		&-last {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: rem(20);
+			height: 2px;
+			background-color: $orange;
+			transition: all 0.3s ease;
+
+		}
+
+		&-last {
+			transform: rotate(90deg);
+		}
+	}
+
+	&__additional {
+		height: 0;
+		visibility: hidden;
+		opacity: 0;
+		will-change: contents;
+
+		&--active {
+			height: auto;
+			visibility: visible;
+			opacity: 1;
+			animation: a-opacity 0.8s forwards;
+		}
+	}
+}
+
+@keyframes a-opacity {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

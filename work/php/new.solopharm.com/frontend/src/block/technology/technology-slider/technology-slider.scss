@@ -1,0 +1,114 @@
+@import "~style";
+
+$block-name: "b-technology-slider";
+
+.#{$block-name} {
+	&__container {
+		&-slider {
+			width: 100%;
+			overflow: hidden;
+		}
+	}
+
+	&__slider {
+		position: relative;
+		display: flex;
+	}
+
+	&__slide {
+		flex-basis: calc(100% / 3);
+		flex-shrink: 0;
+		padding-bottom: rem(44);
+		text-align: center;
+		cursor: pointer;
+		opacity: 0.7;
+		transition: opacity 0.3 ease;
+
+		@include breakpoint(mobile) {
+			flex-basis: calc(100% / 4);
+			border-bottom: 2px solid $gray;
+		}
+
+		@include breakpoint(tablet) {
+			flex-basis: calc(100% / 5);
+		}
+
+		@include breakpoint(laptop) {
+			flex-basis: calc(100% / 7);
+		}
+
+		&-text {
+			color: $gray;
+			font-weight: 700;
+			font-size: rem(15);
+
+			@include breakpoint(small){
+				font-size: rem(20);
+			}
+
+			@include breakpoint(mobile){
+				font-size: rem(25);
+			}
+		}
+
+		& svg {
+			aspect-ratio: 75/76;
+			width: 100%;
+			max-width: rem(75);
+			height: auto;
+			margin-bottom: rem(24);
+
+			& * {
+				stroke: $gray;
+			}
+		}
+
+		&:hover {
+			opacity: 1;
+			transition: opacity 0.3 ease;
+
+			& svg {
+				& path {
+					stroke: $orange;
+				}
+			}
+		}
+
+		&--active {
+			border-color: $orange;
+			opacity: 1;
+
+			& svg {
+				& * {
+					stroke: $orange;
+				}
+			}
+		}
+	}
+
+	&__nav {
+		position: relative;
+		display: flex;
+		flex-wrap: nowrap;
+
+		&-action {
+			background-color: $white;
+
+			@include breakpoint(mobile) {
+				position: absolute;
+				right: 0;
+				bottom: -17px;
+				padding-right: rem(16);
+				padding-left: rem(36);
+			}
+		}
+
+		&-left {
+			margin-right: rem(30);
+
+			@include breakpoint(mobile) {
+				margin-right: unset;
+			}
+		}
+	}
+}

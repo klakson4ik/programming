@@ -1,0 +1,48 @@
+@use "base" as *;
+
+.b-card {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	animation: a-opacity 1s forwards;
+
+	&:hover {
+		& .b-card__img > img {
+			transform: scale(1.1);
+		}
+
+		& .b-card__title {
+			color: var(--c-purple-dark);
+		}
+	}
+
+	@include breakpoint(md) {
+		gap: 1rem;
+	}
+
+	&__img {
+		margin: 0 auto 2rem auto;
+		overflow: hidden;
+
+		& > img {
+			transition: transform var(--trans-time);
+		}
+	}
+
+	&__desc {
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+	}
+}
+
+@keyframes a-opacity {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,55 @@
+@use "base" as *;
+
+.b-cookie {
+	position: fixed;
+	max-width: 60rem;
+	right: 0;
+	bottom: 0;
+	z-index: 20;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4rem;
+	color: var(--c-white);
+	bottom: -150rem;
+
+	@include breakpoint(sm) {
+		padding: 1rem;
+	}
+
+	&-animate {
+		animation: a-bottom 1s forwards;
+	}
+
+	&__btn {
+		margin-left: 2rem;
+		transition: transform var(--trans-time) linear;
+
+		@include breakpoint(sm) {
+			margin-left: 1rem;
+		}
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	&__link {
+		color: var(--c-white);
+	}
+
+	&--hidden {
+		transform: translate(0, 20rem);
+		transition: transform var(--trans-time) linear;
+	}
+}
+
+@keyframes a-bottom {
+	0% {
+		bottom: -100rem;
+	}
+
+	100% {
+		bottom: 0;
+	}
+}

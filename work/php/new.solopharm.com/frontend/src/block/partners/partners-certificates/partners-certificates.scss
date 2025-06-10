@@ -1,0 +1,75 @@
+@import "~style";
+
+$block-name: 'b-partners-certificates';
+
+.#{$block-name} {
+	& .c-h2 {
+		margin-top: 0;
+
+		& span {
+			color: $orange;
+		}
+	}
+
+	&__container {
+		display: grid;
+	}
+
+	&__certificates {
+		display: grid;
+		gap: rem(150);
+
+		@include breakpoint(laptop) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__countries-map {
+		@include section-margin;
+	}
+
+	&__image-content {
+		display: flex;
+		align-items: flex-end;
+		width: 100%;
+		height: rem(470);
+		padding: rem(20) rem(30);
+		color: $white;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
+		@include section-margin;
+
+		& > div {
+			@include breakpoint(tablet) {
+				max-width: rem(670);
+			}
+		}
+
+		@include breakpoint(tablet) {
+			height: rem(415);
+			padding: rem(60) rem(80);
+		}
+
+		@include breakpoint(laptop) {
+			height: rem(510);
+		}
+
+		@include breakpoint(1280) {
+			height: rem(520);
+		}
+	}
+
+	&__links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(15);
+		justify-content: center;
+		margin-top: rem(50);
+
+		@include breakpoint(laptop) {
+			margin-top: rem(70);
+		}
+	}
+}

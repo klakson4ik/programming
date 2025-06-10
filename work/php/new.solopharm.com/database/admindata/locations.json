@@ -1,0 +1,11 @@
+{
+	"title": "Местоположение",
+	"data": {
+		"title": "string",
+		"desc": "text",
+		"btn": "string",
+		"file": "string",
+		"location": "string"
+
+	}
+}

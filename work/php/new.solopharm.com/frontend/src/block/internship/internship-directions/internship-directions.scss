@@ -1,0 +1,51 @@
+@import "~style";
+
+$block-name: "b-internship-directions";
+
+.#{$block-name} {
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(25);
+	margin-bottom: rem(100);
+
+	@include breakpoint(laptop) {
+		flex-wrap: nowrap;
+		gap: rem(65);
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: rem(40);
+
+		@include breakpoint(laptop) {
+			max-width: 30rem;
+		}
+	}
+
+	&__directions-list {
+		padding-left: rem(25);
+
+		@include breakpoint(laptop) {
+			padding-top: rem(13);
+		}
+	}
+
+	&__item {
+		position: relative;
+		line-height: 1.6;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: rem(-20);
+			width: rem(13);
+			height: rem(25);
+			background: url('/images/icons/arrow-short.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			transform: rotate(-90deg);
+			content: "";
+		}
+	}
+}

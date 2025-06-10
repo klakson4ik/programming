@@ -1,0 +1,9 @@
+@import "~style";
+
+$block-name: "b-gallery-detail";
+
+.#{$block-name} {
+	& .b-button {
+		margin-top: rem(50);
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"title": "Поставщикам",
+	"data": {
+		"title": "text",
+		"desc": "text",
+		"img": "string",
+		"btn": "string",
+		"action": "string"
+	}
+}

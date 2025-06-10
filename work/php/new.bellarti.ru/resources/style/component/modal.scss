@@ -1,0 +1,54 @@
+@use "base" as *;
+
+.b-modal {
+	position: relative;
+	width: min(100%, 80rem);
+	height: fit-content;
+	background-image: unset;
+	border: none;
+	border-radius: 8px;
+	padding: 0;
+	animation: modal 1s linear;
+	
+
+	&::backdrop {
+		background-color: var(--c-black);
+		opacity: 0.9;
+		overscroll-behavior: contain;
+	}
+
+	&__content {
+		font-size: 2rem;
+		padding: max(vw(40), 2rem);
+		background-color: var(--c-white);
+		@include breakpoint(sm) {
+			font-size: 1.4rem;
+		}
+	}
+
+
+	&__close {
+		position: absolute;
+		top: 1.5rem;
+		right: 1.5rem;
+		transition: transform var(--trans-time);
+
+		& svg > path {
+			stroke-width: 2;
+		}
+
+		&:hover {
+			transform: rotate(90deg);
+		}
+	}
+}
+
+@keyframes modal {
+	0%{
+		opacity: 0;
+	}
+
+	100%{
+		opacity: 1;
+	}
+}

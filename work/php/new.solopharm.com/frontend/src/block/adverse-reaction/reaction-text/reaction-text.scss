@@ -1,0 +1,84 @@
+@import "~style";
+
+$block-name: "b-reaction-text";
+
+.#{$block-name} {
+	margin-bottom: rem(50);
+
+	&__desc {
+	@include return-ul;
+
+	max-width: rem(997);
+		margin-bottom: rem(34);
+
+		&-link {
+			text-decoration: underline;
+
+			&:hover {
+				color: gray;
+			}
+		}
+
+		&-tel {
+			&:hover {
+				color: gray;
+			}
+		}
+
+		&-policy {
+			color: $orange;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__menu {
+		margin-bottom: rem(57);
+
+		&-list {
+			display: flex;
+			gap: rem(37);
+
+		}
+
+		&-item {
+			font-size: rem(22);
+
+			&--active {
+				& .#{$block-name}__menu-link {
+					color: $orange;
+					pointer-events: none;
+
+					& .icon {
+						stroke: $orange;
+					}
+				}
+			}
+		}
+
+		&-link {
+			& .icon,
+			& .icon {
+				height: rem(41);
+				margin-right: rem(11);
+				vertical-align: bottom;
+				stroke: $black;
+
+				&--medical {
+					width: rem(35);
+				}
+
+				&--patient {
+					width: rem(30);
+				}
+			}
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+	}
+}

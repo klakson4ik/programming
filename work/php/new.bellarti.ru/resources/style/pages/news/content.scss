@@ -1,0 +1,31 @@
+@use "base" as *;
+
+.b-content {
+	&__tabs {
+		margin-bottom: 3.5rem;
+	}
+
+	&__cards {
+		display: grid;
+		gap: 3rem;
+		grid-template-columns: repeat(3, 1fr);
+		margin-bottom: max(vw(60), 2rem);
+
+		@include breakpoint(md) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2rem;
+		}
+
+		@include breakpoint(sm) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__more {
+		text-align: center;
+
+		&--inactive {
+			display: none;
+		}
+	}
+}

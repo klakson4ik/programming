@@ -1,0 +1,126 @@
+@import "~style";
+
+$block-name: "b-sites";
+
+.#{$block-name} {
+	&__header {
+		position: relative;
+		margin-bottom: rem(40);
+
+		&-img {
+			width: 100%;
+			max-width: rem(1140);
+		}
+
+		&-s {
+			position: absolute;
+			bottom: rem(10);
+			left: rem(35);
+			width: vw(337);
+			object-fit: contain;
+			object-position: bottom;
+		}
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(50) rem(140);
+
+		@include breakpoint(mobile) {
+			flex-wrap: nowrap;
+		}
+
+		@include section-margin;
+	}
+
+	&__column {
+		@include breakpoint(mobile) {
+			flex-basis: calc(50% - rem(40));
+		}
+
+		&-text {
+			margin-bottom: rem(30);
+		}
+	}
+
+	&__block {
+		&-1 {
+			&-img {
+				width: 100%;
+				max-width: rem(357);
+			}
+
+			&-subtitle {
+				display: block;
+				width: fit-content;
+				margin-bottom: rem(51);
+				padding: rem(15) rem(25) rem(12) rem(25);
+				color: $white;
+				background-color: $orange;
+				border-radius: rem(100);
+			}
+
+			&-data {
+				&-item {
+					&:not(:last-child) {
+						margin-bottom: rem(35);
+					}
+
+					&-title {
+						width: fit-content;
+						margin-bottom: rem(10);
+						padding: 10px 20px;
+						font-weight: 700;
+						font-size: rem(20);
+						text-align: center;
+						border: 2px solid $orange;
+						border-radius: 40px;
+					}
+				}
+			}
+		}
+
+		&-2 {
+			&-data {
+				margin-bottom: 1.5rem;
+
+				&-item {
+					display: flex;
+
+					&:not(:last-child) {
+						margin-bottom: rem(35);
+					}
+
+					&::before {
+						flex-basis: 7px;
+						flex-shrink: 0;
+						height: 7px;
+						margin-top: rem(6);
+						margin-right: rem(13);
+						background-color: $orange;
+						border-radius: 100%;
+						content: "";
+					}
+				}
+			}
+
+			&-arrow {
+				width: 100%;
+				max-width: rem(39);
+				margin-bottom: rem(17);
+			}
+
+			&-desc {
+				max-width: rem(317);
+				font-weight: 700;
+				font-size: rem(20);
+			}
+
+			&-img {
+				width: 100%;
+				max-width: rem(487);
+			}
+		}
+	}
+}

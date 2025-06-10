@@ -1,0 +1,9 @@
+{
+	"title": "Контакты",
+	"data": {
+		"title": "string",
+		"img": "string",
+		"office": "text",
+		"data": "json"
+	}
+}

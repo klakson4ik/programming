@@ -1,0 +1,9 @@
+@import "~style";
+
+$block-name: 'b-partners-markets';
+
+.#{$block-name} {
+	&__countries-map {
+		@include section-margin;
+	}
+}

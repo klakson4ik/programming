@@ -1,0 +1,9 @@
+{
+	"title": "Пресс-центр",
+	"data": {
+		"tab_1": "string",
+		"tab_2": "string",
+		"btn_caption": "string",
+		"btn_url": "string"
+	}
+}

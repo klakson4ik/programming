@@ -1,0 +1,23 @@
+@mixin site-fonts() {
+	@include font-face(
+		$name: "HelveticaNeueCyr",
+		$path: "~font/HelveticaNeueCyr-Bold",
+		$weight: 700,
+		$style: normal,
+		$woff2: true
+	);
+	@include font-face(
+		$name: "HelveticaNeueCyr",
+		$path: "~font/HelveticaNeueCyr-Roman",
+		$weight: 400,
+		$style: normal,
+		$woff2: true
+	);
+	@include font-face(
+		$name: "HelveticaNeueCyr",
+		$path: "~font/HelveticaNeueCyr-Light",
+		$weight: 300,
+		$style: normal,
+		$woff2: true
+	);
+}

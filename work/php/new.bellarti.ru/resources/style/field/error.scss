@@ -1,0 +1,14 @@
+.b-input {
+	& .field-error {
+		overflow: hidden;
+		font-size: 1.4rem;
+		width: inherit;
+		transition: max-height var(--trans-time);
+		max-height: 0;
+		color: red;
+
+		&--active {
+			max-height: 10rem;
+		}
+	}
+}

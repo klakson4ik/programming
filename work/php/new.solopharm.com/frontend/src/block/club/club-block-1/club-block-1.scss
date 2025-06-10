@@ -1,0 +1,46 @@
+@import "~style";
+
+$block-name: "b-club-block-1";
+
+.#{$block-name} {
+	&__desc {
+		margin-bottom: rem(40);
+	}
+
+	&__video{
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+
+		&:hover {
+			.#{$block-name}__play .icon--watch {
+				stroke: $orange;
+			}
+		}
+	}
+
+	&__play {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		& .icon--watch {
+			width: rem(100);
+			height: rem(100);
+			stroke: $white;
+		}
+	}
+
+	&__img {
+		display: block;
+		max-width: rem(1140);
+		object-fit: none;
+		object-position: center;
+
+		@include breakpoint(laptop) {
+			object-fit: unset;
+			object-position: unset;
+		}
+	}
+}

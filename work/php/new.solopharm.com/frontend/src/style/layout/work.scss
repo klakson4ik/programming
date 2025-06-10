@@ -1,0 +1,80 @@
+/* ignore :increment */
+
+@import "~style";
+@include site-fonts;
+
+:root {
+	font-size: 0.975em;
+
+	@include breakpoint(laptop) {
+		font-size: 1.05em;
+	}
+
+	@include breakpoint(desktop) {
+		font-size: 1.125em;
+	}
+}
+
+html,
+body {
+	scrollbar-gutter: stable;
+}
+
+body {
+	@include reset;
+
+	position: relative;
+	margin: 0;
+	padding: 0;
+	color: $black;
+	font-weight: $font-weight;
+	font-family: $font;
+	line-height: $line-height;
+
+	@include wysiwyg;
+}
+
+.disable-scroll {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+/* Ксатомный скроллбар */
+
+::-webkit-scrollbar {
+	width: 14px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: $white;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: $color-scroll-thumb;
+	border-right: 3.5px solid $white;
+	border-left: 3.5px solid $white;
+	border-radius: 6px;
+
+	&:hover {
+		background-color: $color-scroll-thumb-hover;
+	}
+}
+
+::-webkit-scrollbar-button:single-button {
+	display: block;
+	height: 17px;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+	&:increment {
+		background-image: url('/images/icons/scrollbar/arrow-scrollbar-down.svg');
+	}
+
+	/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+	&:decrement {
+		background-image: url('/images/icons/scrollbar/arrow-scrollbar-top.svg');
+	}
+}

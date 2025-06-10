@@ -1,0 +1,69 @@
+@use 'base' as *;
+
+.b-ymap {
+	&__select {
+		width: 21rem;
+		border-radius: 2px;
+		position: relative;
+		z-index: 3;
+		margin-left: auto;
+		margin-bottom: 2rem;
+
+		& .b-select__dropdown {
+			background-color: var(--c-purple-light-very);
+			max-height: 45rem;
+			overflow-y: auto;
+
+			&::-webkit-scrollbar {
+				width: 5px;
+
+				&-track {
+					background: #f1f1f1;
+					border-radius: 2.5rem;
+				}
+
+				&-thumb {
+					background: #ccc;
+					border-radius: 2.5rem;
+				}
+			}
+		}
+	}
+
+	&__location {
+		height: 60.1rem;
+		position: relative;
+
+		@include breakpoint(sm) {
+			height: 40rem;
+			overflow: hidden;
+		}
+	}
+
+	&__map {
+		width: inherit;
+		height: inherit;
+	}
+
+	& .balloon-container {
+		position: absolute;
+		top: 5rem;
+		left: 5rem;
+		width: 30rem;
+		height: fit-content;
+		z-index: 2;
+		background-color: var(--c-white);
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height var(--trans-time);
+
+		&--active {
+			max-height: 80rem;
+		}
+
+		@include breakpoint(sm){
+			width: 80%;
+		}
+	}
+
+}

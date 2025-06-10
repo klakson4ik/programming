@@ -1,0 +1,96 @@
+@import "~style";
+
+$block-name: "b-supplier";
+
+.#{$block-name} {
+	&__info {
+		margin-bottom: rem(25);
+	}
+
+	&__policy {
+		margin-bottom: rem(40);
+
+		& .b-checkbox:first-child {
+			margin-bottom: rem(10);
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: rem(20);
+		font-weight: 700;
+		font-size: rem(20);
+	}
+
+	&__radio {
+		margin-bottom: rem(40);
+
+		& .b-radio {
+			&__caption {
+				margin-bottom: rem(24);
+			}
+
+			&__row {
+				display: flex;
+				gap: rem(30) rem(70);
+				justify-content: start;
+			}
+		}
+	}
+
+	&__fields {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(37) rem(22);
+		margin-bottom: rem(50);
+
+		&--last {
+			margin-bottom: 0;
+		}
+	}
+
+	&__field {
+		flex-basis: 100%;
+
+		@include breakpoint(tablet) {
+			flex-basis: calc(50% - rem(19));
+		}
+	}
+
+	&__btn {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+
+		& .b-button__icon {
+			display: none;
+
+			@include breakpoint(small) {
+				display: block;
+			}
+		}
+	}
+
+	&__error {
+		color: $error;
+		visibility: hidden;
+		opacity: 0;
+		transition: all 0.5s ease;
+
+		&--active {
+			visibility: visible;
+			opacity: 1;
+			transition: all 0.5s ease;
+
+			& ~ .submit {
+				color: $error;
+				border-color: $error;
+
+				&:hover {
+					color: $white;
+					border-color: $orange;
+				}
+			}
+		}
+	}
+}

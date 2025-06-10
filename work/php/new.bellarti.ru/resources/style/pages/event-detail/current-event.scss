@@ -1,0 +1,8 @@
+@use 'base' as *;
+
+.b-event-detail {
+	&__wrapper {
+		max-width: 80rem;
+	}
+
+}

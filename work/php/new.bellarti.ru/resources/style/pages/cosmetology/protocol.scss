@@ -1,0 +1,121 @@
+@use "sass:map";
+@use "base" as *;
+
+.b-protocol {
+	background: rgb(213, 207, 238, 0.3);
+	padding: vmax(150) 0;
+	background-repeat: no-repeat;
+	background-size: 140%;
+	background-position-x: -3rem;
+
+	@include breakpoint(xl) {
+		background-size: unset;
+		background-position-x: right;
+	}
+
+	@include breakpoint(md) {
+		background-position: center center;
+	}
+
+	&__text img {
+		width: auto;
+	}
+
+	&__cards {
+		display: flex;
+	}
+
+	&__card {
+		flex-shrink: 0;
+	}
+
+	&-card__method-image {
+		margin-bottom: vw(35);
+
+		@include breakpoint(md) {
+			margin-bottom: 3rem;
+		}
+	}
+
+	&-card__method {
+		&-item {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&-content {
+			display: flex;
+			width: 100%;
+		}
+
+		&-title {
+			line-height: 100%;
+			margin-bottom: 5px;
+		}
+
+		&-number {
+			min-width: 3rem;
+			height: 3rem;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&-description {
+			margin-left: vw(13);
+
+			@include breakpoint(md) {
+				margin-left: 1.3rem;
+			}
+		}
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: vmax(50);
+	}
+
+	&__item {
+		cursor: pointer;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid var(--c-purple-dark);
+
+		&:hover {
+			border-bottom-color: var(--c-purple-light);
+
+			& .b-protocol__caption {
+				color: var(--c-purple-light);
+			}
+
+			& .b-protocol__arrow {
+				--color: var(--c-purple-light);
+			}
+		}
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		gap: 0 2rem;
+	}
+
+	&__arrow {
+		display: flex;
+		align-items: center;
+		--color: var(--c-purple-dark, purple);
+	}
+
+	&__dropdown {
+		margin-top: 0;
+		overflow: hidden;
+		transition: height var(--trans-time), margin-top var(--trans-time);
+
+		&.dropdown--active {
+			margin-top: 1.5rem;
+		}
+	}
+}

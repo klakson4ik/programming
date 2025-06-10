@@ -1,0 +1,74 @@
+@import "~style";
+
+$block-name: "b-checkbox";
+
+.#{$block-name} {
+	position: relative;
+
+	&__field {
+		position: absolute;
+		z-index: -1;
+		opacity: 0;
+
+		&:checked + label::before {
+			background-color: $orange;
+			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+			border-color: $orange;
+		}
+	}
+
+	&__label {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		user-select: none;
+
+		&::before {
+			display: block;
+			flex-basis: 18px;
+			flex-shrink: 0;
+			height: 18px;
+			margin-right: rem(14);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 75% 75%;
+			border: 1px solid $gray;
+			border-radius: rem(4);
+			content: "";
+		}
+
+		&:hover::before {
+			border-color: $orange;
+		}
+
+		& > span {
+			padding-top: 3px;
+		}
+	}
+
+	&__validate {
+		position: absolute;
+		bottom: rem(-15);
+		margin-top: rem(5);
+		overflow: hidden;
+		color: $error;
+		font-size: rem(14);
+	}
+}
+
+.b-field--error {
+	&  .#{$block-name}__label {
+		transition: all 0.5s ease;
+
+		&::before {
+			border-color: $error;
+		}
+	}
+
+	& .errors {
+		height: auto;
+		visibility: visible;
+		opacity: 1;
+		transition: all 0.5s ease;
+	}
+}

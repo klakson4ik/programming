@@ -1,0 +1,38 @@
+@use "sass:map";
+@use 'base' as *;
+
+.b-arrow-select {
+	position: relative;
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__line {
+		position: absolute;
+		width: 1.5rem;
+		height: 2px;
+		background-color: var(--color, var(--c-black, black));
+		transition: transform var(--trans-time), background-color var(--trans-time);
+
+		&:first-child {
+			transform: rotate(45deg) translate(-50%, -50%);
+		}
+
+		&:last-child {
+			transform: rotate(-45deg) translateX(8px);
+		}
+	}
+}
+
+.icon--active {
+	& .b-arrow-select__line {
+		&:first-child {
+			transform: rotate(135deg) translate(-2px, 7px);
+		}
+		&:last-child {
+			transform: rotate(45deg) translateY(-9px);
+		}
+	}
+}

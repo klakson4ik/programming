@@ -1,0 +1,145 @@
+@import "~style";
+
+$block-name: "b-product";
+
+.#{$block-name} {
+	position: relative;
+
+	&__mobile {
+		@include breakpoint(laptop) {
+			display: none;
+		}
+
+		position: fixed;
+		top: rem(58);
+		left: 0;
+		z-index: 2;
+		width: 100%;
+		background-color: $white;
+		box-shadow: 0 5px 10px 0 lightgray;
+
+		& .b-breadcrumbs {
+			--display-bc: flex;
+
+			padding-top: rem(20);
+		}
+
+		&-title {
+			margin-top: rem(30);
+			margin-bottom: rem(30);
+			font-weight: 700;
+			font-size: rem(48);
+		}
+	}
+
+	&__title {
+		display: none;
+
+		@include breakpoint(laptop) {
+			display: block;
+		}
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(45);
+		margin-top: rem(210);
+
+		@include breakpoint(laptop) {
+			margin-top: unset;
+		}
+
+		@include breakpoint(laptop) {
+			flex-wrap: nowrap;
+		}
+	}
+
+	&__column {
+		&-left {
+			display: none;
+
+			@include breakpoint(laptop) {
+				display: block;
+				flex-basis: rem(295);
+			}
+		}
+
+		&-right {
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+	}
+
+	&__main {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+	}
+
+	&__filter-mobile {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		padding-top: rem(75);
+		padding-bottom: rem(30);
+		overflow: auto;
+		background-color: $white;
+		box-shadow: 0 8px 20px $light;
+		transition: all 0.7s ease;
+
+		&--inactive {
+			transform: translate(0, -100%);
+			transition: all 0.7s ease;
+		}
+
+		@include breakpoint(laptop) {
+			display: none;
+		}
+
+		&-btn {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			margin-bottom: rem(18);
+			color: $orange;
+			font-weight: 400;
+			font-size: rem(24);
+			cursor: pointer;
+			transition: all 0.7s ease;
+
+			@include breakpoint(laptop) {
+				display: none;
+			}
+
+			& .icon {
+				vertical-align: middle;
+				stroke: $orange;
+			}
+
+			& .icon--arrow-short {
+				width: rem(14);
+				height: rem(10);
+				transition: all 0.7s ease;
+			}
+
+			&:hover .icon--arrow-short {
+				transform: rotate(180deg);
+				transition: all 0.7s ease;
+			}
+		}
+	}
+}
+
+.b-breadcrumbs {
+	--display-bc: none;
+
+	@include breakpoint(laptop) {
+		--display-bc: flex;
+	}
+}

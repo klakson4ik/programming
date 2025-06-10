@@ -1,0 +1,2 @@
+# Обновление sitemap
+0 2 * * * cd /home/bellarti/; php artisan make:sitemap;

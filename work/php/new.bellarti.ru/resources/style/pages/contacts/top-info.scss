@@ -1,0 +1,16 @@
+@use "base" as *;
+
+.b-top-info {
+	padding-bottom: 11.6rem;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	@include breakpoint(lg) {
+		padding-bottom: calc(var(--header-height));
+	}
+
+	@include breakpoint(md) {
+		padding-bottom: calc(var(--header-height) - 2rem);
+	}
+
+}

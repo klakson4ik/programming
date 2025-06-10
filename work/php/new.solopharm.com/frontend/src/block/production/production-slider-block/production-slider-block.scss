@@ -1,0 +1,128 @@
+@import "~style";
+
+$block-name: "b-production-slider-block";
+
+.#{$block-name} {
+	display: flex;
+	flex-direction: column;
+	gap: rem(10);
+	width: 100%;
+	border-bottom: #eaeaea solid 2px;
+
+	@include breakpoint(laptop) {
+		flex-direction: row;
+		gap: rem(80);
+	}
+
+	&__nav {
+		flex-shrink: 0;
+		padding-bottom: rem(20);
+
+		@include breakpoint(laptop) {
+			padding-top: rem(32);
+			padding-bottom: 0;
+		}
+	}
+
+	&__date {
+		position: relative;
+		width: 100%;
+		white-space: nowrap;
+
+		&::before {
+			position: absolute;
+			bottom: -8px;
+			left: -5px;
+			z-index: 4;
+			width: 6px;
+			height: 6px;
+			background-color: black;
+			border-radius: 20px;
+			content: " ";
+		}
+
+		&::after {
+			position: absolute;
+			bottom: -5px;
+			left: -5px;
+			z-index: 2;
+			width: 130%;
+			height: 1px;
+			background-color: #eaeaea;
+			content: " ";
+		}
+	}
+
+	&__text {
+		width: 80%;
+		margin-top: 55px;
+		opacity: 0;
+		transition: 0s;
+
+		@include breakpoint(tablet) {
+			width: 50%;
+		}
+	}
+
+	&__slider {
+		display: inline-block;
+		width: 100% !important;
+		overflow: hidden;
+
+		.swiper-slide {
+			position: relative;
+			width: 100%;
+			height: 400px;
+			padding: 20px;
+			transition: 0.3s;
+
+			@include breakpoint(tablet) {
+				width: 200px !important;
+				transition: 0.3s;
+			}
+
+			&:hover {
+				cursor: pointer;
+
+				.#{$block-name}__date {
+					&::before {
+						bottom: -9px;
+						left: -5px;
+						z-index: 4;
+						width: 8px;
+						height: 8px;
+						background-color: $orange;
+						border-radius: 10px;
+						outline: 5px solid #fc674994;
+						transition: 0.3s;
+					}
+				}
+			}
+		}
+
+		.swiper-slide-active {
+			.#{$block-name}__text {
+				opacity: 1;
+				transition: 3s;
+			}
+
+			.#{$block-name}__date {
+				&::before {
+					bottom: -9px;
+					left: -5px;
+					z-index: 4;
+					width: 8px;
+					height: 8px;
+					background-color: $orange;
+					border-radius: 10px;
+					box-shadow: 0 0 0 5px rgb(252 103 73 / 58%);
+					transition: 0.3s;
+				}
+			}
+
+			@include breakpoint(tablet) {
+				width: 400px !important;
+			}
+		}
+	}
+}

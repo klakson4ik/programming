@@ -1,0 +1,84 @@
+@import "~style";
+
+$block-name: "b-internship";
+
+.#{$block-name} {
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition: all 0.5s ease;
+
+	&--active {
+		height: auto;
+		opacity: 1;
+		transition: all 0.5s ease;
+
+		@include section-margin('top');
+	}
+
+	&__top {
+		display: flex;
+		gap: rem(17);
+		align-items: center;
+		margin-bottom: rem(15);
+		padding-bottom: rem(25);
+		border-bottom: 1px solid $color-bullet;
+	}
+
+	&__exclamation {
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+		width: rem(30);
+		height: rem(30);
+		color: $white;
+		line-height: 1;
+		background-image: url('/images/icons/exclamation-back.svg');
+		background-position: center;
+		background-size: cover;
+
+		@include breakpoint(tablet) {
+			width: rem(45);
+			height: rem(45);
+		}
+	}
+
+	&__city-note {
+		line-height: 1;
+	}
+
+	&__fields {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(37) rem(22);
+	}
+
+	&__field {
+		flex-basis: 100%;
+
+		@include breakpoint(tablet) {
+			flex-basis: calc(50% - rem(11));
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		gap: rem(37);
+		justify-content: space-between;
+		width: 100%;
+
+		@include breakpoint(tablet) {
+			width: calc(50% - rem(11));
+		}
+
+		& .icon--arrow-long {
+			display: none;
+
+			@include breakpoint(small) {
+				display: block;
+			}
+		}
+	}
+}

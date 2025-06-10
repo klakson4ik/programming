@@ -1,0 +1,57 @@
+@use 'base' as *;
+
+.b-injection {
+	display: flex;
+	justify-content: space-between;
+	gap: 3rem;
+
+	@include breakpoint(lg){
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	&__column {
+		flex-basis: 50%;
+
+		@include breakpoint(lg) {
+			flex-basis: unset;
+		}
+	}
+
+	&__desc {
+		margin-bottom: vmax(60);
+	}
+
+	&__subtitle {
+		margin-bottom: vmax(35);
+	}
+
+	&__items {
+		display: flex;
+		justify-content: space-between;
+		gap: 3.5rem;
+
+		@include breakpoint(sm) {
+			flex-wrap: wrap;
+			justify-content: left;
+			gap: 2rem;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+
+		@include breakpoint(sm) {
+			flex-basis: 45%;
+		}
+
+		@include breakpoint(385){
+			flex-basis: 100%;
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+		}
+	}
+}

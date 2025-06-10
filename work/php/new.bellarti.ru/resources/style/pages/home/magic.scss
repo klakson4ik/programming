@@ -1,0 +1,30 @@
+@use "base" as *;
+
+.b-magic {
+	padding: max(vw(95), 4rem) 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	@include breakpoint(xl) {
+		background-position-x: right;
+	}
+
+	@include breakpoint(md) {
+		background-position: center center;
+	}
+
+	&__items {
+		display: flex;
+		justify-content: space-between;
+		gap: max(vw(60), 2rem);
+
+		@include breakpoint(sm) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__item {
+		display: flex;
+		gap: 2rem;
+	}
+}

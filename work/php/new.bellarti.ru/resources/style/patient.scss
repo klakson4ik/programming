@@ -1,0 +1,23 @@
+@forward 'layout';
+
+@forward "common";
+
+@forward "pages/patient/main";
+@forward "pages/patient/bio";
+@forward 'pages/home/injection';
+@forward "pages/patient/magic";
+@forward "pages/patient/eco";
+@forward 'pages/home/product';
+@forward 'pages/patient/cosmetic';
+@forward 'pages/cosmetology/example';
+@forward 'pages/patient/faq';
+@forward 'pages/patient/blog';
+@forward 'pages/patient/ymap';
+@forward 'pages/patient/balloon';
+@forward "pages/patient/map-infos";
+
+@forward 'component/slider/nav-default';
+@forward 'component/picture';
+@forward 'component/select';
+@forward 'component/trash';
+@forward 'component/pagination/side';

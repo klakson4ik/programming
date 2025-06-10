@@ -1,0 +1,41 @@
+@use 'base' as *;
+
+.one-blog {
+
+	&__img-wrapper,
+	&__desc,
+	&__info {
+		margin-bottom: 3.5rem;
+	}
+
+	&__desc--reduced {
+		display: -webkit-box;
+		-webkit-line-clamp: 4;
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+		word-break: break-all;
+	}
+
+	&__info {
+
+		&,
+		&-left {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&-date {
+			padding: 8px 2.5rem;
+			margin-right: 2rem;
+		}
+	}
+
+	&__link {
+		display: inline-flex;
+
+		& svg {
+			margin-left: 6px;
+		}
+	}
+}

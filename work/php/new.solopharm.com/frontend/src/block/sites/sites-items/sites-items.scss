@@ -1,0 +1,61 @@
+@import "~style";
+
+$block-name: "b-sites-items";
+
+.#{$block-name} {
+	&__slide {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: initial;
+	}
+
+	&__desc,
+	&__text,
+	&__title,
+	&__img {
+		display: inline-block;
+		margin-bottom: rem(24);
+	}
+
+	&__img {
+		display: block;
+		text-align: center;
+	}
+
+	&__desc {
+		min-height: rem(45);
+	}
+
+	&__title {
+		display: block;
+		width: 100%;
+		padding: rem(10) rem(30) rem(7) rem(30);
+		color: $white;
+		font-weight: 700;
+		font-size: rem(24);
+		text-align: center;
+		background-color: $orange;
+		border-radius: 40px;
+	}
+
+	&__container-slider {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	&__nav {
+		display: flex;
+		gap: rem(20);
+		justify-content: flex-end;
+		width: 100%;
+		margin-top: rem(20);
+
+		& .b-arrow--left::before,
+		.b-arrow--right::after {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}

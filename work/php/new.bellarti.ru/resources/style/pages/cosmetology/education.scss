@@ -1,0 +1,74 @@
+@use "base" as *;
+
+.b-education {
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 2rem;
+		margin-bottom: vmax(36);
+	}
+
+	&__column--city {
+		width: 21rem;
+		border-radius: 2px;
+		position: relative;
+		z-index: 3;
+
+		& .b-select__dropdown {
+			background-color: var(--c-purple-light-very);
+		}
+	}
+
+	&__column--date {
+		display: flex;
+		gap: 3rem;
+		align-items: center;
+	}
+
+	&__date-action {
+		display: flex;
+		gap: 9px;
+
+		@include breakpoint(sm) {
+			display: none;
+		}
+
+		& > button {
+			padding: 10px 7px;
+			border-radius: 50%;
+			color: var(--c-purple-dark);
+			&:hover {
+				background-color: var(--c-purple-light-very);
+			}
+		}
+	}
+
+	&__prev {
+		transform: rotate(90deg);
+	}
+
+	&__next {
+		transform: rotate(-90deg);
+	}
+
+	&__date-select {
+		border: 1px solid var(--c-gray);
+		border-radius: 2px;
+		width: 20rem;
+
+		& .b-select__dropdown {
+			border: 1px solid var(--c-gray);
+			background-color: var(--c-white);
+			border-top: 0;
+			left: -1px;
+		}
+	}
+
+	& .icon {
+		transition: transform var(--trans-time);
+		&--active {
+			transform: rotate(180deg);
+		}
+	}
+}

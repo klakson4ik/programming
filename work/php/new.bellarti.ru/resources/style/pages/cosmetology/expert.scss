@@ -1,0 +1,34 @@
+@use "base" as *;
+
+.b-expert {
+	&__swiper-container {
+		position: relative;
+	}
+
+	&__swiper {
+		overflow-x: hidden;
+	}
+
+	&__cards {
+		display: flex;
+	}
+
+	&__card {
+		flex-shrink: 0;
+	}
+
+	&-card {
+		&__img {
+			margin-bottom: 1.8rem;
+			display: flex;
+			justify-content: center;
+			& img{
+				object-fit: none;
+			}
+		}
+
+		&__name {
+			margin-bottom: 8px;
+		}
+	}
+}

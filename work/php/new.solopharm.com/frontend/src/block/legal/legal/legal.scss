@@ -1,0 +1,15 @@
+@import "~style";
+
+$block-name: "b-legal";
+
+.#{$block-name} {
+	&__legals {
+		display: grid;
+		grid: auto-flow / repeat(auto-fill, minmax(rem(366), 1fr));
+		gap: rem(21);
+
+		&:not(:last-child) {
+			@include section-margin;
+		}
+	}
+}

@@ -1,0 +1,100 @@
+@import "~style";
+
+$block-name: "b-club-block-2";
+
+.#{$block-name} {
+	&__top-text {
+		margin-bottom: rem(40);	
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include breakpoint(laptop) {
+			flex-wrap: nowrap;
+		}
+
+		gap: rem(65);
+	}
+
+	&__column {
+		@include breakpoint(laptop) {
+			flex-basis: calc(50% - rem(33));
+		}
+
+		&--title {
+			margin-top: rem(-10);
+			font-weight: 700;
+			font-size: rem(40);
+		}
+
+		&--slider {
+			position: relative;
+			max-width: rem(540);
+			margin: 0 auto;
+			overflow: hidden;
+
+			@include breakpoint(laptop) {
+				margin: unset;
+			}
+		}
+
+		&-top {
+			display: flex;
+			flex-wrap: wrap;
+			gap: rem(20) rem(10);
+			justify-content: center;
+
+			@include breakpoint(small){
+				justify-content: space-between;
+			}
+		}
+	}
+
+	&__nav {
+		margin-bottom: rem(54);
+		text-align: end;
+
+		&-prev {
+			margin-right: rem(20);
+		}
+	}
+
+	&__caption {
+		margin-top: rem(5);
+		color: rgb(204 204 204);
+		font-weight: 400;
+		font-size: rem(20);
+	}
+
+	&__desc {
+		&-item {
+			overflow: hidden;
+			opacity: 0;
+			transition: all 0.5s ease;
+
+			&--active {
+				opacity: 1;
+				transition: all 0.5s ease;
+			}
+
+			&-title {
+				margin-bottom: rem(24);
+				font-weight: 700;
+				font-size: rem(40);
+			}
+
+			&-desc {
+				line-height: 1.6;
+			}
+		}
+	}
+
+	&__slider {
+		position: relative;
+		right: 0;
+		display: flex;
+		transition: all 0.5s ease;
+	}
+}

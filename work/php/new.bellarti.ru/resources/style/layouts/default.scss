@@ -1,0 +1,73 @@
+@use "libs/reset" as *;
+@use "libs/variables" as *;
+@use "libs/mixins" as *;
+@use "libs/fonts" as *;
+@use "libs/function" as *;
+
+@forward "../component/cookie/cookie.scss";
+
+html {
+	font-size: 62.5%;
+}
+
+@include reset;
+@include fonts;
+
+body {
+	font-size: 1.6rem;
+	font-family: "Inter", Helvetica, Arial;
+	line-height: 1.3;
+	font-weight: 400;
+	color: var(--c-black);
+	background: var(--c-white);
+	margin: 0;
+	padding: 0;
+
+	@include breakpoint(md) {
+		font-size: 1.4rem;
+	}
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 8rem;
+	word-break: break-word;
+
+	@include breakpoint(lg) {
+		font-size: 6rem;
+	}
+
+	@include breakpoint(sm) {
+		font-size: 4rem;
+	}
+}
+
+h2 {
+	line-height: 1.2;
+	margin-bottom: vmax(35);
+
+	@include adaptiveFS(5.4);
+}
+
+h3 {
+	@include h3();
+}
+
+h4 {
+	@include h4();
+}
+
+sup,
+sub {
+	line-height: 0;
+}
+
+b {
+	font-weight: 700;
+}

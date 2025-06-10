@@ -1,0 +1,36 @@
+@use "base" as *;
+
+.b-sterilization {
+	margin-bottom: vw(200);
+	display: flex;
+	align-items: center;
+	padding-top: vw(100);
+
+	@include breakpoint(md) {
+		margin-bottom: 6rem;
+		padding-top: 0;
+	}
+
+	&__picture {
+		@include breakpoint(md) {
+			display: none;
+		}
+	}
+
+	&__picture,
+	&__detail {
+		flex-basis: 100%;
+	}
+
+	& picture {
+		left: 19rem;
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		transform: translate(-50%, -50%);
+		height: 50rem;
+		width: 81.9rem;
+		animation: rightAndLeft 7s ease infinite;
+	}
+
+}

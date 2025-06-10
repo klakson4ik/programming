@@ -1,0 +1,19 @@
+@forward 'layout';
+
+@forward "common";
+
+@forward 'pages/news/main';
+@forward 'pages/home/product';
+@forward 'pages/news-detail/text';
+
+@forward 'pages/patient/blog';
+
+@forward 'component/slider/pag-default';
+@forward 'component/slider/nav-default';
+
+@forward 'pages/patient/ymap';
+@forward 'pages/patient/balloon';
+
+@forward 'component/select';
+@forward 'component/social-share';
+@forward 'component/trash';

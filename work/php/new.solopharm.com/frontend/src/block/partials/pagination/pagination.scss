@@ -1,0 +1,46 @@
+@import "~style";
+
+$block-name: "b-pagination";
+
+.#{$block-name} {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+
+	&__line {
+		display: inline;
+		display: flex;
+		flex: 1;
+		flex-wrap: nowrap;
+		margin-right: rem(30);
+
+		&-item {
+			flex: 1;
+			height: 10px;
+
+			& > div {
+				@include vertical-align;
+
+				width: 100%;
+				height: 2px;
+				background-color: $light;
+				transition: all 0.3s ease;
+			}
+
+			&:hover > div {
+				background-color: $gray;
+				transition: all 0.3s ease;
+			}
+
+			&--current {
+				& > div {
+					background-color: $orange;
+				}
+
+				&:hover > div {
+					background-color: $orange;
+				}
+			}
+		}
+	}
+}

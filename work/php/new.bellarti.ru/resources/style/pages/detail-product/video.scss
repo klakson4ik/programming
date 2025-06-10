@@ -1,0 +1,58 @@
+@use "base" as *;
+
+.b-videoInstructions {
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 3rem;
+		margin: 0 auto;
+
+		@include breakpoint(lg) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include breakpoint(md) {
+			grid-template-columns: 1fr;
+			justify-items: center;
+		}
+	}
+
+	&__title {
+		margin: vw(125) 0 vw(50);
+
+		@include breakpoint(md) {
+			margin-bottom: 3rem;
+		}
+	}
+
+	&__link {
+		display: block;
+		margin: 3.5rem auto 0;
+	}
+
+	&-block video {
+		min-height: 21.5rem;
+		width: 100%;
+		object-fit: fill;
+	}
+
+	&-block iframe {
+		min-height: 21.5rem;
+		min-width: 100%;
+		width: 100%;
+	}
+
+
+
+	&-block {
+		max-width: 38.3rem;
+		width: 100%;
+
+		&-title {
+			margin-top: 2rem;
+		}
+	}
+
+
+
+}

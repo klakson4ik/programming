@@ -1,0 +1,53 @@
+@use "base" as *;
+
+.b-header__mobile-menu .b-menu {
+	text-transform: uppercase;
+	transition: all 0.3s linear;
+
+	@include container-padding();
+	&__level--root {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		& > li {
+			padding-bottom: 1.5rem;
+			border-bottom: 1px solid var(--c-gray-light);
+			& .b-menu__arrow {
+				height: 1.5rem;
+			}
+		}
+
+		& ul {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+		}
+		& li {
+			& > a {
+				margin-right: 2rem;
+			}
+
+			& > ul li {
+				margin-left: 2rem;
+			}
+		}
+	}
+
+	&__level--1,
+	&__level--2 {
+		transition: all 0.3s ease;
+		max-height: 0;
+		overflow: hidden;
+	}
+
+	&--active {
+		max-height: 50rem;
+		padding-top: 2rem;
+		padding-bottom: 1rem;
+	}
+
+	&__arrow {
+		float: right;
+	}
+}

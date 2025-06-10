@@ -1,0 +1,45 @@
+@use "base" as *;
+
+.b-breadcrumbs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.4rem;
+	justify-content: start;
+	align-items: center;
+
+	&--background {
+		padding-top: calc(var(--header-height) + 6rem);
+		padding-bottom: 9rem;
+
+		@include breakpoint(lg) {
+			padding-top: calc(var(--header-height));
+			padding-bottom: 5rem;
+		}
+
+		@include breakpoint(sm) {
+			padding-top: calc(var(--header-height) - 2rem);
+			padding-bottom: 2rem;
+		}
+	}
+
+	&__item {
+		font-size: 1.2rem;
+
+		&--active {
+			pointer-events: none;
+
+			&>a {
+				color: var(--c-black);
+			}
+		}
+
+		&>a :hover {
+			text-decoration: underline;
+		}
+
+		&:not(:first-child)::before {
+			content: "/";
+			padding-right: 7px;
+		}
+	}
+}

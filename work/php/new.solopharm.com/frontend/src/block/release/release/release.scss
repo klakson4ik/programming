@@ -1,0 +1,22 @@
+@import "~style";
+
+$block-name: "b-release";
+
+.#{$block-name} {
+	&__items {
+		display: grid;
+		gap: rem(25);
+
+		@include breakpoint(small) {
+			grid: auto-flow / repeat(2, 1fr);
+		}
+
+		@include breakpoint(tablet) {
+			grid: auto-flow / repeat(3, 1fr);
+		}
+
+		@include breakpoint(laptop) {
+			grid: auto-flow / repeat(4, 1fr);
+		}
+	}
+}

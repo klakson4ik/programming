@@ -1,0 +1,136 @@
+@import "~style";
+
+$block-name: "b-product-filter";
+
+.#{$block-name} {
+	& > input {
+		width: 100%;
+		height: rem(50);
+		margin-bottom: rem(30);
+		padding: rem(5) rem(20);
+		border: 1px solid $gray;
+		border-radius: rem(25);
+
+		@include breakpoint(small) {
+			width: rem(295);
+		}
+
+		&::placeholder {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		&:hover {
+			border: 1px solid $orange;
+		}
+	}
+
+	&__search::placeholder{
+		color: $gray;
+	}
+
+	&__filters {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: rem(15);
+		margin-bottom: rem(30);
+
+		@include breakpoint(small) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include breakpoint(laptop) {
+			display: block;
+		}
+	}
+
+	&__item,
+	&__dropdown-item {
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+	}
+
+	&__item input[type="checkbox"]:checked ~ &__dropdown-container > ul {
+		margin-top: 0;
+	}
+
+	&__btns {
+		display: flex;
+		margin-bottom: rem(30);
+
+		& > .b-button {
+			margin-right: rem(20);
+		}
+	}
+
+	&__additional-fields {
+		margin-bottom: rem(30);
+		padding: 10px 0;
+		border-top: 1px solid $light;
+		border-bottom: 1px solid $light;
+	}
+
+	&__info {
+		margin-bottom: rem(46);
+		color: $gray;
+		font-weight: 400;
+		font-size: rem(14);
+
+		& > span {
+			color: $orange;
+		}
+	}
+
+	&__catalog-doc-item {
+		display: block;
+		margin-bottom: rem(10);
+		color: $orange;
+		text-decoration: underline;
+
+		&:hover {
+			color: $black;
+		}
+	}
+
+	&__dropdown-button {
+		cursor: pointer;
+	}
+
+	&__dropdown-container {
+		overflow: hidden;
+	}
+
+	&__dropdown-list {
+		max-height: 257px;
+		margin-top: calc(-1 * var(--item-height, calc(100% + 49px)));
+		padding: 10px 0;
+		overflow: auto;
+		transition: margin-top 0.4s ease;
+
+		&.show {
+			margin-top: 0;
+		}
+
+		&::-webkit-scrollbar {
+			width: 2px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: $light;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: $orange;
+			border: none;
+			border-radius: 0;
+
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+
+		&::-webkit-scrollbar-button {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,66 @@
+@import "~style";
+
+$block-name: "b-button";
+
+.#{$block-name} {
+	display: block;
+	width: fit-content;
+	padding: rem(10) rem(20);
+	color: $orange;
+	background-color: transparent;
+	border: 2px solid $orange;
+	border-radius: rem(100);
+	cursor: pointer;
+	transition: all 0.5s ease;
+
+	&:hover {
+		color: $white;
+		background-color: $orange;
+		transition: all 0.5s ease;
+
+		& .icon {
+			transition: stroke 0.5s ease;
+			stroke: $white;
+		}
+	}
+
+	&--reverse {
+		color: $white;
+		background-color: $orange;
+
+		&:hover {
+			border: 2px solid $white;
+		}
+	}
+
+	&__icon {
+		padding-left: rem(23);
+
+		& .icon {
+			vertical-align: middle;
+			transition: stroke 0.5s ease;
+			stroke: $orange;
+
+			&--arrow-long {
+				width: rem(51);
+				height: rem(13);
+				stroke-width: 2px;
+			}
+
+			&--download {
+				width: rem(39);
+				height: rem(35);
+			}
+
+			&--watch {
+				width: rem(36);
+				height: rem(36);
+			}
+		}
+	}
+
+	&--submit {
+		display: flex;
+		align-items: center;
+	}
+}

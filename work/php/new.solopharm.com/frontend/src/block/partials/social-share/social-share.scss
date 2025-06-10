@@ -1,0 +1,36 @@
+@import "~style";
+
+$block-name: "b-social-share";
+
+.#{$block-name} {
+	position: relative;
+	display: flex;
+	padding: rem(15);
+	background-color: $white;
+	border: 1px solid $gray;
+	border-radius: 5px;
+
+	& > li {
+		float: left;
+
+		&:not(:last-child){
+			margin-right: rem(7);
+		}
+	}
+
+	&::after,
+	&::before {
+		position: absolute;
+		top: -20px;
+		left: 50%;
+		border: 10px solid transparent;
+		border-bottom: 10px solid $gray;
+		transform: translate(-50%, 0);
+		content: "";
+	}
+
+	&::after {
+		top: -18px;
+		border-bottom: 10px solid $white;
+	}
+}

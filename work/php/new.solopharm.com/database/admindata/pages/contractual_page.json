@@ -1,0 +1,26 @@
+{
+	"title": "Экспортные рынки",
+	"data": {
+		"title": "text",
+		"desc": "text",
+		"img": "string",
+		"block_1_title": "text",
+		"block_1_img": "string",
+		"block_1_data": "json",
+		"block_2_title": "text",
+		"block_2_desc": "text",
+		"block_2_data": "json",
+		"block_2_img": "string",
+		"block_3_title": "text",
+		"block_3_desc": "text",
+		"block_3_data": "json",
+		"block_3_img": "string",
+		"block_4_title": "text",
+		"block_4_desc": "text",
+		"block_4_img": "string",
+		"btn_1": "string",
+		"action_1": "string",
+		"btn_2": "string",
+		"action_2": "string"
+	}
+}

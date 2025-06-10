@@ -1,0 +1,55 @@
+@use "base" as *;
+
+.b-substances {
+	display: flex;
+	align-items: center;
+
+	&__detail,
+	&__picture {
+		flex-basis: 100%;
+	}
+
+	&__picture {
+		flex-basis: 80%;
+
+		@include breakpoint(lg) {
+			flex-basis: 70%;
+		}
+
+		@include breakpoint(md) {
+			display: none;
+		}
+
+	}
+
+	&__detail {
+		&-title {
+			margin-bottom: 3.5rem;
+		}
+
+		&-subtitle {
+			margin-bottom: 4px;
+		}
+
+		&-item {
+			padding-right: vw(87);
+		}
+	}
+
+	&__detail-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: 3rem;
+	}
+
+	&__picture picture {
+		right: -40rem;
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		transform: translate(-50%, -50%);
+		animation: topAndBotom 7s ease infinite;
+	}
+}
+

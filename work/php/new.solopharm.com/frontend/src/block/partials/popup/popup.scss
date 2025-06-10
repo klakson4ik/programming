@@ -1,0 +1,115 @@
+@import "~style";
+
+$block-name: "b-popup";
+
+.#{$block-name} {
+	position: fixed;
+	inset: 0;
+	z-index: 3;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+
+	&--active {
+		visibility: visible;
+		opacity: 1;
+		transition: all 0.5s ease;
+	}
+
+	&__container {
+		position: absolute;
+		width: inherit;
+		height: inherit;
+		background-color: $gray;
+		opacity: 0.9;
+	}
+
+	&__window {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 90vmin;
+		background-color: $white;
+		transform: translate(-50%, -50%);
+
+		&--panorama {
+			width: 80%;
+		}
+
+		&-content {
+			width: 100%;
+			height: 100%;
+		}
+
+		&-close {
+			position: absolute;
+			top: rem(-25);
+			right: 0;
+			text-shadow: 0 1px 0 #fff;
+			cursor: pointer;
+
+			& .icon--close {
+				width: rem(16);
+				height: rem(16);
+				transition: all 0.3s ease;
+				stroke: $white;
+			}
+
+			&:hover {
+				& .icon--close {
+					width: rem(19);
+					height: rem(19);
+					transform: rotate(180deg);
+					transition: all 0.3s ease;
+				}
+			}
+		}
+
+		&-container {
+			padding: rem(30);
+		}
+
+		&-header {
+			margin-bottom: rem(30);
+			padding-bottom: rem(30);
+			font-weight: 700;
+			font-size: rem(24);
+			text-align: center;
+			border-bottom: 1px solid $light;
+		}
+
+		&-content {
+			font-size: rem(20);
+		}
+
+		&__footer {
+			margin-top: rem(30);
+			padding-top: rem(30);
+			border-top: 1px solid $light;
+		}
+	}
+
+	&__video {
+		&-wrap {
+			position: relative;
+			padding-top: 56.25%;
+
+			& > iframe, & .b-popup__video-item {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: block;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				border: none;
+			}
+		}
+	}
+
+	&__panorama {
+		width: 1024px;
+		height: 768px;
+	}
+}

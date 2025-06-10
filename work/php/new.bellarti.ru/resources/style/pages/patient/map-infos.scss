@@ -1,0 +1,39 @@
+@use "base" as *;
+
+.b-patient__ymap-infos {
+	& .replacement {
+		margin-top: 4rem;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 4rem 3rem;
+		animation: fade .5s;
+
+		@include breakpoint(lg) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include breakpoint(sm) {
+			margin-top: 2rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		& .b-balloon {
+			padding: 0;
+			flex: 0 0 28.5rem;
+		}
+
+		.b-balloon__close {
+			display: none;
+		}
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

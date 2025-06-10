@@ -1,0 +1,81 @@
+@use "base" as *;
+
+.b-card-event {
+	display: flex;
+	gap: 2rem;
+
+	@include breakpoint(sm){
+		flex-direction: column;
+	}
+
+	&__img {
+		flex-basis: 28.2rem;
+		flex-shrink: 0;
+
+		& > img {
+			word-break: break-word;
+		}
+
+		@include breakpoint(lg) {
+			flex-shrink: 1;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		animation: a-opacity 1s forwards;
+	}
+
+	&__title {
+		word-break: break-word;
+	}
+
+	&__right {
+		flex-basis: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 2rem;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
+
+	&__date {
+		padding: 8px max(vw(25), 8px);
+	}
+
+	&__city {
+		margin-bottom: 1.5rem;
+	}
+
+	&__desc {
+		display: -webkit-box;
+		-webkit-line-clamp: 4;
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+		word-break: break-all;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
+}
+
+@keyframes a-opacity {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

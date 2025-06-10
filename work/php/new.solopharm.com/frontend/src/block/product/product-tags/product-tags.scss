@@ -1,0 +1,30 @@
+@import "~style";
+
+$block-name: "b-product-tags";
+
+.#{$block-name} {
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(30);
+	margin-bottom: rem(50);
+	color: $orange;
+	font-weight: 400;
+
+	&>li {
+		&>button {
+			margin-left: rem(5);
+			cursor: pointer;
+
+			& .icon {
+				width: rem(12);
+				height: rem(12);
+				vertical-align: middle;
+				stroke: $gray;
+
+				&:hover {
+					stroke: $orange;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,74 @@
+.dots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    height: 100%;
+}
+
+.dots-image-wrapper {
+    display: inline-flex;
+    position: relative;
+    width: max-content;
+    height: max-content;
+    margin: 0 auto;
+}
+
+.dot {
+    display: grid;
+    place-items: center;
+    color: white;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    cursor: grab;
+    user-select: none;
+    transform: translate(-50%, -50%);
+}
+
+.dots-footer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    grid-column: 1 / 3;
+}
+
+.dots-points {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: auto;
+}
+
+.dots-points-container {
+    display: flex;
+    gap: 0.3rem;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+    padding-bottom: 0.625rem;;
+}
+
+.dots-dot {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.dots-dot-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    flex-grow: 1;
+}
+
+.dots-image {
+    max-width: 100%;
+    max-height: 50vh;
+    border: 1px solid red;
+    user-select: none;
+    -webkit-user-drag: none;
+}

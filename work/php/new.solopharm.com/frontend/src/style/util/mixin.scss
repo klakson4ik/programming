@@ -1,0 +1,106 @@
+@mixin text($font-size: $font-size,
+	$color: $black,
+	$font-weight: 300,
+	$line-height: 1.4) {
+	color: $color;
+	font-weight: $font-weight;
+	font-size: rem($font-size);
+	line-height: $line-height;
+}
+
+@mixin h($color: $black,
+	$font-size: 30,
+	$font-weight: 700,
+	$line-height: 1.3,
+	$mt: 60,
+	$mb: 40) {
+	margin-top: rem($mt * 0.8);
+	margin-bottom: rem($mb * 0.8);
+	color: $color;
+	font-weight: $font-weight;
+	font-size: rem($font-size * 0.8);
+	line-height: $line-height;
+
+	@include breakpoint(mobile) {
+		margin-top: rem($mt * 0.9);
+		margin-bottom: rem($mb * 0.9);
+		font-size: rem($font-size * 0.9);
+	}
+
+	@include breakpoint(tablet) {
+		margin-top: rem($mt);
+		margin-bottom: rem($mb);
+		font-size: rem($font-size);
+	}
+
+}
+
+@mixin link($type: "orange") {
+	cursor: pointer;
+	transition: color 0.3s, opacity 0.3s;
+
+	@if $type == "orange" {
+		$color: $orange;
+
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	} @else {
+		@if $type == "black" {
+			color: $black;
+		} @else {
+			color: $white;
+		}
+
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		&:visited {
+			color: $gray;
+			text-decoration: underline;
+		}
+	}
+}
+
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin section-margin($pos: 'bottom') {
+	margin-#{$pos}: rem(50);
+
+	@include breakpoint(tablet) {
+		margin-#{$pos}: rem(75);
+	}
+
+	@include breakpoint(laptop) {
+		margin-#{$pos}: rem(100);
+	}
+}
+
+@mixin section-padding($pos: 'bottom') {
+	padding-#{$pos}: rem(50);
+
+	@include breakpoint(tablet) {
+		padding-#{$pos}: rem(75);
+	}
+
+	@include breakpoint(laptop) {
+		padding-#{$pos}: rem(100);
+	}
+}
+
+@mixin border-bottom($color: $light, $width: 1px){
+	@include section-padding;
+
+	border-bottom: $width solid $color;
+
+	@include section-margin;
+}

@@ -1,0 +1,38 @@
+@use "base" as *;
+
+.nav-pag {
+	display: flex;
+	gap: 2rem;
+	& .nav {
+		display: flex;
+		gap: 1rem;
+
+		&-next {
+			transform: rotate(180deg);
+		}
+
+		& button {
+			padding: 5px;
+			border-radius: 100%;
+			&:hover {
+				background-color: var(--c-purple-light-very);
+			}
+		}
+	}
+
+	& .pag {
+		display: flex;
+		align-items: center;
+	}
+
+	& .bullet {
+		cursor: pointer;
+		height: 3px;
+		width: vw(100);
+		background-color: var(--c-purple-light-very);
+
+		&--active {
+			background-color: var(--c-purple-dark);
+		}
+	}
+}

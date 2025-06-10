@@ -1,0 +1,96 @@
+@import "~style";
+
+$block-name: "b-block-3";
+
+.#{$block-name} {
+	&__row {
+		margin-bottom: rem(20);
+
+		@include breakpoint(tablet) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: vw(120);
+			margin-bottom: unset;
+		}
+	}
+
+	&__column {
+		&--right {
+			text-align: center;
+
+			& img {
+				width: 100%;
+			}
+		}
+
+		&--left {
+			display: flex;
+			gap: 1.5rem;
+			justify-content: space-between;
+		}
+	}
+
+	&__items {
+		display: inline-block;
+		width: 60%;
+		vertical-align: top;
+
+		@include breakpoint(laptop) {
+			width: 40%;
+		}
+
+		.p-border {
+			width: 100%;
+			margin-bottom: 1.7rem;
+			padding: 13px 0 12px;
+			color: $orange;
+			font-weight: 700;
+			line-height: 100%;
+			text-align: center;
+			background-color: white;
+			border: 2.3px solid $orange;
+			border-radius: 32.5px;
+		}
+
+		ul {
+			position: relative;
+			margin-top: 1.6rem;
+			margin-left: 2.5rem;
+			padding-left: 1rem;
+
+			li {
+				position: relative;
+				margin-bottom: 18px;
+			}
+
+			li::before {
+				position: absolute;
+				left: -2.3rem;
+				width: 20px;
+				height: 20px;
+				background-color: white;
+				border: 2.3px solid $orange;
+				border-radius: 100%;
+				content: "";
+
+				@include breakpoint(big) {
+					left: -2.2rem;
+				}
+			}
+		}
+
+		ul::before {
+			position: absolute;
+			top: -1.7rem;
+			bottom: 10px;
+			left: -0.7rem;
+			border-left: $orange solid 2.3px;
+			content: "";
+		}
+	}
+
+	&__subtitle {
+		margin-top: 0 !important;
+		margin-bottom: 1rem !important;
+	}
+}

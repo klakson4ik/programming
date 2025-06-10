@@ -1,0 +1,20 @@
+@forward 'layout';
+
+@forward "common";
+
+@forward "pages/cosmetology/main";
+@forward "pages/cosmetology/eco";
+@forward "pages/cosmetology/detail";
+@forward 'pages/home/product';
+@forward 'pages/cosmetology/protocol';
+@forward 'pages/cosmetology/example';
+@forward 'pages/cosmetology/expert';
+@forward 'pages/cosmetology/education';
+@forward 'pages/cosmetology/calendar';
+@forward 'pages/detail-product/publications';
+@forward 'component/trash';
+
+
+@forward 'component/slider/nav-default';
+@forward 'component/select';
+@forward 'component/pagination/side';

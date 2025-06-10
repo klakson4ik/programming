@@ -1,0 +1,50 @@
+@forward 'layout';
+
+@forward "common";
+@use "base" as *;
+
+.b-policy {
+
+	ul,
+	ol {
+		list-style: none;
+		counter-reset: li;
+		font-size: 1.6rem;
+		line-height: 1.4;
+	}
+
+	ol>li:before {
+		counter-increment: li;
+		content: counters(li, ".") ". ";
+	}
+
+	&__title {
+		padding-top: calc(var(--header-height) + 6rem);
+
+		@include breakpoint(lg) {
+			padding-top: calc(var(--header-height) - 3rem);
+		}
+	}
+
+	&__main-list {
+		margin-top: 3.5rem;
+	}
+
+	&__main-ol,
+	&__last-update {
+		margin-top: 2.5rem;
+	}
+
+	&__li {
+		margin-top: 1.5rem;
+	}
+
+	&__square-wrapper {
+		margin-top: 2rem;
+	}
+
+	&__square {
+		list-style: square;
+		margin-left: 3rem;
+	}
+}

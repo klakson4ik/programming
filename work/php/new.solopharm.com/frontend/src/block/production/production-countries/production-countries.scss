@@ -1,0 +1,12 @@
+@import "~style";
+
+$block-name: "b-production-countries";
+
+.#{$block-name} {
+	padding-bottom: 3rem;
+	border-bottom: #eaeaea solid 2px;
+
+	@include breakpoint(big) {
+		padding-bottom: 5rem;
+	}
+}

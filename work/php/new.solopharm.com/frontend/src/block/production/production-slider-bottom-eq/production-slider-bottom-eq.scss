@@ -1,0 +1,94 @@
+@import "~style";
+
+$block-name: "b-production-slider-bottom-eq";
+
+.#{$block-name} {
+	position: relative;
+	width: 100%;
+	padding-top: 0 !important;
+	overflow: hidden;
+	background-size: cover;
+
+	@include breakpoint(laptop) {
+		padding-top: 3.6rem !important;
+	}
+
+	&__nav {
+		position: relative;
+		bottom: rem(-20);
+		z-index: 1;
+		width: 100%;
+
+		@include breakpoint(mobile){
+			text-align: end;
+		}
+	}
+
+	.slider-eq-bottom {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+
+		@include breakpoint(laptop) {
+			width: 85%;
+		}
+
+		.swiper-slide {
+			display: flex;
+			flex-flow: wrap;
+			height: 640px;
+
+			@include breakpoint(mobile) {
+				height: 840px;
+			}
+
+			@include breakpoint(laptop) {
+				height: 540px;
+			}
+
+			img {
+				display: inline-block;
+				order: 2;
+				width: 100%;
+				height: 100%;
+				object-fit: scale-down;
+				object-position: 0 0;
+
+				@include breakpoint(laptop) {
+					order: 1;
+					width: 53%;
+					object-fit: cover;
+					object-position: unset;
+				}
+			}
+
+			.info {
+				display: inline-block;
+				order: 1;
+				width: 100%;
+				margin-top: 4rem;
+				margin-left: 0;
+				vertical-align: top;
+
+				@include breakpoint(laptop) {
+					margin-top: 2rem;
+				}
+
+				@include breakpoint(laptop) {
+					order: 2;
+					width: auto;
+					margin-left: 7%;
+				}
+
+				h2 {
+					margin-top: 0;
+					text-transform: uppercase;
+				}
+
+				p {
+					padding-bottom: 1.5rem !important;
+				}
+			}
+		}
+	}
+}

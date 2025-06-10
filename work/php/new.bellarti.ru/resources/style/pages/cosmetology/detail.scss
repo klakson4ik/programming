@@ -1,0 +1,26 @@
+@use "base" as *;
+
+.b-detail {
+	&__items {
+		display: grid;
+		grid-template: repeat(3, auto) / repeat(2, 1fr);
+		justify-content: space-between;
+		gap: 3.5rem 3rem;
+
+		@include breakpoint(md) {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+	}
+
+	&__item {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+
+		&-title {
+			padding-bottom: 1rem;
+			margin-bottom: 2rem;
+			border-bottom: 1px solid var(--c-purple-light-very);
+		}
+	}
+}

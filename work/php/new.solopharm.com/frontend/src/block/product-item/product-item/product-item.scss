@@ -1,0 +1,85 @@
+@import "~style";
+
+$block-name: "b-product-item";
+
+.#{$block-name} {
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: rem(20);
+		font-weight: 400;
+		border-bottom: 1px solid $light;
+
+		&-left {
+			& > img {
+				width: rem(33);
+				height: rem(33);
+				margin-right: rem(10);
+				vertical-align: middle;
+			}
+		}
+
+		&-right {
+			position: relative;
+			display: none;
+			cursor: pointer;
+
+			&:hover {
+				color: $orange;
+			}
+
+			@include breakpoint(mobile) {
+				display: block;
+			}
+		}
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include breakpoint(tablet) {
+			flex-wrap: nowrap;
+			padding-top: rem(30);
+		}
+	}
+
+	&__column {
+		&-left {
+			flex-grow: 1;
+
+			@include breakpoint(tablet) {
+				padding-right: rem(45);
+				border-right: 1px solid $light;
+			}
+		}
+
+		&-right {
+			flex-grow: 1;
+
+			@include breakpoint(tablet) {
+				flex-shrink: 0;
+			}
+
+			@include breakpoint(tablet) {
+				flex-basis: 37%;
+				padding-left: rem(45);
+			}
+		}
+	}
+
+	&__backurl {
+		display: flex;
+		align-items: center;
+		color: $orange;
+		font-weight: 400;
+
+		& .icon {
+			width: rem(62);
+			height: rem(33);
+			margin-right: rem(25);
+			stroke: $orange;
+			stroke-width: 2px;
+		}
+	}
+}

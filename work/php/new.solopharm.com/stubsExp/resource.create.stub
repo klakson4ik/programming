@@ -1,0 +1,48 @@
+<?php
+namespace App\MoonShine\Resources;
+
+use Illuminate\Database\Eloquent\Model;
+
+use MoonShine\Resources\Resource;
+use MoonShine\Decorations\Block;
+use MoonShine\Actions\FiltersAction;
+$USE$
+
+
+class $NAME$ extends Resource
+{
+    public static string $model = 'App\Models\$MODEL$';
+
+    public static string $title = '$TITLE$';
+
+    public function fields(): array
+    {
+        return [
+            Block::make('form-container', [
+               $DATA$
+            ]),
+        ];
+    }
+
+    public function rules(Model $item): array
+    {
+        return [];
+    }
+
+    public function search(): array
+    {
+        $SEARCH$
+    }
+
+    public function filters(): array
+    {
+        $FILTER$
+    }
+
+    public function actions(): array
+    {
+        return [
+            FiltersAction::make(trans('moonshine::ui.filters')),
+        ];
+    }
+}

@@ -1,0 +1,105 @@
+@import "~style";
+
+$block-name: "b-countries-map";
+
+.#{$block-name} {
+	display: grid;
+	gap: rem(30);
+
+	.c-h2 {
+		margin-top: 0;
+	}
+
+	@include breakpoint(big) {
+		grid-template-columns: auto 1fr;
+		gap: rem(50);
+
+		&:not(&--full) {
+			.#{$block-name}__list {
+				grid-template-columns: 1fr 1fr;
+				gap: rem(15) rem(50);
+			}
+		}
+	}
+
+	&--full {
+		@include breakpoint(big) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__map {
+		position: relative;
+		height: min-content;
+	}
+
+	&__map-dot {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		background-color: black;
+		border-radius: 20px;
+		cursor: pointer;
+
+		&::after {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			background-color: black;
+			border-radius: 60px;
+			opacity: 0;
+			content: "";
+		}
+
+		&.active {
+			&::after {
+				width: 100px;
+				height: 100px;
+				animation-name: dot-pulse;
+				animation-duration: 2s;
+			}
+		}
+	}
+
+	&__map-image {
+		width: 100%;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(rem(150), 1fr));
+		gap: rem(15);
+		height: min-content;
+	}
+
+	&__list-item {
+		display: grid;
+		grid-template-columns: rem(30) auto;
+		gap: rem(10);
+		width: 100%;
+	}
+
+	&__name {
+		&.active {
+			color: $orange;
+		}
+	}
+}
+
+@keyframes dot-pulse {
+	from {
+		top: -3px;
+		left: -3px;
+		width: 14px;
+		height: 14px;
+		opacity: 0.4;
+	}
+
+	to {
+		top: -45px;
+		left: -45px;
+		width: 100px;
+		height: 100px;
+		opacity: 0;
+	}
+}

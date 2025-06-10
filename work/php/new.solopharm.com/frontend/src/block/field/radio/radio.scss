@@ -1,0 +1,96 @@
+@import "~style";
+
+$block-name: "b-radio";
+
+.#{$block-name} {
+	&__field {
+		position: absolute;
+		z-index: -1;
+		opacity: 0;
+
+		&:checked+label::before {
+			border-color: $orange;
+		}
+
+		&:checked+label::after {
+			background-color: $orange;
+		}
+	}
+
+	&__label {
+		position: relative;
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		cursor: pointer;
+		user-select: none;
+
+		&::before {
+			display: block;
+			flex-basis: 18px;
+			flex-shrink: 0;
+			height: 18px;
+			margin-right: rem(14);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 75% 75%;
+			border: 1px solid $gray;
+			border-radius: 100%;
+			content: "";
+		}
+
+		&::after {
+			position: absolute;
+			left: 3px;
+			display: block;
+			width: 12px;
+			height: 12px;
+			border-radius: 100%;
+			content: "";
+		}
+
+		&:hover::before {
+			border-color: $orange;
+		}
+
+		&>span {
+			flex-shrink: 0;
+			padding-top: 3px;
+
+		}
+	}
+
+	&__error {
+		margin-bottom: rem(5);
+	}
+
+	&__input-inside {
+		width: 100%;
+		padding: rem(5) rem(10);
+		border-bottom: 1px solid $gray;
+		transition: all 0.5s ease;
+
+		&::placeholder {
+			color: $gray;
+			line-height: rem(18);
+		}
+
+		&--below {
+			margin-bottom: rem(35);
+		}
+	}
+
+	&__column {
+		&--flex {
+			display: flex;
+			gap: rem(30);
+		}
+	}
+
+	&__caption {
+		&--bold {
+			margin-bottom: rem(20);
+			font-weight: 700;
+		}
+	}
+}

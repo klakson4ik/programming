@@ -1,0 +1,43 @@
+@use 'base' as *;
+
+.b-cosmetic {
+	display: flex;
+	justify-content: space-between;
+	gap: 3rem;
+	margin-bottom: vw(166);
+
+	@include breakpoint(lg){
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	@include breakpoint(md){
+		margin-bottom: 6rem;
+	}
+
+	&__column {
+		flex-basis: 50%;
+
+		@include breakpoint(lg) {
+			flex-basis: unset;
+		}
+	}
+
+	&__desc {
+		margin-bottom: vmax(60);
+	}
+
+	&__link {
+		display: flex;
+		align-items: flex-end;
+		gap: 5px;
+
+		& svg {
+			padding-bottom: 8px;
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

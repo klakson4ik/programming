@@ -1,0 +1,11 @@
+.idea/
+vendor/
+composer.lock
+/resource
+!/resource/.gitkeep
+/resource/input
+!/resource/input/.gitkeep
+/resource/output
+!/resource/output/.gitkeep
+*.cache
+*.log

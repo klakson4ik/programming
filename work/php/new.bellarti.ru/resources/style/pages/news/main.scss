@@ -1,0 +1,24 @@
+@use "base" as *;
+
+.b-main {
+	padding-bottom: 11.6rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	@include breakpoint(xl) {
+		background-position-x: right;
+	}
+
+	@include breakpoint(lg) {
+		padding-bottom: calc(var(--header-height));
+	}
+
+	@include breakpoint(md) {
+		background-position: center center;
+		padding-bottom: calc(var(--header-height) - 2rem);
+	}
+
+	&__title {
+		word-wrap: break-word;
+	}
+}

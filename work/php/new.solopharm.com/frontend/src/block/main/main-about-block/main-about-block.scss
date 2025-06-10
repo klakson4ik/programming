@@ -1,0 +1,126 @@
+@import "~style";
+
+$block-name: "b-main-about-block";
+
+.#{$block-name} {
+	position: relative;
+
+	&__left {
+		display: inline-block;
+
+		.c-h1 {
+			margin-top: 0.7rem;
+			font-size: 25px;
+		}
+
+		@include breakpoint(tablet) {
+			width: 60%;
+
+			.c-h1 {
+				font-size: 2.5rem;
+			}
+		}
+	}
+
+	.header {
+		position: relative;
+		top: 0;
+		display: inline;
+		margin-bottom: 35px;
+		font-weight: 700;
+		font-size: 18px;
+		font-style: normal;
+		line-height: 18px;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+	}
+
+	.header::before {
+		position: absolute;
+		bottom: -20px;
+		display: block;
+		width: 100%;
+		border-bottom: 2px solid #fd7d5a;
+		content: "";
+	}
+
+	&__right {
+		position: relative;
+		display: inline-block;
+		margin-top: rem(25);
+		margin-bottom: rem(15);
+		margin-left: 18%;
+		text-align: left;
+		vertical-align: top;
+
+		@include breakpoint(big) {
+			margin-left: 9%;
+		}
+
+		@include breakpoint(tablet) {
+			width: 20%;
+			font-size: 16px;
+		}
+
+		.c-text {
+			max-height: 0;
+			overflow: hidden;
+			transition: 0.5s;
+		}
+
+		h3 {
+			margin-top: 0.7rem;
+			font-size: 20px;
+			cursor: pointer;
+		}
+
+		h3::before {
+			position: absolute;
+			left: -60px;
+			width: 50px;
+			height: 16px;
+			background: url("/images/icons/ar-dark.png") no-repeat;
+			background-position: -20px bottom;
+			background-position: bottom;
+			content: "";
+		}
+
+		@include breakpoint(mobile) {
+			h3::before {
+				position: absolute;
+				left: -80px;
+				width: 50px;
+				height: 16px;
+				margin-top: 0.15rem;
+				background: url("/images/icons/ar-dark.png") no-repeat;
+				background-position: -20px bottom;
+				background-position: bottom;
+				content: "";
+			}
+		}
+
+		.active .c-text {
+			width: 80%;
+			max-height: 200px;
+			overflow: hidden;
+			transition: 1s;
+
+			@include breakpoint(tablet) {
+				width: auto;
+			}
+		}
+
+		.active h3::before {
+			margin-top: 0.25rem;
+			background: url("/images/icons/ar-orange.png") no-repeat;
+		}
+
+		.active h3 {
+			color: $orange;
+		}
+
+		&-title {
+			font-size: rem(23) !important;
+		}
+	}
+}

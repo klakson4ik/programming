@@ -1,0 +1,215 @@
+@import "~style";
+
+$block-name: "b-product-list-item";
+
+.#{$block-name} {
+	position: relative;
+	display: block;
+	height: 100%;
+	padding: rem(15) rem(20);
+	background-color: $product-bg;
+	cursor: default;
+	transition: all 0.3s linear;
+
+	&:hover {
+		box-shadow: 0 5px 20px $gray;
+		transition: all 0.3s linear;
+	}
+
+	&__top-row {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		padding: rem(15) rem(20) 0;
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: rem(18);
+		line-height: 1.4;
+	}
+
+	&__attribute,
+	&__vital {
+		color: $gray;
+		font-weight: 600;
+		font-size: 14px;
+	}
+
+	&__vital {
+		display: flex;
+		margin-top: 1px;
+
+		@include breakpoint(laptop) {
+			margin-top: 3px;
+
+			&::before {
+				position: absolute;
+				top: 20px;
+				right: 10px;
+				border: 7px solid transparent;
+    			border-right: 7px solid $black;
+				transition: opacity 0.4s ease;
+			}
+
+			&::after {
+				position: absolute;
+				top: -12px;
+				right: -230px;
+				z-index: 1;
+				width: 240px;
+				padding: 10px;
+				color: $white;
+				background-color: $black;
+				border-radius: 5px;
+			}
+
+			&:hover::before {
+				content: '';
+			}
+
+			&:hover::after {
+				content: attr(data-descr);
+			}
+		}
+
+		@include breakpoint(desktop) {
+			margin-top: 4px;
+		}
+
+		svg {
+			margin-top: 3px;
+			margin-left: 2px;
+		}
+	}
+
+	&__card-attributes {
+		position: absolute;
+		bottom: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(11);
+		transform: translateY(120%);
+	}
+
+	&__attribute {
+		width: fit-content;
+		padding: 1px 9px 0;
+		line-height: 1.3;
+		border: 1px solid $orange;
+		border-radius: 10px;
+	}
+
+	&__img {
+		position: relative;
+		margin-top: rem(75);
+		overflow-x: clip;
+		text-align: center;
+
+		& > img {
+			flex-shrink: 0;
+			width: 100%;
+			max-width: rem(233);
+		}
+	}
+
+	&__pics-wrapper {
+		display: flex;
+	}
+
+	&__trade-link {
+		flex-shrink: 0;
+		width: 100%;
+	}
+
+	&__pic-controller {
+		position: absolute;
+		top: 37%;
+		z-index: 1;
+		padding: 0.5rem;
+		cursor: pointer;
+		transition: 0.4s ease;
+
+		@include breakpoint(tablet) {
+			top: 4rem;
+		}
+
+		&--prev {
+			left: 0;
+			transform: rotate(90deg);
+		}
+
+		&--next {
+			right: 0;
+			transform: rotate(-90deg);
+		}
+
+		&--deactive,
+		&:hover {
+			opacity: 0.5;
+		}
+
+		&--locked {
+			display: none;
+		}
+	}
+
+	&__pagination {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		gap: rem(5);
+		width: 100%;
+		margin: auto;
+		overflow: hidden;
+
+		&--deactive {
+			display: none;
+		}
+
+		&.centered {
+			justify-content: center;
+		}
+	}
+
+	&__bullet {
+		z-index: 1;
+		display: flex;
+		flex-shrink: 0;
+		width: rem(5.75);
+		height: rem(5.75);
+		background-color: $color-bullet;
+		border-radius: 100%;
+		cursor: pointer;
+		transition: background-color 0.4s ease;
+
+		&--active,
+		&:hover {
+			background-color: $color-bullet-current;
+		}
+	}
+
+	&__info {
+		display: flex;
+		justify-content: space-between;
+
+		&-item {
+			color: $gray;
+			font-weight: 700;
+			font-size: rem(14);
+
+			& > span {
+				color: $orange;
+			}
+		}
+
+		&--end {
+			justify-content: end;
+		}
+	}
+}

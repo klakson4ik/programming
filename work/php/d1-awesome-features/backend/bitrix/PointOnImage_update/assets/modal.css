@@ -1,0 +1,34 @@
+.b-modal {
+    position: fixed;
+    z-index: -15;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    will-change: opacity;
+}
+.b-modal--open {
+    opacity: 1;
+}
+.b-modal__container {
+    position: relative;
+    border-radius: 1.4rem;
+    padding: 5rem 3.5rem 3.5rem;
+}
+.b-modal__close {
+    display: inline-flex;
+    position: absolute;
+    z-index: 1;
+    top: 6rem;
+    right: 4.5rem;
+    transition: transform 0.3s ease;
+    transform: scale(1.5);
+}
+.b-modal__content {
+    background-color: white;
+    padding: 2rem;
+    height: 60vmin;
+    width: min(65vw, 65vmax);
+}

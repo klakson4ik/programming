@@ -1,0 +1,22 @@
+@use "sass:math";
+
+@function round($value, $fractionDigits: 0) {
+    $power: math.pow(10, $fractionDigits);
+    @return math.div(math.round($power * $value), $power);
+}
+
+@function vw($pixels) {
+    @return #{round(math.div($pixels, 19.2), 2)}vw;
+}
+
+@function vh($pixels) {
+    @return #{round(math.div($pixels, 19.2), 2)}vh;
+}
+
+@function vmax($pixels) {
+    @return #{round(math.div($pixels, 19.2), 2)}vmax;
+}
+
+@function vmin($pixels) {
+    @return #{round(math.div($pixels, 19.2), 2)}vmin;
+}

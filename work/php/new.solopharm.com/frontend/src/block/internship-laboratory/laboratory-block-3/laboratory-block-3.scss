@@ -1,0 +1,44 @@
+@import "~style";
+
+$block-name: "b-laboratory-block-3";
+
+.#{$block-name} {
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(65);
+	align-items: center;
+	justify-content: space-between;
+
+	@include breakpoint(tablet){
+		flex-wrap: nowrap;
+	}
+
+	&__text {
+		color: $orange;
+		font-weight: 700;
+		font-size: rem(40);
+	}
+
+	&__btn {
+		position: relative;
+		display: flex;
+		flex-shrink: 0;
+		justify-content: end;
+		width: 100%;
+
+		@include breakpoint(tablet){
+			display: unset;
+			justify-content: unset;
+			width: unset;
+		}
+	}
+
+	&__s {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		max-width: rem(230);
+		opacity: 0.6;
+	}
+}

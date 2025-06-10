@@ -1,0 +1,25 @@
+@use "base" as *;
+
+.b-tabs {
+	&__list {
+		display: flex;
+		gap: max(vw(30), 1.5rem);
+	}
+
+	&__link {
+		padding: 1rem max(vw(30), 1.5rem);
+		border-radius: 4px;
+		display: block;
+
+		&:hover {
+			background-color: var(--c-black);
+			color: var(--c-white);
+		}
+
+		&.active {
+			border-color: var(--c-purple-dark);
+			color: var(--c-purple-dark);
+			pointer-events: none;
+		}
+	}
+}

@@ -1,0 +1,42 @@
+@use "base" as *;
+
+.b-bio {
+	&__desc {
+		margin-bottom: vmax(50);
+		max-width: 58.5rem;
+	}
+
+	&__subtitle {
+		margin-bottom: vmax(35);
+	}
+
+	&__items {
+		display: flex;
+		gap: vw(50);
+
+		@include breakpoint(md) {
+			flex-wrap: wrap;
+			gap: 2rem 1rem;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		flex-basis: 20%;
+
+		@include breakpoint(md) {
+			flex-basis: 48%;
+			gap: 1rem;
+		}
+	}
+
+	&__icon {
+		@include breakpoint(md) {
+			& svg {
+				width: 5rem;
+			}
+		}
+	}
+}

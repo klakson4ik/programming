@@ -1,0 +1,49 @@
+@use "base" as *;
+
+.b-main {
+	position: relative;
+
+	@include breakpoint(sm) {
+		overflow-x: hidden;
+		&__picture {
+			& img {
+				max-width: 180%;
+				object-fit: cover;
+				object-position: -15rem 0;
+			}
+		}
+	}
+
+	&__info {
+		position: absolute;
+		left: 50%;
+		top: 60%;
+		transform: translate(-50%, -50%);
+	}
+
+	&__title {
+		margin-bottom: vmax(28);
+
+		@include breakpoint(md){
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	&__btn {
+		font-size: 2rem;
+		padding: 1.3rem 2.2rem;
+		border-radius: 4px;
+		transition:
+			color var(--trans-time),
+			background-color var(--trans-time);
+
+		&:hover {
+			background-color: var(--c-white);
+			color: var(--c-purple);
+		}
+
+		@include breakpoint(md) {
+			font-size: 1.4rem;
+		}
+	}
+}

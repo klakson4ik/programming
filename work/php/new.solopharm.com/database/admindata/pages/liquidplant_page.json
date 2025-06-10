@@ -1,0 +1,15 @@
+{
+	"title": "Завод ЖЛФ",
+	"data": {
+		"title": "text",
+		"block_1_img": "string",
+		"block_1_data": "json",
+		"block_2_title": "text",
+		"block_2_subtitle" :"text",
+		"block_2_text_1": "text",
+		"block_2_text_2": "text",
+		"block_2_desc": "text",
+		"block_2_img": "string",
+		"block_2_data": "json"
+	}
+}

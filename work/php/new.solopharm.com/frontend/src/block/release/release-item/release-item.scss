@@ -1,0 +1,27 @@
+@import "~style";
+
+$block-name: "b-release-item";
+
+.#{$block-name} {
+	height: 340px;
+	padding: rem(24);
+	background-repeat: no-repeat;
+	background-position-y: bottom;
+	background-size: cover;
+
+	@include breakpoint(small) {
+		height: 275px;
+	}
+
+	@include breakpoint(mobile) {
+		height: 368px;
+	}
+
+	&__title {
+		margin-bottom: rem(10);
+		font-weight: 700;
+		font-size: rem(20);
+		line-height: 1.2;
+		word-break: break-word;
+	}
+}

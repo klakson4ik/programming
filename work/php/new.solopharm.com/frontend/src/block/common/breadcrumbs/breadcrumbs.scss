@@ -1,0 +1,35 @@
+@import "~style";
+
+$block-name: "b-breadcrumbs";
+
+.#{$block-name} {
+	--display-bc: flex;
+
+	display: var(--display-bc);
+	flex-wrap: wrap;
+	gap: rem(15) rem(10);
+	justify-content: start;
+
+
+	&__item {
+		font-weight: 400;
+		font-size: rem(14);
+
+		& .icon {
+			width: rem(10);
+			height: rem(10);
+			margin-left: rem(10) ;
+			transform: rotate(-90deg);
+			stroke: $gray;
+		}
+
+		&--active {
+			font-weight: 300;
+			pointer-events: none;
+		}
+
+		& > a :hover {
+			text-decoration: underline;
+		}
+	}
+}

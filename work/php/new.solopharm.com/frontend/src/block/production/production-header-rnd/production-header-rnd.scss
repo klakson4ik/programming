@@ -1,0 +1,20 @@
+@import "~style";
+
+$block-name: "b-production-header-rnd";
+
+.#{$block-name} {
+	width: 100%;
+	padding-bottom: rem(40);
+
+	h1 {
+		font-size: 1.6rem;
+
+		@include breakpoint(tablet) {
+			font-size: 2.5rem;
+		}
+
+		span {
+			color: $orange;
+		}
+	}
+}

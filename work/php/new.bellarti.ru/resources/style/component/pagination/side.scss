@@ -1,0 +1,52 @@
+@use "base" as *;
+
+.b-pag-side {
+	position: absolute;
+	right: vw(70);
+	top: 0;
+	height: 100%;
+	z-index: 3;
+	right: 4rem;
+
+	@include breakpoint(1900) {
+		display: none;
+	}
+
+	&__nav {
+		position: sticky;
+		top: calc(var(--header-height) + 3rem);
+	}
+
+	&__list {
+		padding: 5px 1rem 5px 0;
+	}
+
+	&__item {
+		padding: 5px 1rem;
+		border-left: 1px solid var(--c-purple-dark);
+		transition: border-left-color var(--trans-time);
+
+		&>a {
+			transition: color var(--trans-time);
+
+			&:hover {
+				color: var(--c-purple);
+			}
+		}
+
+		&:hover {
+			border-left-color: var(--c-purple);
+		}
+
+		&--active {
+			border-width: 2px;
+			padding-left: 9px;
+			border-left-color: var(--c-purple-dark);
+			pointer-events: none;
+
+			&>a {
+				color: var(--c-purple-dark);
+			}
+		}
+	}
+}

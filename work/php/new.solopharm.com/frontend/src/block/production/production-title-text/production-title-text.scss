@@ -1,0 +1,32 @@
+@import "~style";
+
+$block-name: "b-production-title-text";
+
+.#{$block-name} {
+	width: 100% !important;
+	margin: 0;
+	margin-bottom: rem(30);
+
+	.icon-area,
+	.text {
+		display: inline-block;
+		width: 100%;
+		vertical-align: top;
+
+		@include breakpoint(laptop) {
+			width: 43%;
+		}
+	}
+
+	.icon-area {
+		margin-right: 0%;
+
+		@include breakpoint(laptop) {
+			margin-right: 8%;
+		}
+	}
+
+	.text {
+		font-weight: 700;
+	}
+}

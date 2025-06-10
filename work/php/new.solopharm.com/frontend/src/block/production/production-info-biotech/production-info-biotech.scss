@@ -1,0 +1,179 @@
+@import "~style";
+
+$block-name: "b-production-info-biotech";
+
+.#{$block-name} {
+	width: 100%;
+
+	.c-icon {
+		position: relative;
+	}
+
+	.c-icon::after {
+		position: absolute;
+		top: -40px;
+		right: 0;
+		display: none;
+		width: 142px;
+		height: 117px;
+		background-image: url("/storage/images/test/biotech-icon.png");
+		content: "";
+
+		@include breakpoint(laptop) {
+			display: block;
+		}
+	}
+
+	&__slides {
+		gap: rem(30) 0;
+		width: 100%;
+
+		div {
+			display: inline-block;
+			width: 100%;
+			margin-right: 15px;
+			vertical-align: top;
+
+			@include breakpoint(laptop) {
+				width: calc(33% - 15px);
+			}
+
+			img {
+				width: 100%;
+				margin-bottom: 15px;
+
+				@include breakpoint(laptop) {
+					margin-bottom: 40px;
+				}
+			}
+		}
+	}
+
+	.img-area,
+	.text-area {
+		display: block;
+		width: 100%;
+
+		@include breakpoint(laptop) {
+			display: inline-block;
+			width: 46%;
+			vertical-align: top;
+		}
+
+		.p-border {
+			width: 100%;
+			margin-top: 0.8rem;
+			margin-bottom: 1.7rem;
+			padding: 13px 0 12px;
+			color: $orange;
+			font-weight: 700;
+			line-height: 100%;
+			text-align: center;
+			background-color: white;
+			border: 2.3px solid $orange;
+			border-radius: 32.5px;
+		}
+
+		li {
+			margin-bottom: 15px;
+
+			@include breakpoint(laptop) {
+				margin-bottom: 50px;
+			}
+		}
+
+		li::after {
+			display: none;
+		}
+
+		ul {
+			padding-left: 1rem;
+		}
+
+		ul::before {
+			position: absolute;
+			top: -1.7rem;
+			bottom: 10px;
+			left: -0.7rem;
+			border-left: $orange solid 2.3px;
+			content: "";
+		}
+	}
+
+	.img-area {
+		margin: 0;
+
+		@include breakpoint(laptop) {
+			margin-left: 6%;
+		}
+
+		img {
+			width: 100%;
+			height: 775px;
+		}
+	}
+
+	.text-area {
+		.info-cols {
+			width: 100%;
+			margin-top: 7rem;
+			vertical-align: top;
+
+			.left {
+				display: inline-block;
+				width: 38%;
+				margin-right: 13%;
+				vertical-align: top;
+
+				div {
+					margin: 4.2rem 0 0;
+				}
+			}
+
+			.right {
+				display: inline-block;
+				width: 40%;
+				vertical-align: top;
+			}
+		}
+	}
+
+	ul {
+		position: relative;
+		margin-top: 1.6rem;
+		margin-left: 2.5rem;
+
+		li {
+			position: relative;
+			margin-bottom: 18px;
+		}
+
+		li::before {
+			position: absolute;
+			left: -2.3rem;
+			width: 20px;
+			height: 20px;
+			background-color: $white;
+			border: 2.3px solid $orange;
+			border-radius: 100%;
+			content: "";
+
+			@include breakpoint(laptop) {
+				left: -2.2rem;
+			}
+		}
+	}
+
+	li::after {
+		position: absolute;
+		top: 20px;
+		bottom: -20px;
+		left: -1.7rem;
+		border-left: $orange solid 2.3px;
+		content: "";
+	}
+
+	ul li:last-child::after {
+		display: none;
+	}
+}

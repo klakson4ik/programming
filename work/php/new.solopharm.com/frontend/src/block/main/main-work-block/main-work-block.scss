@@ -1,0 +1,66 @@
+@import "~style";
+
+$block-name: "b-main-work-block";
+
+.#{$block-name} {
+	&__header {
+		display: inline;
+		width: 100%;
+
+		h2 {
+			display: inline-block;
+			width: 60%;
+			margin-top: 1.3rem;
+			margin-bottom: 1.3rem;
+		}
+
+		a {
+			display: inline-block;
+			width: 38%;
+			margin-top: 2.78rem;
+			color: #333;
+			font-weight: 500;
+			font-size: 14px;
+			font-style: normal;
+			line-height: 14px;
+			text-align: right;
+			text-transform: uppercase;
+		}
+	}
+
+	p {
+		/* or 29px */
+
+		color: #333;
+		font-weight: 400;
+		font-size: 18px;
+		font-family: HelveticaNeueCyr;
+		font-style: normal;
+		line-height: 160%;
+	}
+
+	&__bgblock {
+		height: 500px;
+		margin-top: 1.5rem;
+		background-image: url("/images/workbg.png");
+
+		div {
+			float: right;
+			width: 40%;
+			margin-top: 60px;
+			margin-right: 60px;
+			color: #fff;
+
+			h2 {
+				margin-top: 0;
+				margin-bottom: 1rem;
+				color: #fff;
+			}
+
+			p {
+				margin-bottom: 2rem;
+				color: #fff;
+			}
+		}
+	}
+}

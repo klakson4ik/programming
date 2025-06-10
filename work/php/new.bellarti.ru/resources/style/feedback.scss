@@ -1,0 +1,13 @@
+@forward 'layout';
+
+@forward "common";
+
+@forward "pages/feedback/main";
+
+@forward "field/input";
+@forward "field/textarea";
+@forward "field/checkbox";
+@forward "field/submit";
+@forward "field/error";
+
+@forward "component/modal"

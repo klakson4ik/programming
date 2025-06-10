@@ -1,0 +1,7 @@
+@use 'base' as *;
+
+.b-eco {
+	&__picture {
+		margin-top: vmax(120);
+	}
+}

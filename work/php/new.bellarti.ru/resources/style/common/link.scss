@@ -1,0 +1,14 @@
+@use "base" as *;
+
+.custom-link {
+	&-title {
+		display: inline-block;
+		border-radius: 4px;
+		padding: 1.3rem 2.2rem;
+
+		&:hover{
+			background-color: var(--c-blue-light);
+			color: var(--c-black);
+		}
+	}
+}

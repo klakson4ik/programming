@@ -1,0 +1,28 @@
+@import "~style";
+
+$block-name: "b-supplier-text";
+
+.#{$block-name} {
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(65);
+	align-items: start;
+	justify-content: center;
+
+	@include breakpoint(laptop) {
+		flex-wrap: nowrap;
+	}
+
+	&__column {
+		&--img {
+			display: block;
+			flex-shrink: 0;
+			width: 100%;
+			max-width: rem(463);
+		}
+
+		&--desc {
+			font-size: rem(20);
+		}
+	}
+}
